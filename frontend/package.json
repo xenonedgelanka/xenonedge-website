@@ -1,0 +1,31 @@
+{
+  "name": "xenonedge-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@iconify/react": "^6.0.2",
+    "@lordicon/react": "^1.11.0",
+    "framer-motion": "^10.18.0",
+    "lottie-react": "^2.4.1",
+    "lottie-web": "^5.13.0",
+    "lucide-react": "^0.563.0",
+    "next": "^16.1.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^5.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "25.0.6",
+    "@types/react": "^18.3.27",
+    "@types/react-dom": "^18.3.7",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.2.0"
+  }
+}
