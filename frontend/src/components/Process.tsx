@@ -52,7 +52,7 @@ export default function Process() {
   })
 
   return (
-    <section className="relative py-24 md:py-32 bg-slate-50 overflow-hidden" id="process" ref={containerRef}>
+    <section className="relative py-24 md:py-32 bg-[#f1f5f9] overflow-hidden" id="process" ref={containerRef}>
       {/* Geometric Constellation Background */}
       <GeometricConstellation />
 
@@ -63,7 +63,7 @@ export default function Process() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center px-3 py-1 rounded-md bg-slate-100 text-slate-600 text-xs font-medium tracking-wide uppercase mb-8 -mt-12"
+            className="inline-flex items-center px-4 py-1.5 rounded-md border border-sky-500/30 text-sky-600 text-[10px] font-bold tracking-[0.2em] uppercase mb-8 -mt-12 bg-sky-50/50"
           >
             Our Process
           </motion.div>

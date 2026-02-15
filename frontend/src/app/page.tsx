@@ -8,6 +8,7 @@ import CTA from '../components/CTA'
 import PortfolioPreview from '../components/PortfolioPreview'
 import Testimonials from '../components/Testimonials'
 import BlogPreview from '../components/BlogPreview'
+import FAQ from '../components/FAQ'
 
 export const metadata = {
   title: 'xenonedge',
@@ -25,6 +26,7 @@ export default function HomePage() {
       <PortfolioPreview />
       <Testimonials />
       <BlogPreview />
+      <FAQ />
       <CTA />
     </>
   )

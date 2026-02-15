@@ -15,14 +15,14 @@ export default function Navbar() {
             label: 'Services',
             href: '/services',
             children: [
-                { label: 'Web Development', href: '/services#web-development' },
-                { label: 'Mobile App Development', href: '/services#mobile-app-development' },
-                { label: 'Custom Software Solutions', href: '/services#custom-software-solutions' },
-                { label: 'Ecommerce Application', href: '/services#ecommerce-application' },
-                { label: 'AI Integrations', href: '/services#ai-integrations' },
-                { label: 'UI/UX Design', href: '/services#ui-ux-design' },
-                { label: 'SEO & Content', href: '/services#seo-content-writing' },
-                { label: 'Digital Marketing', href: '/services#digital-marketing' },
+                { label: 'Web Development', href: '/services/web-development' },
+                { label: 'Mobile App Development', href: '/services/mobile-app-development' },
+                { label: 'Custom Software Solutions', href: '/services/custom-software-solutions' },
+                { label: 'Ecommerce Application', href: '/services/ecommerce-application' },
+                { label: 'AI Integrations', href: '/services/ai-integrations' },
+                { label: 'UI/UX Design', href: '/services/ui-ux-design' },
+                { label: 'SEO & Content', href: '/services/seo-content-writing' },
+                { label: 'Digital Marketing', href: '/services/digital-marketing' },
             ]
         },
         { label: 'Portfolio', href: '/portfolio' },
@@ -40,9 +40,8 @@ export default function Navbar() {
             setScrolled(isHome ? isScrolled : true)
 
             if (isHome) {
-                // Determine if we are over a dark section (Hero or Portfolio)
+                // Determine if we are over a dark section (Hero)
                 const hero = document.querySelector('.hero-dark')
-                const portfolio = document.getElementById('portfolio-preview')
 
                 let isOverDarkSection = false
 
@@ -51,15 +50,6 @@ export default function Navbar() {
                     const heroRect = hero.getBoundingClientRect()
                     // Navbar is 64px high. Only stay dark if Hero covers the entire navbar.
                     if (heroRect.bottom >= 64) {
-                        isOverDarkSection = true
-                    }
-                }
-
-                // Check Portfolio
-                if (portfolio) {
-                    const pfRect = portfolio.getBoundingClientRect()
-                    // Only switch to dark glass if Portfolio fully covers the navbar area (top is 0 or less).
-                    if (pfRect.top <= 0 && pfRect.bottom >= 64) {
                         isOverDarkSection = true
                     }
                 }
@@ -115,7 +105,7 @@ export default function Navbar() {
                         </summary>
                         <div className={`absolute right-4 left-4 mt-4 flex flex-col space-y-1 rounded-xl p-4 border shadow-xl transition-all duration-200 max-h-[80vh] overflow-y-auto ${isHeaderLight
                             ? 'bg-white border-slate-200 text-slate-900'
-                            : 'bg-slate-900/90 backdrop-blur-xl border-white/20 text-white'
+                            : 'bg-[#0a2444]/60 backdrop-blur-xl border-white/20 text-white'
                             }`}>
                             {links.map((link) => (
                                 <div key={link.href}>
@@ -162,7 +152,7 @@ export default function Navbar() {
                                         <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 min-w-[220px]">
                                             <div className={`rounded-xl overflow-hidden border p-2 flex flex-col transition-colors duration-200 ${isHeaderLight
                                                 ? 'bg-white border-slate-200'
-                                                : 'bg-slate-900/90 border-white/10'
+                                                : 'bg-[#0a2444]/60 backdrop-blur-xl border-white/10'
                                                 }`}>
                                                 {link.children.map((child) => (
                                                     <Link

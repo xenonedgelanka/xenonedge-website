@@ -96,12 +96,12 @@ export default function Testimonials() {
   }
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-[#f1f5f9]">
       <div className="container mx-auto px-6">
 
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 mb-4 text-xs font-bold uppercase tracking-widest text-sky-600 bg-sky-50 rounded-md">
+          <span className="inline-flex items-center px-4 py-1.5 rounded-md border border-sky-500/30 text-sky-600 text-[10px] font-bold tracking-[0.2em] uppercase mb-4 bg-sky-50/50">
             Testimonials
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
@@ -174,7 +174,7 @@ export default function Testimonials() {
 
 function TestimonialCard({ item }: { item: typeof testimonials[0] }) {
   return (
-    <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 h-full relative flex flex-col justify-between hover:shadow-lg transition-all duration-300">
+    <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 h-full relative flex flex-col justify-between transition-all duration-300">
 
       {/* Header: Author & Stars */}
       <div className="flex justify-between items-start mb-6">

@@ -1,13 +1,12 @@
 import Link from "next/link"
 import Image from "next/image"
-import { FaFacebookF, FaLinkedinIn, FaGithub } from "react-icons/fa"
-import { FaXTwitter } from "react-icons/fa6"
+import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa"
 
 export default function Footer() {
   return (
-    <footer className="mt-20 relative overflow-hidden">
+    <footer className="relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-[#050f23]" />
+      <div className="absolute inset-0 bg-[#0a1b33]" />
       <div className="absolute inset-0 opacity-20">
         <Image
           src="/images/footer-pattern.svg"
@@ -37,8 +36,7 @@ export default function Footer() {
               {[
                 { icon: FaFacebookF, href: "#", label: "Facebook" },
                 { icon: FaLinkedinIn, href: "#", label: "LinkedIn" },
-                { icon: FaXTwitter, href: "#", label: "Twitter" },
-                { icon: FaGithub, href: "#", label: "GitHub" },
+                { icon: FaInstagram, href: "#", label: "Instagram" },
               ].map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}

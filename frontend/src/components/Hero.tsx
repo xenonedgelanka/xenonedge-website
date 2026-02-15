@@ -80,7 +80,7 @@ export default function Hero() {
               >
                 <span className="relative">
                   Let's Talk!
-                  <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-gradient-to-r from-sky-400 to-indigo-400 transition-all duration-500 group-hover:w-full"></span>
+                  <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-sky-400 transition-all duration-500 group-hover:w-full"></span>
                 </span>
                 <svg
                   className="ml-2 w-6 h-6 transition-all duration-300 group-hover:translate-x-2"
@@ -107,9 +107,7 @@ export default function Hero() {
         </AnimatedSection>
       </div>
 
-      <div className="relative z-10 pointer-events-none">
-        <img src="/images/wave-bottom.svg" alt="" className="w-full block" />
-      </div>
+
     </section>
   )
 }

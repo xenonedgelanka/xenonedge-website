@@ -105,7 +105,13 @@ export default function QuoteSection() {
     ]
 
     return (
-        <section className="bg-white py-40 relative overflow-hidden">
+        <section className="bg-[#f1f5f9] py-48 relative overflow-hidden">
+            {/* Premium Background Layer */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                {/* Technical Dot Grid Style */}
+                <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1.5px,transparent_1.5px)] [background-size:48px_48px] opacity-80" />
+            </div>
+
             <div className="container mx-auto px-6 relative">
                 {/* Background Icons Layer - Static (no entry animation) */}
                 <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
@@ -131,7 +137,7 @@ export default function QuoteSection() {
 
                     <h2 className="relative z-10 text-3xl md:text-5xl font-black uppercase tracking-tight leading-tight text-[var(--btn)]">
                         Business growth comes from strong ideas and teamwork. <br className="hidden md:block" />
-                        <span className="text-sky-600 mt-2 block">
+                        <span className="text-sky-500 mt-2 block">
                             Together, we deliver outcomes.
                         </span>
                     </h2>
