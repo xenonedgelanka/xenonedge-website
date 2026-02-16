@@ -39,11 +39,20 @@ const items = [
 
 export default function Services() {
   return (
-    <section className="pt-8 md:pt-12 pb-16 md:pb-20 bg-white relative overflow-hidden" id="services">
-      {/* Premium Decorative Accents */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-40">
-        <div className="absolute top-[-10%] right-[-10%] w-[400px] h-[400px] bg-sky-50 rounded-full blur-[100px]" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-indigo-50 rounded-full blur-[100px]" />
+    <section className="pt-8 md:pt-12 pb-16 md:pb-20 bg-[#f1f5f9] relative overflow-hidden" id="services">
+      {/* Premium Background Elements */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Technical Dot Grid Style */}
+
+
+
+
+        {/* Soft Mesh Gradients for Depth - Sophisticated Neutrals */}
+        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-blue-50/40 rounded-full blur-[120px] -translate-y-1/2" />
+        <div className="absolute bottom-0 right-1/4 w-[700px] h-[700px] bg-slate-100/50 rounded-full blur-[120px] translate-y-1/2" />
+
+        {/* Soft Gradient Mask */}
+
       </div>
 
       <div className="container px-6 mx-auto relative z-10">
@@ -52,7 +61,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center px-4 py-1.5 rounded-md bg-sky-50 text-sky-600 text-xs font-bold tracking-widest uppercase mb-4 shadow-sm border border-sky-100/50"
+            className="inline-flex items-center px-4 py-1.5 rounded-md border border-sky-500/30 text-sky-600 text-[10px] font-bold tracking-[0.2em] uppercase mb-4 bg-sky-50/50"
           >
             Our Services
           </motion.div>
@@ -76,9 +85,9 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05, duration: 0.6 }}
-              className="group relative p-6 rounded-xl bg-white border border-slate-100 transition-all duration-300 hover:border-sky-400 flex flex-col items-center text-center h-full"
+              className="group relative p-6 rounded-xl bg-white border border-slate-200 transition-all duration-300 hover:border-sky-500 flex flex-col items-center text-center h-full min-h-[220px] shadow-sm"
             >
-              <div className="relative z-10 flex flex-col items-center">
+              <div className="relative z-10 flex flex-col items-center justify-center h-full w-full">
                 {/* Icon Wrapper - Minimal without background */}
                 <div className="relative mb-4">
                   <div className="w-16 h-16 flex items-center justify-center transition-all duration-300">
@@ -96,7 +105,7 @@ export default function Services() {
                   </div>
                 </div>
 
-                <h3 className="text-lg font-bold text-[#071E3D] group-hover:text-sky-400 transition-colors duration-300 px-2">
+                <h3 className="text-lg font-bold text-[#071E3D] group-hover:text-sky-500 transition-colors duration-300 px-2">
                   {service.title}
                 </h3>
               </div>

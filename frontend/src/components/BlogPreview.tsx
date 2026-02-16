@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ArrowRight, Calendar } from 'lucide-react'
+import { FiArrowUpRight } from 'react-icons/fi'
 
 const posts = [
   {
@@ -33,7 +34,7 @@ const posts = [
 
 export default function BlogPreview() {
   return (
-    <section className="py-20 bg-gradient-to-b from-slate-50 to-white">
+    <section className="py-20 bg-[#f1f5f9]">
       <div className="container mx-auto px-6">
 
         {/* Clean Modern Header */}
@@ -43,7 +44,7 @@ export default function BlogPreview() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 mb-4 text-xs font-bold uppercase tracking-widest text-sky-600 bg-sky-50 rounded-md">
+          <span className="inline-flex items-center px-4 py-1.5 rounded-md border border-sky-500/30 text-sky-600 text-[10px] font-bold tracking-[0.2em] uppercase mb-4 bg-sky-50/50">
             Latest Articles
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
@@ -63,7 +64,7 @@ export default function BlogPreview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.15, duration: 0.5 }}
-              className="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-sky-400/50 transition-all duration-300 flex flex-col"
+              className="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-slate-400/50 transition-all duration-300 flex flex-col"
             >
               {/* Image Container with Overlay Effect */}
               <Link href={`/blog/${post.id}`} className="relative overflow-hidden aspect-[16/9]">
@@ -118,7 +119,7 @@ export default function BlogPreview() {
                 {/* Read More Link */}
                 <Link
                   href={`/blog/${post.id}`}
-                  className="inline-flex items-center gap-2 text-xs text-sky-500 hover:text-sky-600 transition-colors group/link"
+                  className="inline-flex items-center gap-2 text-xs text-slate-600 hover:text-black transition-colors group/link"
                 >
                   Read More
                   <ArrowRight size={16} className="transition-transform group-hover/link:translate-x-1" />
@@ -138,10 +139,10 @@ export default function BlogPreview() {
         >
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 px-8 py-3 text-sm font-bold text-sky-600 bg-sky-50 hover:bg-sky-100 rounded-md transition-all"
+            className="inline-flex items-center gap-3 px-8 py-3 bg-[#071E3D] text-white rounded-lg font-bold text-sm transition-all hover:bg-sky-600 group"
           >
-            View All Articles
-            <ArrowRight size={18} />
+            <span>View All Articles</span>
+            <FiArrowUpRight className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </motion.div>
 

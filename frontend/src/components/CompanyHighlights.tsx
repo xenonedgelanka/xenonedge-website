@@ -14,11 +14,18 @@ import Link from 'next/link'
  */
 export default function CompanyHighlights() {
     return (
-        <section className="py-24 md:py-32 bg-white relative overflow-hidden" id="highlights">
-            {/* Base Background remains pure white */}
+        <section className="py-24 md:py-32 bg-[#f1f5f9] relative overflow-hidden" id="highlights">
+            {/* Premium Technical Background */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                {/* Subtle Dot Grid - Clean Visibility */}
 
-            {/* Premium Accent Orb remains for a subtle touch */}
-            <div className="absolute bottom-0 left-0 w-[700px] h-[700px] bg-gradient-to-tr from-cyan-400/10 via-blue-300/5 to-transparent rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+
+                {/* Vertical Depth Gradient */}
+
+            </div>
+
+            {/* Subtle Bottom Accent - Neutral */}
+            <div className="absolute bottom-0 left-1/4 w-[600px] h-[300px] bg-slate-100/30 rounded-full blur-[100px] translate-y-1/2 pointer-events-none" />
 
             <div className="container px-6 mx-auto relative z-10">
                 <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
