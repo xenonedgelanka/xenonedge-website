@@ -14,14 +14,14 @@ import Link from 'next/link'
  */
 export default function CompanyHighlights() {
     return (
-        <section className="py-24 md:py-32 bg-white relative overflow-hidden" id="highlights">
+        <section className="py-24 md:py-32 bg-[#f1f5f9] relative overflow-hidden" id="highlights">
             {/* Premium Technical Background */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 {/* Subtle Dot Grid - Clean Visibility */}
-                <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1.5px,transparent_1.5px)] [background-size:32px_32px] opacity-60" />
+
 
                 {/* Vertical Depth Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-b from-[#f9fafb] via-transparent to-[#f9fafb] opacity-40" />
+
             </div>
 
             {/* Subtle Bottom Accent - Neutral */}

@@ -107,10 +107,7 @@ export default function QuoteSection() {
     return (
         <section className="bg-[#f1f5f9] py-48 relative overflow-hidden">
             {/* Premium Background Layer */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                {/* Technical Dot Grid Style */}
-                <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1.5px,transparent_1.5px)] [background-size:48px_48px] opacity-80" />
-            </div>
+
 
             <div className="container mx-auto px-6 relative">
                 {/* Background Icons Layer - Static (no entry animation) */}

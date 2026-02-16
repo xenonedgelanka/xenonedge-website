@@ -43,18 +43,13 @@ export default function FAQ() {
             {/* Premium Technical Background Background */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 {/* Subtle Dot Grid */}
-                <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1.5px,transparent_1.5px)] [background-size:32px_32px] opacity-60" />
+
 
                 {/* Giant "?" Watermarks - Pinned to top to prevent movement on expansion */}
-                <div className="absolute top-[-5rem] right-[-2rem] text-[40rem] font-black text-slate-200/80 select-none leading-none rotate-12">
-                    ?
-                </div>
-                <div className="absolute top-[25rem] left-[-4rem] text-[30rem] font-black text-slate-200/60 select-none leading-none -rotate-12">
-                    ?
-                </div>
+
 
                 {/* Vertical Depth Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-b from-[#f9fafb] via-transparent to-[#f9fafb] opacity-40" />
+
             </div>
 
             <div className="container mx-auto px-6 relative z-10">

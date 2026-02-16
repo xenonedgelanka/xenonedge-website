@@ -39,11 +39,11 @@ const items = [
 
 export default function Services() {
   return (
-    <section className="pt-8 md:pt-12 pb-16 md:pb-20 bg-[#f9fafb] relative overflow-hidden" id="services">
+    <section className="pt-8 md:pt-12 pb-16 md:pb-20 bg-[#f1f5f9] relative overflow-hidden" id="services">
       {/* Premium Background Elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Technical Dot Grid Style */}
-        <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1.5px,transparent_1.5px)] [background-size:32px_32px] opacity-40" />
+
 
 
 
@@ -52,7 +52,7 @@ export default function Services() {
         <div className="absolute bottom-0 right-1/4 w-[700px] h-[700px] bg-slate-100/50 rounded-full blur-[120px] translate-y-1/2" />
 
         {/* Soft Gradient Mask */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-transparent to-white/80" />
+
       </div>
 
       <div className="container px-6 mx-auto relative z-10">

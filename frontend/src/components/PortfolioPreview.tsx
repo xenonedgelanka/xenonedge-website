@@ -30,9 +30,9 @@ const projects = [
 
 export default function PortfolioPreview() {
   return (
-    <section id="portfolio-preview" className="py-24 bg-[#f9fafb] relative overflow-hidden">
+    <section id="portfolio-preview" className="py-24 bg-[#f1f5f9] relative overflow-hidden">
       {/* Background Subtle Tech Elements */}
-      <div className="absolute inset-0 z-0 opacity-40 bg-[radial-gradient(#e2e8f0_1.5px,transparent_1.5px)] [background-size:32px_32px] pointer-events-none"></div>
+
 
       <div className="container mx-auto px-6 relative z-10">
 

@@ -34,7 +34,7 @@ const posts = [
 
 export default function BlogPreview() {
   return (
-    <section className="py-20 bg-[#f9fafb]">
+    <section className="py-20 bg-[#f1f5f9]">
       <div className="container mx-auto px-6">
 
         {/* Clean Modern Header */}
