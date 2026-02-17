@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-[#0a1b33]" />
+      <div className="absolute inset-0 bg-[#0f294d]" />
       <div className="absolute inset-0 opacity-20">
         <Image
           src="/images/footer-pattern.svg"

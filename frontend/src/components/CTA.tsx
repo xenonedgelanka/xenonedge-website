@@ -11,7 +11,7 @@ export default function CTA() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl bg-[#071E3D] p-8 md:p-16"
+        className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl bg-[#0a2e5c] p-8 md:p-16"
       >
         {/* Simple Technical Background */}
         <div className="absolute inset-0 pointer-events-none">

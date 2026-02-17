@@ -49,7 +49,7 @@ export default function Navbar() {
                 if (hero) {
                     const heroRect = hero.getBoundingClientRect()
                     // Navbar is 64px high. Only stay dark if Hero covers the entire navbar.
-                    if (heroRect.bottom >= 64) {
+                    if (heroRect.bottom >= 56) {
                         isOverDarkSection = true
                     }
                 }
@@ -80,7 +80,7 @@ export default function Navbar() {
 
     if (scrolled) {
         if (isHeaderLight) {
-            headerClass = 'bg-white border-b border-slate-200 text-slate-900'
+            headerClass = 'bg-white/60 backdrop-blur-2xl backdrop-saturate-[180%] border-b border-white/20 shadow-sm text-slate-900'
         } else {
             headerClass = 'bg-slate-950/40 backdrop-blur-xl backdrop-saturate-150 border-b border-white/10 text-white'
         }
@@ -88,7 +88,7 @@ export default function Navbar() {
 
     return (
         <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-200 ${headerClass}`}>
-            <div className="container flex items-center justify-between h-16">
+            <div className="container flex items-center justify-between h-14">
                 <Link href="/" className="font-bold text-2xl md:text-3xl tracking-tight">
                     XenonEdge
                 </Link>
@@ -104,7 +104,7 @@ export default function Navbar() {
                             </div>
                         </summary>
                         <div className={`absolute right-4 left-4 mt-4 flex flex-col space-y-1 rounded-xl p-4 border shadow-xl transition-all duration-200 max-h-[80vh] overflow-y-auto ${isHeaderLight
-                            ? 'bg-white border-slate-200 text-slate-900'
+                            ? 'bg-white/60 backdrop-blur-2xl backdrop-saturate-[180%] border-white/20 shadow-2xl text-slate-900'
                             : 'bg-[#0a2444]/60 backdrop-blur-xl border-white/20 text-white'
                             }`}>
                             {links.map((link) => (
@@ -151,8 +151,8 @@ export default function Navbar() {
                                     {link.children && (
                                         <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 min-w-[220px]">
                                             <div className={`rounded-xl overflow-hidden border p-2 flex flex-col transition-colors duration-200 ${isHeaderLight
-                                                ? 'bg-white border-slate-200'
-                                                : 'bg-[#0a2444]/60 backdrop-blur-xl border-white/10'
+                                                ? 'bg-white/95 backdrop-blur-3xl backdrop-saturate-[200%] border-white/60 shadow-2xl'
+                                                : 'bg-[#0a2444]/95 backdrop-blur-2xl border-white/20 shadow-xl'
                                                 }`}>
                                                 {link.children.map((child) => (
                                                     <Link
