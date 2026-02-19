@@ -19,8 +19,59 @@ export default function CompanyHighlights() {
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 {/* Subtle Dot Grid - Clean Visibility */}
 
-
                 {/* Vertical Depth Gradient */}
+            </div>
+
+            {/* Watermark Background Icons - Colorful flat icons scattered all around */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+
+                {/* 💻 Code Editor - Top Left */}
+                <img
+                    src="/watermark-icons/code.svg"
+                    alt=""
+                    className="absolute -top-2 left-[3%] w-[100px] h-[100px] md:w-[140px] md:h-[140px] opacity-[0.20]"
+                    style={{ transform: 'rotate(-10deg)' }}
+                />
+
+                {/* 🏆 Trophy - Top Right */}
+                <img
+                    src="/watermark-icons/trophy.svg"
+                    alt=""
+                    className="absolute top-0 right-[4%] w-[95px] h-[95px] md:w-[130px] md:h-[130px] opacity-[0.20]"
+                    style={{ transform: 'rotate(12deg)' }}
+                />
+
+                {/* 🛡️ Shield - Middle Left */}
+                <img
+                    src="/watermark-icons/shield.svg"
+                    alt=""
+                    className="absolute top-[40%] -left-2 w-[100px] h-[100px] md:w-[130px] md:h-[130px] opacity-[0.18]"
+                    style={{ transform: 'rotate(8deg)' }}
+                />
+
+                {/* 🔍 Search - Middle Right */}
+                <img
+                    src="/watermark-icons/search.svg"
+                    alt=""
+                    className="absolute top-[38%] right-[2%] w-[95px] h-[95px] md:w-[125px] md:h-[125px] opacity-[0.18]"
+                    style={{ transform: 'rotate(-12deg)' }}
+                />
+
+                {/* 📄 Document - Bottom Left */}
+                <img
+                    src="/watermark-icons/document.svg"
+                    alt=""
+                    className="absolute bottom-4 left-[5%] w-[95px] h-[95px] md:w-[130px] md:h-[130px] opacity-[0.22]"
+                    style={{ transform: 'rotate(-14deg)' }}
+                />
+
+                {/* 💡 Lightbulb - Bottom Right */}
+                <img
+                    src="/watermark-icons/lightbulb.svg"
+                    alt=""
+                    className="absolute bottom-2 right-[5%] w-[100px] h-[100px] md:w-[135px] md:h-[135px] opacity-[0.20]"
+                    style={{ transform: 'rotate(15deg)' }}
+                />
 
             </div>
 

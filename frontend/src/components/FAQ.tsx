@@ -40,13 +40,54 @@ export default function FAQ() {
 
     return (
         <section className="py-24 bg-[#f1f5f9] relative overflow-hidden" id="faq">
-            {/* Premium Technical Background Background */}
+            {/* Premium Technical Background */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 {/* Subtle Dot Grid */}
 
-
                 {/* Giant "?" Watermarks - Pinned to top to prevent movement on expansion */}
+                <svg
+                    className="absolute -top-10 -left-10 w-[400px] h-[500px] md:w-[550px] md:h-[650px] opacity-[0.06]"
+                    style={{ transform: 'rotate(-12deg)' }}
+                    viewBox="0 0 200 250"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                >
+                    <text
+                        x="50%"
+                        y="50%"
+                        dominantBaseline="central"
+                        textAnchor="middle"
+                        fontSize="280"
+                        fontWeight="900"
+                        fontFamily="Arial, Helvetica, sans-serif"
+                        fill="#0ea5e9"
+                    >
+                        ?
+                    </text>
+                </svg>
 
+                <svg
+                    className="absolute top-[320px] -right-8 w-[300px] h-[380px] md:w-[420px] md:h-[500px] opacity-[0.05]"
+                    style={{ transform: 'rotate(15deg)' }}
+                    viewBox="0 0 200 250"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                >
+                    <text
+                        x="50%"
+                        y="50%"
+                        dominantBaseline="central"
+                        textAnchor="middle"
+                        fontSize="280"
+                        fontWeight="900"
+                        fontFamily="Arial, Helvetica, sans-serif"
+                        fill="#071E3D"
+                    >
+                        ?
+                    </text>
+                </svg>
 
                 {/* Vertical Depth Gradient */}
 
