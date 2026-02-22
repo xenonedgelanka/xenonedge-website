@@ -3,7 +3,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ArrowRight, Calendar } from 'lucide-react'
-import { FiArrowUpRight } from 'react-icons/fi'
 
 const posts = [
   {
@@ -129,22 +128,15 @@ export default function BlogPreview() {
           ))}
         </div>
 
-        {/* View All Link */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="text-center mt-12"
-        >
+        <div className="mt-20 text-center">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-3 px-8 py-3 bg-[#071E3D] text-white rounded-lg font-bold text-sm transition-all hover:bg-sky-600 group"
+            className="group inline-flex items-center gap-4 text-[#071E3D] hover:text-sky-600 transition-colors"
           >
-            <span>View All Articles</span>
-            <FiArrowUpRight className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <span className="text-sm font-bold uppercase tracking-[0.2em]">View All Articles</span>
+            <div className="w-8 h-px bg-[#071E3D]/20 group-hover:w-12 group-hover:bg-sky-600 transition-all duration-500"></div>
           </Link>
-        </motion.div>
+        </div>
 
       </div>
     </section>

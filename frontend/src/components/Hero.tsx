@@ -98,7 +98,7 @@ export default function Hero() {
 
         <AnimatedSection delay={0.15}>
           <div className="mx-auto w-full hero-illustration relative flex items-center justify-center">
-            <div className="relative z-10 flex items-center justify-center w-full md:-translate-y-6 scale-105 md:scale-110 transition-all duration-500">
+            <div className="relative z-10 flex items-center justify-center w-full md:translate-y-20 scale-105 md:scale-110 transition-all duration-500">
               <div className="w-full max-w-[400px] md:max-w-[460px] aspect-square">
                 <AnimatedLottie className="transition-transform duration-500 hover:scale-105 cursor-pointer" />
               </div>

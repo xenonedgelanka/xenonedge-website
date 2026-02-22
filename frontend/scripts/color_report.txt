@@ -1,0 +1,11 @@
+=== Current Color Palette ===
+RGB(217, 235, 255) #d9ebff x14 stroke
+RGB(191, 224, 255) #bfe0ff x11 stroke
+RGB(56, 199, 245) #38c7f5 x9 stroke
+RGB(15, 148, 227) #0f94e3 x9 stroke
+RGB(84, 217, 255) #54d9ff x9 stroke
+RGB(153, 209, 250) #99d1fa x9 stroke
+RGB(5, 115, 199) #0573c7 x7 stroke
+RGB(120, 107, 245) #786bf5 x6 stroke
+RGB(140, 92, 242) #8c5cf2 x6 stroke
+RGB(92, 128, 242) #5c80f2 x5 stroke

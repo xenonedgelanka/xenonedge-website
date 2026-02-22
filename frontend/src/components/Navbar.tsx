@@ -80,14 +80,14 @@ export default function Navbar() {
 
     if (scrolled) {
         if (isHeaderLight) {
-            headerClass = 'bg-white/60 backdrop-blur-2xl backdrop-saturate-[180%] border-b border-white/20 shadow-sm text-slate-900'
+            headerClass = 'bg-white border-b border-slate-200 shadow-sm text-slate-900'
         } else {
-            headerClass = 'bg-slate-950/40 backdrop-blur-xl backdrop-saturate-150 border-b border-white/10 text-white'
+            headerClass = 'bg-[#071427]/40 backdrop-blur-xl border-b border-white/10 text-white'
         }
     }
 
     return (
-        <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-200 ${headerClass}`}>
+        <header className={`fixed top-0 left-0 w-full z-50 transition-none ${headerClass}`}>
             <div className="container flex items-center justify-between h-14">
                 <Link href="/" className="font-bold text-2xl md:text-3xl tracking-tight">
                     XenonEdge
@@ -95,27 +95,27 @@ export default function Navbar() {
 
                 <nav>
                     <details className="md:hidden">
-                        <summary className={`cursor-pointer transition-colors duration-200 list-none ${isHeaderLight ? 'text-slate-900' : 'text-white'}`}>
+                        <summary className={`cursor-pointer list-none ${isHeaderLight ? 'text-slate-900' : 'text-white'}`}>
                             {/* Hamburger Icon - Three Lines */}
                             <div className="flex flex-col gap-1.5 w-7">
-                                <span className={`block h-0.5 w-full rounded-full transition-colors ${isHeaderLight ? 'bg-slate-900' : 'bg-white'}`}></span>
-                                <span className={`block h-0.5 w-full rounded-full transition-colors ${isHeaderLight ? 'bg-slate-900' : 'bg-white'}`}></span>
-                                <span className={`block h-0.5 w-full rounded-full transition-colors ${isHeaderLight ? 'bg-slate-900' : 'bg-white'}`}></span>
+                                <span className={`block h-0.5 w-full rounded-full ${isHeaderLight ? 'bg-slate-900' : 'bg-white'}`}></span>
+                                <span className={`block h-0.5 w-full rounded-full ${isHeaderLight ? 'bg-slate-900' : 'bg-white'}`}></span>
+                                <span className={`block h-0.5 w-full rounded-full ${isHeaderLight ? 'bg-slate-900' : 'bg-white'}`}></span>
                             </div>
                         </summary>
-                        <div className={`absolute right-4 left-4 mt-4 flex flex-col space-y-1 rounded-xl p-4 border shadow-xl transition-all duration-200 max-h-[80vh] overflow-y-auto ${isHeaderLight
-                            ? 'bg-white/60 backdrop-blur-2xl backdrop-saturate-[180%] border-white/20 shadow-2xl text-slate-900'
+                        <div className={`absolute right-4 left-4 mt-4 flex flex-col space-y-1 rounded-xl p-4 border shadow-xl max-h-[80vh] overflow-y-auto ${isHeaderLight
+                            ? 'bg-white border-slate-200 shadow-2xl text-slate-900'
                             : 'bg-[#0a2444]/60 backdrop-blur-xl border-white/20 text-white'
                             }`}>
                             {links.map((link) => (
                                 <div key={link.href}>
-                                    <Link href={link.href} className="py-2.5 px-3 block rounded-lg hover:bg-slate-100/50 dark:hover:bg-white/10 transition-colors font-medium">
+                                    <Link href={link.href} className="py-2.5 px-3 block rounded-lg hover:bg-slate-100 transition-colors font-medium">
                                         {link.label}
                                     </Link>
                                     {link.children && (
                                         <div className={`ml-4 flex flex-col space-y-1 border-l pl-4 mt-1 mb-2 ${isHeaderLight ? 'border-slate-300' : 'border-white/20'}`}>
                                             {link.children.map((child) => (
-                                                <Link key={child.href} href={child.href} className="text-sm py-2 px-3 rounded-lg opacity-75 hover:opacity-100 hover:bg-slate-100/50 dark:hover:bg-white/10 transition-all">
+                                                <Link key={child.href} href={child.href} className="text-sm py-2 px-3 rounded-lg opacity-75 hover:opacity-100 hover:bg-slate-100 transition-all">
                                                     {child.label}
                                                 </Link>
                                             ))}

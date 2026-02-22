@@ -1,0 +1,24 @@
+ Volume in drive C is OS
+ Volume Serial Number is 4077-FA15
+
+ Directory of C:\Users\DELL\Desktop\XenonedgeLanka\frontend\src\components
+
+02/21/2026  08:23 PM    <DIR>          .
+02/09/2026  01:32 AM    <DIR>          ..
+02/08/2026  10:01 PM               856 AnimatedLottie.tsx
+02/15/2026  11:55 AM               425 AnimatedSection.tsx
+02/22/2026  10:43 AM             5,788 BlogPreview.tsx
+02/22/2026  10:36 AM             5,667 CompanyHighlights.tsx
+02/21/2026  08:23 PM             2,431 CTA.tsx
+02/21/2026  08:23 PM             9,595 FAQ.tsx
+02/21/2026  08:23 PM             4,610 Footer.tsx
+02/15/2026  03:01 PM             4,374 GeometricConstellation.tsx
+02/16/2026  12:25 AM             4,611 Hero.tsx
+02/22/2026  10:31 AM            10,869 Navbar.tsx
+02/16/2026  11:13 PM             4,900 PortfolioPreview.tsx
+02/15/2026  03:50 PM             4,745 Process.tsx
+02/21/2026  09:06 PM             7,406 QuoteSection.tsx
+02/16/2026  11:13 PM             4,474 Services.tsx
+02/16/2026  11:13 PM             8,821 Testimonials.tsx
+              15 File(s)         79,572 bytes
+               2 Dir(s)  23,884,136,448 bytes free

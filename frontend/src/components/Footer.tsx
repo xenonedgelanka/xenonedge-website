@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link"
 import Image from "next/image"
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa"
@@ -6,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-[#0f294d]" />
+      <div className="absolute inset-0 bg-[#071427]" />
       <div className="absolute inset-0 opacity-20">
         <Image
           src="/images/footer-pattern.svg"

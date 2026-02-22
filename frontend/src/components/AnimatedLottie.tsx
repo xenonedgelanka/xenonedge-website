@@ -1,29 +1,63 @@
 "use client"
+// Component for rendering Lottie animations
 
-import React, { useState, useEffect } from 'react'
-import Lottie from 'lottie-react'
 
-type Props = {
-  className?: string
-  animationPath?: string
+import { useEffect, useState } from 'react'
+import dynamic from 'next/dynamic'
+
+// Dynamically import Lottie with SSR disabled to prevent browser-only errors
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false })
+
+interface AnimatedLottieProps {
+    animationPath?: string;
+    className?: string;
 }
 
-export default function AnimatedLottie({ className = '', animationPath = '/team04.json' }: Props) {
-  const [animationData, setAnimationData] = useState<any>(null);
+/**
+ * AnimatedLottie Component
+ * A wrapper for lottie-react that supports loading animations from a public path.
+ * Defaults to '/team04.json' for the Hero section.
+ */
+export default function AnimatedLottie({ animationPath = '/team04.json', className }: AnimatedLottieProps) {
+    const [animationData, setAnimationData] = useState<any>(null);
+    const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    // Fetch the animation from the public folder
-    fetch(animationPath)
-      .then(res => res.json())
-      .then(data => setAnimationData(data))
-      .catch(err => console.error("Failed to load animation:", err));
-  }, [animationPath]);
+    useEffect(() => {
+        let isMounted = true;
 
-  if (!animationData) return null;
+        const fetchAnimation = async () => {
+            setIsLoading(true);
+            try {
+                const response = await fetch(animationPath);
+                if (!response.ok) throw new Error(`Failed to fetch animation: ${response.statusText}`);
+                const data = await response.json();
+                if (isMounted) {
+                    setAnimationData(data);
+                }
+            } catch (error) {
+                console.error("Error loading Lottie animation:", error);
+            } finally {
+                if (isMounted) {
+                    setIsLoading(false);
+                }
+            }
+        };
 
-  return (
-    <div className={`${className} flex items-center justify-center w-full h-full`}>
-      <Lottie animationData={animationData} loop={true} className="w-full h-full" />
-    </div>
-  )
+        fetchAnimation();
+        return () => { isMounted = false };
+    }, [animationPath]);
+
+    if (isLoading || !animationData) {
+        return <div className={className} style={{ aspectRatio: '1/1' }} />;
+    }
+
+    return (
+        <div className={className}>
+            <Lottie
+                animationData={animationData}
+                loop={true}
+                autoplay={true}
+            />
+        </div>
+    )
 }

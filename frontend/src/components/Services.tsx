@@ -1,4 +1,5 @@
 "use client"
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
@@ -85,7 +86,7 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05, duration: 0.6 }}
-              className="group relative p-6 rounded-xl bg-white border border-slate-200 transition-all duration-300 hover:border-sky-500 flex flex-col items-center text-center h-full min-h-[220px] shadow-sm"
+              className="group relative p-5 rounded-none bg-white border border-slate-200 transition-all duration-300 hover:border-sky-500 flex flex-col items-center text-center h-[180px] w-full shadow-sm"
             >
               <div className="relative z-10 flex flex-col items-center justify-center h-full w-full">
                 {/* Icon Wrapper - Minimal without background */}
@@ -111,6 +112,16 @@ export default function Services() {
               </div>
             </motion.div>
           ))}
+        </div>
+
+        <div className="mt-16 text-center">
+          <Link
+            href="/services"
+            className="group inline-flex items-center gap-4 text-[#071E3D] hover:text-sky-600 transition-colors"
+          >
+            <span className="text-sm font-bold uppercase tracking-[0.2em]">Explore All Services</span>
+            <div className="w-8 h-px bg-[#071E3D]/20 group-hover:w-12 group-hover:bg-sky-600 transition-all duration-500"></div>
+          </Link>
         </div>
       </div>
     </section>
