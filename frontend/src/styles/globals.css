@@ -25,13 +25,13 @@
 html,
 body,
 #root {
-  height: 100%;
+  min-height: 100%;
   font-size: 18px;
   /* increase base font size for whole site */
 }
 
 body {
-  @apply bg-[var(--bg)] text-[var(--text)] leading-[1.6];
+  @apply bg-[var(--bg)] text-[var(--text)] leading-[1.6] overflow-x-hidden;
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

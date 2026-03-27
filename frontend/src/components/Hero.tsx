@@ -49,12 +49,12 @@ export default function Hero() {
   }, [displayText, isDeleting, index, speed])
 
   return (
-    <section className="hero-dark relative overflow-hidden">
+    <section className="hero-dark relative overflow-hidden min-h-[100dvh] flex items-center pt-20 w-full flex-col justify-center">
       {/* Dot Pattern Overlay */}
       <div className="absolute inset-0 z-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:32px_32px] pointer-events-none"></div>
 
-      <div className="container hero-inner grid grid-cols-1 md:grid-cols-2 items-center gap-12 pt-28 pb-16 md:pt-36 md:pb-24">
-        <div className="relative z-10">
+      <div className="container hero-inner grid grid-cols-1 md:grid-cols-2 items-center gap-12 pt-12 pb-16 md:pt-16 md:pb-24 w-full">
+        <div className="relative z-10 w-full">
           <AnimatedSection>
             <h1 className="text-4xl md:text-6xl font-extrabold leading-[1.15] tracking-tight min-h-[160px] md:min-h-[220px]">
               Build Better<br />
