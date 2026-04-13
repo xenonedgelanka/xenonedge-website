@@ -18,10 +18,10 @@ const features = [
 ]
 
 const solutions = [
-    { title: 'ERP Systems', desc: 'Comprehensive enterprise resource planning systems to manage day-to-day business activities.', icon: ChartBar, color: 'from-emerald-500 to-teal-500' },
-    { title: 'CRM Platforms', desc: 'Custom customer relationship management tools to track leads, sales, and customer interactions.', icon: CircleUser, color: 'from-blue-500 to-indigo-500' },
-    { title: 'SaaS Products', desc: 'Scalable multi-tenant architectures for building and launching your own Software-as-a-Service product.', icon: Layers, color: 'from-orange-500 to-amber-500' },
-    { title: 'Legacy Modernization', desc: 'Upgrading and refactoring outdated software to modern tech stacks without disrupting operations.', icon: Cog, color: 'from-red-500 to-rose-500' },
+    { title: 'ERP Systems', desc: 'Comprehensive enterprise resource planning systems to manage day-to-day business activities.', icon: ChartBar },
+    { title: 'CRM Platforms', desc: 'Custom customer relationship management tools to track leads, sales, and customer interactions.', icon: CircleUser },
+    { title: 'SaaS Products', desc: 'Scalable multi-tenant architectures for building and launching your own Software-as-a-Service product.', icon: Layers },
+    { title: 'Legacy Modernization', desc: 'Upgrading and refactoring outdated software to modern tech stacks without disrupting operations.', icon: Cog },
 ]
 
 const process = [
@@ -96,8 +96,8 @@ export default function CustomSoftwarePage() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {solutions.map((sol, i) => (
-                            <div key={i} className="flex gap-5 p-8 rounded-md bg-white border border-slate-100 transition-all duration-300">
-                                <div className={`w-14 h-14 rounded-md bg-sky-500 text-white flex items-center justify-center flex-shrink-0`}>
+                            <div key={i} className="flex gap-5 p-8 rounded-md bg-white border-2 border-[#0B1E36] transition-all duration-300 hover:-translate-y-1 shadow-sm">
+                                <div className={`w-14 h-14 rounded-md bg-sky-50 text-sky-500 flex items-center justify-center flex-shrink-0 transition-all duration-300`}>
                                     <sol.icon className="w-7 h-7" />
                                 </div>
                                 <div>

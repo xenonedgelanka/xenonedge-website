@@ -18,10 +18,10 @@ const features = [
 ]
 
 const contentTypes = [
-    { title: 'Blog Articles', desc: 'SEO-optimized, in-depth articles that establish thought leadership and drive organic traffic to your site.', icon: BookOpen, color: 'from-indigo-500 to-blue-500' },
-    { title: 'Landing Pages', desc: 'High-converting landing page copy that communicates your value proposition and drives action.', icon: CircleDot, color: 'from-emerald-500 to-teal-500' },
-    { title: 'Social Media Content', desc: 'Engaging social posts, captions, and content calendars that build community and increase brand awareness.', icon: AudioWaveform, color: 'from-amber-500 to-orange-500' },
-    { title: 'Technical Content', desc: 'Whitepapers, case studies, documentation, and guides that showcase your expertise and build trust.', icon: CircleStar, color: 'from-rose-500 to-pink-500' },
+    { title: 'Blog Articles', desc: 'SEO-optimized, in-depth articles that establish thought leadership and drive organic traffic to your site.', icon: BookOpen },
+    { title: 'Landing Pages', desc: 'High-converting landing page copy that communicates your value proposition and drives action.', icon: CircleDot },
+    { title: 'Social Media Content', desc: 'Engaging social posts, captions, and content calendars that build community and increase brand awareness.', icon: AudioWaveform },
+    { title: 'Technical Content', desc: 'Whitepapers, case studies, documentation, and guides that showcase your expertise and build trust.', icon: CircleStar },
 ]
 
 const seoResults = [
@@ -116,8 +116,8 @@ export default function SEOContentWritingPage() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {contentTypes.map((ct, i) => (
-                            <div key={i} className="flex gap-5 p-8 rounded-md bg-white border border-slate-100 transition-all duration-300">
-                                <div className={`w-14 h-14 rounded-md bg-sky-500 text-white flex items-center justify-center flex-shrink-0`}>
+                            <div key={i} className="flex gap-5 p-8 rounded-md bg-white border-2 border-[#0B1E36] transition-all duration-300 hover:-translate-y-1 shadow-sm">
+                                <div className={`w-14 h-14 rounded-md bg-sky-50 text-sky-500 flex items-center justify-center flex-shrink-0 transition-all duration-300`}>
                                     <ct.icon className="w-7 h-7" />
                                 </div>
                                 <div>

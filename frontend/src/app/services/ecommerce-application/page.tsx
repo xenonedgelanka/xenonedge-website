@@ -18,9 +18,9 @@ const features = [
 ]
 
 const platforms = [
-    { title: 'Custom Headless', desc: 'Speed and flexibility with Next.js frontends connected to robust backends.', icon: Box, color: 'from-orange-500 to-amber-500' },
-    { title: 'Shopify Plus', desc: 'Scalable, hosted solutions for high-growth brands who need reliability.', icon: CircleStar, color: 'from-green-500 to-emerald-500' },
-    { title: 'WooCommerce', desc: 'Flexible, open-source ecommerce for WordPress sites with endless plugins.', icon: ChartLine, color: 'from-violet-500 to-purple-500' },
+    { title: 'Custom Headless', desc: 'Speed and flexibility with Next.js frontends connected to robust backends.', icon: Box },
+    { title: 'Shopify Plus', desc: 'Scalable, hosted solutions for high-growth brands who need reliability.', icon: CircleStar },
+    { title: 'WooCommerce', desc: 'Flexible, open-source ecommerce for WordPress sites with endless plugins.', icon: ChartLine },
 ]
 
 const process = [
@@ -95,8 +95,8 @@ export default function EcommercePage() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {platforms.map((plat, i) => (
-                            <div key={i} className="flex gap-5 p-8 rounded-md bg-white border border-slate-100 transition-all duration-300">
-                                <div className={`w-14 h-14 rounded-md bg-sky-500 text-white flex items-center justify-center flex-shrink-0`}>
+                            <div key={i} className="flex gap-5 p-8 rounded-md bg-white border-2 border-[#0B1E36] transition-all duration-300 hover:-translate-y-1 shadow-sm">
+                                <div className={`w-14 h-14 rounded-md bg-sky-50 text-sky-500 flex items-center justify-center flex-shrink-0 transition-all duration-300`}>
                                     <plat.icon className="w-7 h-7" />
                                 </div>
                                 <div>

@@ -30,10 +30,10 @@ const tools = [
 ]
 
 const deliverables = [
-    { title: 'User Personas', desc: 'Detailed profiles of your CircleDot CircleUser.', icon: CircleUser, color: 'from-pink-500 to-rose-500' },
-    { title: 'Interactive Prototypes', desc: 'Clickable mockups for testing.', icon: AppWindow, color: 'from-violet-500 to-purple-500' },
-    { title: 'Design System', desc: 'Comprehensive component library.', icon: Layers, color: 'from-blue-500 to-cyan-500' },
-    { title: 'Style Guide', desc: 'Colors, fonts, and usage rules.', icon: Lightbulb, color: 'from-amber-500 to-orange-500' },
+    { title: 'User Personas', desc: 'Detailed profiles of your CircleDot CircleUser.', icon: CircleUser },
+    { title: 'Interactive Prototypes', desc: 'Clickable mockups for testing.', icon: AppWindow },
+    { title: 'Design System', desc: 'Comprehensive component library.', icon: Layers },
+    { title: 'Style Guide', desc: 'Colors, fonts, and usage rules.', icon: Lightbulb },
 ]
 
 export default function UIUXDesignPage() {
@@ -100,8 +100,8 @@ export default function UIUXDesignPage() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {deliverables.map((del, i) => (
-                            <div key={i} className="flex gap-5 p-8 rounded-md bg-white border border-slate-100 transition-all duration-300">
-                                <div className={`w-14 h-14 rounded-md bg-gradient-to-br ${del.color} text-white flex items-center justify-center flex-shrink-0`}>
+                            <div key={i} className="flex gap-5 p-8 rounded-md bg-white border-2 border-[#0B1E36] transition-all duration-300 hover:-translate-y-1 shadow-sm">
+                                <div className={`w-14 h-14 rounded-md bg-sky-50 text-sky-500 flex items-center justify-center flex-shrink-0 transition-all duration-300`}>
                                     <del.icon className="w-7 h-7" />
                                 </div>
                                 <div>

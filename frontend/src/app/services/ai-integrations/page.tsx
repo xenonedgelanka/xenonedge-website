@@ -18,10 +18,10 @@ const features = [
 ]
 
 const useCases = [
-    { title: 'Customer Support AI', desc: 'Deploy AI chatbots that resolve 70%+ of support tickets automatically, with smart escalation to human agents when needed.', icon: BotMessageSquare, color: 'from-cyan-500 to-blue-500' },
-    { title: 'Document Intelligence', desc: 'Extract data from invoices, contracts, and forms with 99%+ accuracy. Automate document processing workflows end-to-end.', icon: Database, color: 'from-violet-500 to-purple-500' },
-    { title: 'Recommendation Engines', desc: 'Personalized product, content, and service recommendations that increase engagement and drive 20-30% more revenue.', icon: Globe, color: 'from-pink-500 to-rose-500' },
-    { title: 'Process Automation', desc: 'AI-driven GitGraph automation that handles data entry, classification, routing, and decision-making at scale.', icon: Cog, color: 'from-amber-500 to-orange-500' },
+    { title: 'Customer Support AI', desc: 'Deploy AI chatbots that resolve 70%+ of support tickets automatically, with smart escalation to human agents when needed.', icon: BotMessageSquare },
+    { title: 'Document Intelligence', desc: 'Extract data from invoices, contracts, and forms with 99%+ accuracy. Automate document processing workflows end-to-end.', icon: Database },
+    { title: 'Recommendation Engines', desc: 'Personalized product, content, and service recommendations that increase engagement and drive 20-30% more revenue.', icon: Globe },
+    { title: 'Process Automation', desc: 'AI-driven GitGraph automation that handles data entry, classification, routing, and decision-making at scale.', icon: Cog },
 ]
 
 const techStack = [
@@ -101,8 +101,8 @@ export default function AIIntegrationsPage() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {useCases.map((uc, i) => (
-                            <div key={i} className="flex gap-5 p-8 rounded-md bg-white border border-slate-100 hover:border-cyan-100 transition-all duration-300">
-                                <div className={`w-14 h-14 rounded-md bg-sky-500 text-white flex items-center justify-center flex-shrink-0`}>
+                            <div key={i} className="flex gap-5 p-8 rounded-md bg-white border-2 border-[#0B1E36] transition-all duration-300 hover:-translate-y-1 shadow-sm">
+                                <div className={`w-14 h-14 rounded-md bg-sky-50 text-sky-500 flex items-center justify-center flex-shrink-0 transition-all duration-300`}>
                                     <uc.icon className="w-7 h-7" />
                                 </div>
                                 <div>

@@ -58,7 +58,7 @@ export default function BlogPage() {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {blogs.map((blog) => (
-              <article key={blog.slug} className="group bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-sky-900/5 transition-all duration-500 border border-slate-100 flex flex-col h-full hover:-translate-y-1">
+              <article key={blog.slug} className="group bg-white rounded-md overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-sky-900/5 transition-all duration-500 border-2 border-[#0B1E36] flex flex-col h-full hover:-translate-y-1">
                 <Link href={`/blog/${blog.slug}`} className="block relative aspect-[4/3] overflow-hidden">
                   <Image 
                     src={blog.image} 
@@ -67,7 +67,7 @@ export default function BlogPage() {
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute top-5 left-5 z-10">
-                    <span className="px-4 py-2 bg-white/95 backdrop-blur-md text-sky-600 font-black text-[10px] uppercase tracking-widest rounded-full shadow-sm">
+                    <span className="px-4 py-2 bg-white/95 backdrop-blur-md text-sky-600 font-black text-[10px] uppercase tracking-widest rounded-md shadow-sm">
                       {blog.category}
                     </span>
                   </div>

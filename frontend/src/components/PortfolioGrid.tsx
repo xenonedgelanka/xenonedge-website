@@ -60,16 +60,16 @@ export default function PortfolioGrid() {
               transition={{ duration: 0.3 }}
               className="group cursor-pointer"
             >
-              <div className="relative aspect-[4/5] rounded-md overflow-hidden bg-white border border-slate-100 transition-all duration-500 hover:border-slate-300">
+              <div className="relative aspect-[4/5] overflow-hidden bg-white border-2 border-[#0B1E36] transition-all duration-500 hover:shadow-xl hover:-translate-y-1">
                 {/* Badge at Top Right */}
                 <div className="absolute top-4 right-4 z-20">
-                  <span className="inline-block px-2 py-1 bg-[#071E3D] text-white text-[8px] font-bold uppercase tracking-widest rounded-sm">
+                  <span className="inline-block px-3 py-1 bg-[#0B1E36] text-white text-[8px] font-black uppercase tracking-[0.2em]">
                     {project.category}
                   </span>
                 </div>
 
                 {/* Content Graphic Placeholder */}
-                <div className="w-full h-full relative p-8 flex items-center justify-center bg-slate-50">
+                <div className="w-full h-full relative p-8 flex items-center justify-center bg-slate-50 transition-colors duration-500 group-hover:bg-slate-100">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -78,7 +78,7 @@ export default function PortfolioGrid() {
                     strokeWidth="0.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="w-16 h-16 text-slate-200"
+                    className="w-16 h-16 text-slate-200 transition-colors duration-500 group-hover:text-sky-500/20"
                   >
                     <rect width="18" height="18" x="3" y="3" rx="0" ry="0" />
                     <circle cx="9" cy="9" r="2" />
@@ -87,12 +87,12 @@ export default function PortfolioGrid() {
                 </div>
 
                 {/* Static Bottom Info */}
-                <div className="absolute inset-x-0 bottom-0 bg-white p-4 border-t border-slate-50">
-                  <h3 className="text-sm font-bold text-[#071E3D] tracking-tight truncate">
+                <div className="absolute inset-x-0 bottom-0 bg-white p-5 border-t-2 border-[#0B1E36]">
+                  <h3 className="text-sm font-black text-[#0B1E36] tracking-tight uppercase">
                     {project.title}
                   </h3>
-                  <div className="flex items-center gap-2 mt-1 text-[9px] font-bold text-sky-600 uppercase tracking-widest">
-                    Explore <FiArrowUpRight size={10} />
+                  <div className="flex items-center gap-2 mt-1.5 text-[9px] font-bold text-sky-600 uppercase tracking-[0.2em]">
+                    Explore Project <FiArrowUpRight size={12} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </div>
                 </div>
               </div>

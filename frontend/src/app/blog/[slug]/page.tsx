@@ -38,7 +38,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
   return (
     <>
-      <section className="pt-32 pb-20 bg-gradient-to-br from-[#071E3D] to-[#0a2444] text-white">
+      <section className="hero-dark pt-32 pb-20 bg-gradient-to-br from-[#071E3D] to-[#0a2444] text-white">
         <div className="container relative z-10">
           <Link href="/blog" className="inline-flex items-center gap-2 text-sky-400 hover:text-white mb-8 font-semibold transition-colors">
             <FiArrowLeft size={20} /> Back to Blogs
@@ -62,7 +62,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         <div className="container flex flex-col lg:flex-row gap-12 lg:gap-20">
           {/* Main Content Area */}
           <article className="lg:w-2/3">
-            <div className="relative aspect-[16/9] w-full rounded-3xl overflow-hidden shadow-xl shadow-sky-900/5 mb-12">
+            <div className="relative aspect-[16/9] w-full rounded-md overflow-hidden border-2 border-[#0B1E36] shadow-xl shadow-sky-900/5 mb-12">
               <Image
                 src={post.image}
                 alt={post.title}
@@ -113,8 +113,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
               <div className="flex flex-col gap-6">
                 {blogs.filter(b => b.slug !== post.slug).map(recent => (
-                  <Link key={recent.slug} href={`/blog/${recent.slug}`} className="group flex gap-4 items-center p-3 rounded-2xl hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all">
-                    <div className="relative w-24 h-24 rounded-xl overflow-hidden shrink-0 shadow-sm">
+                  <Link key={recent.slug} href={`/blog/${recent.slug}`} className="group flex gap-4 items-center p-3 rounded-md hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all">
+                    <div className="relative w-24 h-24 rounded-md overflow-hidden shrink-0 shadow-sm">
                       <Image
                         src={recent.image}
                         alt={recent.title}
@@ -133,12 +133,12 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               </div>
 
               {/* Newsletter Widget - Common in premium blogs */}
-              <div className="mt-12 bg-slate-50 rounded-3xl p-8 border border-slate-100 shadow-sm">
+              <div className="mt-12 bg-slate-50 rounded-md p-8 border-2 border-[#0B1E36] shadow-sm">
                 <h4 className="text-xl font-black text-[#071E3D] mb-3">Newsletter</h4>
                 <p className="text-sm text-slate-500 mb-6 font-medium">Get the latest insights and updates delivered straight to your inbox.</p>
                 <div className="flex flex-col gap-3">
-                  <input type="email" placeholder="Your email address" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-sky-500 bg-white shadow-inner" />
-                  <button className="w-full py-3 bg-[#071E3D] text-white rounded-xl font-bold hover:bg-sky-600 transition-all shadow-md">Subscribe</button>
+                  <input type="email" placeholder="Your email address" className="w-full px-4 py-3 rounded-md border border-slate-200 focus:outline-none focus:ring-2 focus:ring-sky-500 bg-white shadow-inner" />
+                  <button className="w-full py-3 bg-[#071E3D] text-white rounded-md font-bold hover:bg-sky-600 transition-all shadow-md">Subscribe</button>
                 </div>
               </div>
             </div>

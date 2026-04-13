@@ -63,7 +63,7 @@ export default function BlogPreview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.15, duration: 0.5 }}
-              className="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-slate-400/50 transition-all duration-300 flex flex-col"
+              className="group bg-white rounded-md overflow-hidden border-2 border-[#0B1E36] hover:shadow-xl transition-all duration-300 flex flex-col"
             >
               {/* Image Container with Overlay Effect */}
               <Link href={`/blog/${post.id}`} className="relative overflow-hidden aspect-[16/9]">

@@ -18,10 +18,10 @@ const features = [
 ]
 
 const channels = [
-    { title: 'Google Ads', desc: 'FileSearch, display, shopping, and YouTube ads that capture high-intent buyers at the moment they are searching.', icon: Globe, color: 'from-blue-500 to-sky-500' },
-    { title: 'Social Media Ads', desc: 'Targeted campaigns on Meta, Instagram, LinkedIn, and TikTok with custom audiences and lookalike targeting.', icon: CircleUser, color: 'from-pink-500 to-rose-500' },
-    { title: 'Email Campaigns', desc: 'Automated nurture sequences, promotional campaigns, and re-engagement flows that drive repeat purchases.', icon: MailCheck, color: 'from-emerald-500 to-teal-500' },
-    { title: 'Content Marketing', desc: 'Blog content, infographics, videos, and thought leadership that attracts organic traffic and builds authority.', icon: Eye, color: 'from-amber-500 to-orange-500' },
+    { title: 'Google Ads', desc: 'FileSearch, display, shopping, and YouTube ads that capture high-intent buyers at the moment they are searching.', icon: Globe },
+    { title: 'Social Media Ads', desc: 'Targeted campaigns on Meta, Instagram, LinkedIn, and TikTok with custom audiences and lookalike targeting.', icon: CircleUser },
+    { title: 'Email Campaigns', desc: 'Automated nurture sequences, promotional campaigns, and re-engagement flows that drive repeat purchases.', icon: MailCheck },
+    { title: 'Content Marketing', desc: 'Blog content, infographics, videos, and thought leadership that attracts organic traffic and builds authority.', icon: Eye },
 ]
 
 const results = [
@@ -116,8 +116,8 @@ export default function DigitalMarketingPage() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {channels.map((ch, i) => (
-                            <div key={i} className="flex gap-5 p-8 rounded-md bg-white border border-slate-100 transition-all duration-300">
-                                <div className={`w-14 h-14 rounded-md bg-sky-500 text-white flex items-center justify-center flex-shrink-0`}>
+                            <div key={i} className="flex gap-5 p-8 rounded-md bg-white border-2 border-[#0B1E36] transition-all duration-300 hover:-translate-y-1 shadow-sm">
+                                <div className={`w-14 h-14 rounded-md bg-sky-50 text-sky-500 flex items-center justify-center flex-shrink-0 transition-all duration-300`}>
                                     <ch.icon className="w-7 h-7" />
                                 </div>
                                 <div>
