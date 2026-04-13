@@ -1,12 +1,13 @@
 "use client"
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
 export default function Navbar() {
     const path = usePathname()
-    const isHome = path === '/'
-    const [scrolled, setScrolled] = useState(isHome ? false : true)
+    const isDarkBannerPage = path === '/' || path === '/about' || path === '/portfolio' || path.startsWith('/blog') || path.startsWith('/services')
+    const [scrolled, setScrolled] = useState(isDarkBannerPage ? false : true)
 
     type LinkItem = { label: string; href: string; children?: LinkItem[] }
     const links: LinkItem[] = [
@@ -31,33 +32,28 @@ export default function Navbar() {
     ]
 
     // State to toggle between dark-glass (false) and light-glass (true) themes
-    const [isHeaderLight, setIsHeaderLight] = useState(false)
+    const [isHeaderLight, setIsHeaderLight] = useState(!isDarkBannerPage)
 
     useEffect(() => {
         const onScroll = () => {
             const scrollPos = window.scrollY
             const isScrolled = scrollPos > 20
-            setScrolled(isHome ? isScrolled : true)
+            
+            const hero = document.querySelector('.hero-dark')
+            const hasDarkBanner = hero !== null || isDarkBannerPage
 
-            if (isHome) {
-                // Determine if we are over a dark section (Hero)
-                const hero = document.querySelector('.hero-dark')
+            setScrolled(hasDarkBanner ? isScrolled : true)
 
+            if (hasDarkBanner) {
                 let isOverDarkSection = false
-
-                // Check Hero
                 if (hero) {
                     const heroRect = hero.getBoundingClientRect()
-                    // Navbar is 64px high. Only stay dark if Hero covers the entire navbar.
                     if (heroRect.bottom >= 56) {
                         isOverDarkSection = true
                     }
                 }
-
-                // If we are over a dark section, header should NOT be light
                 setIsHeaderLight(!isOverDarkSection)
             } else {
-                // Non-home pages default to light header (unless specific logic added later)
                 setIsHeaderLight(true)
             }
         }
@@ -82,15 +78,23 @@ export default function Navbar() {
         if (isHeaderLight) {
             headerClass = 'bg-white border-b border-slate-200 shadow-sm text-slate-900'
         } else {
-            headerClass = 'bg-[#071427]/40 backdrop-blur-xl border-b border-white/10 text-white'
+            headerClass = 'bg-[#0B1E36]/40 backdrop-blur-xl border-b border-white/10 text-white'
         }
     }
 
     return (
         <header className={`fixed top-0 left-0 w-full z-50 transition-none ${headerClass}`}>
             <div className="container flex items-center justify-between h-14">
-                <Link href="/" className="font-bold text-2xl md:text-3xl tracking-tight">
-                    XenonEdge
+                <Link href="/" className="flex items-center">
+                    <Image
+                        src={isHeaderLight ? '/images/blacklogo.png' : '/images/whitelogo.png'}
+                        alt="XenonEdge Logo"
+                        width={160}
+                        height={40}
+                        className="h-8 md:h-10 w-auto object-contain"
+                        priority
+                        unoptimized
+                    />
                 </Link>
 
                 <nav>

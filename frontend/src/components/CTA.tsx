@@ -41,10 +41,10 @@ export default function CTA() {
             >
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-3 px-8 py-3 bg-white text-[#071E3D] rounded-lg font-bold text-sm transition-all hover:bg-sky-600 hover:text-white group"
+                className="btn-premium-primary group"
               >
                 <span>Start the Project</span>
-                <FiArrowUpRight className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <FiArrowUpRight className="arrow-icon transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
             </motion.div>
           </div>

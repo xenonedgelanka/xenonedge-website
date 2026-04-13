@@ -12,7 +12,7 @@
   /* ice blue */
   --accent: #0ea5e9;
   /* sky blue accent */
-  --btn: #071427;
+  --btn: #0B1E36;
   /* dark-navy button */
   --text: #0b0f19;
   /* dark text */
@@ -184,3 +184,44 @@ header {
     transform: translateY(0);
   }
 }
+
+/* Premium Buttons - Sharp, No Shadows, High Contrast */
+.btn-premium {
+  @apply inline-flex items-center justify-center gap-2 px-10 py-4 font-bold uppercase tracking-widest text-[10px] md:text-xs transition-all duration-500 relative overflow-hidden text-center;
+  border-radius: 12px;
+  letter-spacing: 0.15em;
+}
+
+.btn-premium-primary {
+  @apply btn-premium bg-white text-[#0B1E36] border border-white;
+}
+
+.btn-premium-primary:hover {
+  @apply bg-transparent text-white;
+}
+
+.btn-premium-outline {
+  @apply btn-premium border border-white/30 text-white bg-transparent;
+}
+
+.btn-premium-outline:hover {
+  @apply border-white bg-white text-[#0B1E36];
+}
+
+/* For Darker sections/elements if needed */
+.btn-premium-dark {
+  @apply btn-premium bg-[#0B1E36] text-white border border-[#0B1E36];
+}
+
+.btn-premium-dark:hover {
+  @apply bg-transparent text-[#0B1E36];
+}
+
+/* Arrow Animation Helper */
+.btn-premium .arrow-icon {
+  @apply transition-transform duration-300;
+}
+
+.btn-premium:hover .arrow-icon {
+  @apply translate-x-1.5;
+}

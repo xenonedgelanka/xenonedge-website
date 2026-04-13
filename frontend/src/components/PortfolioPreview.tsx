@@ -39,7 +39,7 @@ export default function PortfolioPreview() {
         {/* Simple Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-xl">
-            <span className="inline-flex items-center px-4 py-1.5 rounded-md border border-sky-500/30 text-sky-600 text-[10px] font-bold tracking-[0.2em] uppercase mb-4 bg-sky-50/50">
+            <span className="inline-flex items-center px-4 py-1.5 rounded-md border border-sky-500/30 text-sky-600 text-[10px] font-bold tracking-[0.3em] uppercase mb-4 bg-sky-50/50">
               Selected Works
             </span>
             <h2 className="text-4xl md:text-5xl font-black text-[#071E3D] uppercase tracking-tight">
