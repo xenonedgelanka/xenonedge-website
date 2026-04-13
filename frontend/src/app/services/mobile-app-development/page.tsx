@@ -18,9 +18,9 @@ const features = [
 ]
 
 const appTypes = [
-    { title: 'Consumer Apps', desc: 'Engaging B2C apps focused on user retention, gamification, and social sharing features.', icon: LayoutGrid, color: 'from-purple-500 to-pink-500' },
-    { title: 'Enterprise Mobility', desc: 'Secure internal tools for workforce management, logistics, and productivity.', icon: Activity, color: 'from-blue-500 to-cyan-500' },
-    { title: 'mCommerce', desc: 'Feature-rich shopping apps with secure payment gateways and personalized product feeds.', icon: ListRestart, color: 'from-amber-500 to-orange-500' },
+    { title: 'Consumer Apps', desc: 'Engaging B2C apps focused on user retention, gamification, and social sharing features.', icon: LayoutGrid },
+    { title: 'Enterprise Mobility', desc: 'Secure internal tools for workforce management, logistics, and productivity.', icon: Activity },
+    { title: 'mCommerce', desc: 'Feature-rich shopping apps with secure payment gateways and personalized product feeds.', icon: ListRestart },
 ]
 
 const process = [
@@ -95,8 +95,8 @@ export default function MobileAppDevelopmentPage() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {appTypes.map((app, i) => (
-                            <div key={i} className="flex gap-5 p-8 rounded-md bg-white border border-slate-100 hover:border-purple-100 transition-all duration-300">
-                                <div className={`w-14 h-14 rounded-md bg-gradient-to-br ${app.color} text-white flex items-center justify-center flex-shrink-0`}>
+                            <div key={i} className="flex gap-5 p-8 rounded-md bg-white border-2 border-[#0B1E36] transition-all duration-300 hover:-translate-y-1 shadow-sm">
+                                <div className={`w-14 h-14 rounded-md bg-sky-50 text-sky-500 flex items-center justify-center flex-shrink-0 transition-all duration-300`}>
                                     <app.icon className="w-7 h-7" />
                                 </div>
                                 <div>
