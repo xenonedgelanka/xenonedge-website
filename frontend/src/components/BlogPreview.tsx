@@ -43,7 +43,7 @@ export default function BlogPreview() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-flex items-center px-4 py-1.5 rounded-md border border-sky-500/30 text-sky-600 text-[10px] font-bold tracking-[0.2em] uppercase mb-4 bg-sky-50/50">
+          <span className="inline-block px-4 py-1.5 rounded-md bg-sky-500/10 border border-sky-500/30 text-sky-600 font-bold uppercase tracking-[0.3em] text-[10px] mb-4">
             Latest Articles
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">

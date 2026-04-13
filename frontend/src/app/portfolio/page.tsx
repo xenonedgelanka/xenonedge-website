@@ -1,41 +1,39 @@
-import Image from 'next/image'
+import PortfolioGrid from '../../components/PortfolioGrid'
 
 export const metadata = {
-  title: 'XenonEdge | Portfolio',
-  description: 'Selected projects and case studies from XenonEdge.'
+  title: 'XenonEdge | Portfolio & Our Works',
+  description: 'Selected projects, graphic designs, and web applications delivered by XenonEdge.'
 }
-
-const projects = [
-  { id: 'p1', title: 'Fintech Dashboard', img: '/images/portfolio-1.svg' },
-  { id: 'p2', title: 'Health App', img: '/images/portfolio-2.svg' },
-  { id: 'p3', title: 'E-commerce Platform', img: '/images/portfolio-3.svg' }
-]
 
 export default function PortfolioPage() {
   return (
     <>
-      <section className="py-24 bg-gradient-to-b from-slate-50 to-white border-b">
-        <div className="container">
-          <h1 className="text-5xl font-extrabold text-gray-900">Our Portfolio</h1>
-          <p className="mt-4 text-lg text-gray-600 max-w-3xl">Showcasing innovative projects and successful case studies from our work with leading brands and startups.</p>
+      <section className="py-24 bg-[#071E3D] relative overflow-hidden hero-dark">
+        {/* Architectural Background Elements */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-sky-500/10 blur-[120px] rounded-full pointer-events-none translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-600/10 blur-[100px] rounded-full pointer-events-none -translate-x-1/2 translate-y-1/2"></div>
+        
+        {/* Subtle Grid Pattern */}
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
+
+        <div className="container relative z-10 flex flex-col items-center pt-24 pb-12">
+          <span className="inline-block px-4 py-1.5 rounded-md bg-sky-500/10 border border-sky-500/30 text-sky-400 font-bold uppercase tracking-[0.3em] text-[10px] mb-6">
+            Our Showcase
+          </span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter text-center uppercase">
+            Our Works
+          </h1>
+          <p className="mt-8 text-base md:text-lg text-slate-400 max-w-2xl text-center leading-relaxed">
+            Explore our curated selection of high-performance projects spanning across Web Design, Mobile Apps, and Graphic Design. Engineering digital excellence that drives real-world results.
+          </p>
         </div>
       </section>
-      <section className="py-12 section-light">
-      <div className="container">
 
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((p) => (
-            <article key={p.id} className="card">
-              <div className="h-48 w-full relative">
-                <Image src={p.img} alt={p.title} fill style={{ objectFit: 'cover' }} />
-              </div>
-              <h3 className="mt-3 font-semibold">{p.title}</h3>
-              <p className="mt-2 text-[var(--muted)]">Short summary of the project and the value delivered.</p>
-            </article>
-          ))}
+      <section className="py-16 md:py-24 bg-white relative z-10">
+        <div className="container">
+          <PortfolioGrid />
         </div>
-      </div>
-    </section>
+      </section>
     </>
   )
 }

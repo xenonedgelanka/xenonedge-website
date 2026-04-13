@@ -68,7 +68,7 @@ export default function FAQ() {
                 </svg>
 
                 <svg
-                    className="absolute top-[320px] -right-8 w-[300px] h-[380px] md:w-[420px] md:h-[500px] opacity-[0.05]"
+                    className="absolute top-[120px] -right-8 w-[220px] h-[280px] md:w-[320px] md:h-[400px] opacity-[0.05]"
                     style={{ transform: 'rotate(15deg)' }}
                     viewBox="0 0 200 250"
                     fill="none"
@@ -80,7 +80,7 @@ export default function FAQ() {
                         y="50%"
                         dominantBaseline="central"
                         textAnchor="middle"
-                        fontSize="280"
+                        fontSize="200"
                         fontWeight="900"
                         fontFamily="Arial, Helvetica, sans-serif"
                         fill="#071E3D"
@@ -98,7 +98,7 @@ export default function FAQ() {
 
                     {/* Left Column: Heading and CTA */}
                     <div className="lg:w-5/12 lg:h-fit">
-                        <div className="inline-flex items-center px-4 py-1.5 rounded-md border border-sky-500/30 text-sky-600 text-[10px] font-bold uppercase tracking-[0.2em] mb-6 bg-sky-50/50">
+                        <div className="inline-block px-4 py-1.5 rounded-md bg-sky-500/10 border border-sky-500/30 text-sky-600 font-bold uppercase tracking-[0.3em] text-[10px] mb-6">
                             Frequently Asked Questions
                         </div>
 

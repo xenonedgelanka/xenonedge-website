@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import { AudioWaveform, CircleDot, ChartLine, ChartBar, MailCheck, CircleUser, ArrowRight, CircleCheck, Activity, Globe, Heart, Eye } from 'lucide-react'
+import ServiceCTA from '../../../components/ServiceCTA'
+import ProcessTimeline from '../../../components/ProcessTimeline'
 
 export const metadata = {
     title: 'Digital Marketing Services | XenonEdge',
@@ -40,27 +42,24 @@ const process = [
 export default function DigitalMarketingPage() {
     return (
         <>
-            <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-br from-[#071427] via-[#0a2040] to-[#102040]">
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(244,63,94,0.12),transparent_60%)]" />
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(249,115,22,0.1),transparent_60%)]" />
+            <section className="hero-dark relative pt-32 pb-20 overflow-hidden bg-[#0B1E36]">
                 <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' viewBox=\'0 0 40 40\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Ccircle cx=\'20\' cy=\'20\' r=\'1\'/%3E%3C/g%3E%3C/svg%3E")' }} />
                 <div className="container relative z-10">
                     <div className="max-w-3xl">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-sm font-medium mb-6">
-                            <AudioWaveform className="w-4 h-4" />
+                        <div className="inline-block px-4 py-1.5 rounded-md bg-sky-500/10 border border-sky-500/30 text-sky-400 font-bold uppercase tracking-[0.3em] text-[10px] mb-6">
                             Digital Marketing
                         </div>
                         <h1 className="text-4xl md:text-6xl font-black text-white tracking-tight leading-[1.1]">
-                            Marketing That <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-orange-300">Drives Growth</span>
+                            Marketing That <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-cyan-300">Drives Growth</span>
                         </h1>
                         <p className="mt-6 text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl">
                             Data-driven digital marketing strategies that increase your brand visibility, generate qualified leads, and deliver measurable ROI across every channel.
                         </p>
-                        <div className="mt-8 flex flex-wrap gap-4">
-                            <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-rose-500 to-orange-500 hover:from-rose-400 hover:to-orange-400 text-white font-bold rounded-lg transition-all duration-300 shadow-lg shadow-rose-500/25 hover:-translate-y-0.5">
-                                Grow Your Business <ArrowRight className="w-4 h-4" />
+                        <div className="mt-10 flex flex-wrap gap-5">
+                            <Link href="/contact" className="btn-premium-primary">
+                                Grow Your Business <ArrowRight className="w-4 h-4 arrow-icon" />
                             </Link>
-                            <Link href="/portfolio" className="inline-flex items-center gap-2 px-8 py-3.5 border-2 border-white/20 text-white font-medium rounded-lg hover:bg-white/10 transition-all duration-300">
+                            <Link href="/portfolio" className="btn-premium-outline">
                                 See Our Results
                             </Link>
                         </div>
@@ -73,7 +72,7 @@ export default function DigitalMarketingPage() {
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                         {results.map((stat, i) => (
                             <div key={i}>
-                                <div className="text-3xl md:text-4xl font-black text-rose-500">{stat.metric}</div>
+                                <div className="text-3xl md:text-4xl font-black text-sky-500">{stat.metric}</div>
                                 <div className="mt-2 text-slate-500 text-sm font-medium">{stat.label}</div>
                             </div>
                         ))}
@@ -84,8 +83,8 @@ export default function DigitalMarketingPage() {
             <section className="py-24 bg-white">
                 <div className="container">
                     <div className="text-center max-w-2xl mx-auto mb-16">
-                        <h2 className="text-3xl md:text-4xl font-black text-[#071427] tracking-tight">
-                            Full-Spectrum <span className="text-rose-500">Marketing</span> Services
+                        <h2 className="text-3xl md:text-4xl font-black text-[#0B1E36] tracking-tight">
+                            Full-Spectrum <span className="text-sky-500">Marketing</span> Services
                         </h2>
                         <p className="mt-4 text-slate-600 text-lg leading-relaxed">
                             A comprehensive suite of digital marketing services designed to reach your audience, wherever they are online.
@@ -93,11 +92,11 @@ export default function DigitalMarketingPage() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {features.map((f, i) => (
-                            <div key={i} className="group p-8 rounded-2xl border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-xl hover:shadow-rose-500/5 hover:border-rose-100 transition-all duration-300 hover:-translate-y-1">
-                                <div className="w-12 h-12 rounded-xl bg-rose-50 text-rose-500 flex items-center justify-center mb-5 group-hover:bg-gradient-to-br group-hover:from-rose-500 group-hover:to-orange-500 group-hover:text-white transition-all duration-300">
+                            <div key={i} className="group p-8 rounded-md border-2 border-[#0B1E36] bg-white hover:bg-slate-50 transition-all duration-300 hover:-translate-y-1 shadow-sm">
+                                <div className="w-12 h-12 rounded-md bg-sky-50 text-sky-500 flex items-center justify-center mb-5 group-hover:bg-sky-500 group-hover:text-white transition-all duration-300">
                                     <f.icon className="w-6 h-6" />
                                 </div>
-                                <h3 className="text-xl font-bold text-[#071427] mb-3">{f.title}</h3>
+                                <h3 className="text-xl font-bold text-[#0B1E36] mb-3">{f.title}</h3>
                                 <p className="text-slate-600 leading-relaxed">{f.desc}</p>
                             </div>
                         ))}
@@ -108,8 +107,8 @@ export default function DigitalMarketingPage() {
             <section className="py-24 bg-slate-50">
                 <div className="container">
                     <div className="text-center max-w-2xl mx-auto mb-16">
-                        <h2 className="text-3xl md:text-4xl font-black text-[#071427] tracking-tight">
-                            Marketing <span className="text-rose-500">Channels</span>
+                        <h2 className="text-3xl md:text-4xl font-black text-[#0B1E36] tracking-tight">
+                            Marketing <span className="text-sky-500">Channels</span>
                         </h2>
                         <p className="mt-4 text-slate-600 text-lg">
                             We master every major digital marketing channel to maximize your reach and return on investment.
@@ -117,12 +116,12 @@ export default function DigitalMarketingPage() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {channels.map((ch, i) => (
-                            <div key={i} className="flex gap-5 p-8 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300">
-                                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${ch.color} text-white flex items-center justify-center flex-shrink-0`}>
+                            <div key={i} className="flex gap-5 p-8 rounded-md bg-white border border-slate-100 transition-all duration-300">
+                                <div className={`w-14 h-14 rounded-md bg-sky-500 text-white flex items-center justify-center flex-shrink-0`}>
                                     <ch.icon className="w-7 h-7" />
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-bold text-[#071427] mb-2">{ch.title}</h3>
+                                    <h3 className="text-xl font-bold text-[#0B1E36] mb-2">{ch.title}</h3>
                                     <p className="text-slate-600 leading-relaxed">{ch.desc}</p>
                                 </div>
                             </div>
@@ -134,69 +133,43 @@ export default function DigitalMarketingPage() {
             <section className="py-24 bg-white">
                 <div className="container">
                     <div className="text-center max-w-2xl mx-auto mb-16">
-                        <h2 className="text-3xl md:text-4xl font-black text-[#071427] tracking-tight">
-                            Our Marketing <span className="text-rose-500">Process</span>
+                        <h2 className="text-3xl md:text-4xl font-black text-[#0B1E36] tracking-tight">
+                            Our Marketing <span className="text-sky-500">Process</span>
                         </h2>
                         <p className="mt-4 text-slate-600 text-lg">
                             A data-driven approach that ensures every marketing dollar produces measurable results.
                         </p>
                     </div>
-                    <div className="space-y-0">
-                        {process.map((p, i) => (
-                            <div key={i} className="flex gap-6 md:gap-10">
-                                <div className="flex flex-col items-center">
-                                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-rose-500 to-orange-400 text-white font-black text-sm flex items-center justify-center shadow-lg shadow-rose-500/20">
-                                        {p.step}
-                                    </div>
-                                    {i < process.length - 1 && <div className="w-px h-full bg-gradient-to-b from-rose-200 to-transparent min-h-[60px]" />}
-                                </div>
-                                <div className="pb-12">
-                                    <h3 className="text-xl font-bold text-[#071427] mb-2">{p.title}</h3>
-                                    <p className="text-slate-600 leading-relaxed max-w-xl">{p.desc}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                    <ProcessTimeline steps={process} numberBgColor="bg-sky-500" />
                 </div>
             </section>
 
             <section className="py-24 bg-slate-50">
                 <div className="container">
                     <div className="text-center max-w-2xl mx-auto mb-12">
-                        <h2 className="text-3xl md:text-4xl font-black text-[#071427] tracking-tight">
-                            Platforms We <span className="text-rose-500">Master</span>
+                        <h2 className="text-3xl md:text-4xl font-black text-[#0B1E36] tracking-tight">
+                            Platforms We <span className="text-sky-500">Master</span>
                         </h2>
                     </div>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                         {['Google Ads', 'Facebook Ads', 'Instagram', 'LinkedIn', 'TikTok', 'Mailchimp', 'HubSpot', 'Google Analytics'].map((platform, i) => (
-                            <div key={i} className="flex items-center gap-3 p-4 rounded-xl bg-white border border-slate-100 shadow-sm">
-                                <CircleCheck className="w-5 h-5 text-rose-500 flex-shrink-0" />
-                                <span className="font-semibold text-[#071427]">{platform}</span>
+                            <div key={i} className="flex items-center gap-3 p-4 rounded-md bg-white border-2 border-[#0B1E36] transition-colors duration-300 shadow-sm hover:bg-slate-50">
+                                <CircleCheck className="w-5 h-5 text-sky-500 flex-shrink-0" />
+                                <span className="font-semibold text-[#0B1E36]">{platform}</span>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            <section className="py-24 bg-gradient-to-br from-[#071427] via-[#0a2040] to-[#102040] relative overflow-hidden">
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(244,63,94,0.1),transparent_70%)]" />
-                <div className="container relative z-10 text-center">
-                    <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight">
-                        Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-orange-300">Accelerate Growth?</span>
-                    </h2>
-                    <p className="mt-6 text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-                        Stop guessing and start growing. Let&apos;s build a marketing strategy that delivers real, measurable results for your business.
-                    </p>
-                    <div className="mt-10 flex flex-wrap justify-center gap-4">
-                        <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-rose-500 to-orange-500 hover:from-rose-400 hover:to-orange-400 text-white font-bold rounded-lg transition-all duration-300 shadow-lg shadow-rose-500/25 hover:-translate-y-0.5">
-                            Get a Free Marketing Audit <ArrowRight className="w-4 h-4" />
-                        </Link>
-                        <Link href="/services" className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/20 text-white font-medium rounded-lg hover:bg-white/10 transition-all duration-300">
-                            Explore All Services
-                        </Link>
-                    </div>
-                </div>
-            </section>
+            <ServiceCTA
+                title="Ready to Accelerate Growth?"
+                subtitle="Stop guessing and start growing. Let&apos;s build a marketing strategy that delivers real, measurable results for your business."
+                primaryBtnText="Get a Free Marketing Audit"
+                primaryBtnHref="/contact"
+                secondaryBtnText="Explore All Services"
+                secondaryBtnHref="/services"
+            />
         </>
     )
 }

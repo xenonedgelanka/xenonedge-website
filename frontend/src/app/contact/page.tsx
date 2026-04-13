@@ -1,47 +1,25 @@
+import ContactForm from '../../components/ContactForm'
+
 export const metadata = {
   title: 'XenonEdge | Contact',
-  description: 'Contact XenonEdge to discuss your software, cloud, or product design needs.'
+  description: 'Get in touch with XenonEdge to elevate your business with cutting-edge software solutions.'
 }
 
 export default function ContactPage() {
   return (
     <>
-      <section className="py-24 bg-gradient-to-b from-slate-50 to-white border-b">
-        <div className="container max-w-2xl">
-          <h1 className="text-5xl font-extrabold text-gray-900">Let's Work Together</h1>
-          <p className="mt-4 text-lg text-gray-600">Tell us about your project and we'll get back to you with tailored solutions and a timeline.</p>
+      <section className="pt-32 pb-24 bg-gradient-to-br from-[#f8fafc] to-[#e0f2fe] relative overflow-hidden min-h-[90vh] flex flex-col justify-center border-b border-sky-100">
+        {/* Background Decorative Blobs */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-sky-300/30 blur-[120px] rounded-full pointer-events-none translate-x-1/3 -translate-y-1/3"></div>
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-300/20 blur-[100px] rounded-full pointer-events-none -translate-x-1/3 translate-y-1/3"></div>
+        <div className="absolute top-1/2 left-1/2 w-[800px] h-[400px] bg-white/40 blur-[100px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
+        
+        <div className="container relative z-10">
+          <ContactForm />
         </div>
       </section>
-      <section className="py-12">
-        <div className="container max-w-2xl">
-
-          <form className="mt-8 grid grid-cols-1 gap-4">
-            <label className="flex flex-col">
-              <span className="text-sm text-[var(--muted)]">Name</span>
-              <input name="name" type="text" className="mt-1 rounded p-3 bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.03)]" />
-            </label>
-
-            <label className="flex flex-col">
-              <span className="text-sm text-[var(--muted)]">Email</span>
-              <input name="email" type="email" className="mt-1 rounded p-3 bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.03)]" />
-            </label>
-
-            <label className="flex flex-col">
-              <span className="text-sm text-[var(--muted)]">Company</span>
-              <input name="company" type="text" className="mt-1 rounded p-3 bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.03)]" />
-            </label>
-
-            <label className="flex flex-col">
-              <span className="text-sm text-[var(--muted)]">Message</span>
-              <textarea name="message" rows={6} className="mt-1 rounded p-3 bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.03)]" />
-            </label>
-
-            <div>
-              <button type="submit" className="rounded bg-[var(--accent)] px-5 py-3 text-white">Send Message</button>
-            </div>
-          </form>
-        </div>
-      </section>
+      
+      {/* Optional: Trusted Brands or Minimal Footer section could be injected here */}
     </>
   )
 }
