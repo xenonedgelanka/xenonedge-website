@@ -44,6 +44,11 @@ export default function Navbar() {
 
             setScrolled(hasDarkBanner ? isScrolled : true)
 
+            if (scrollPos < 10 && hasDarkBanner) {
+                setIsHeaderLight(false)
+                return
+            }
+
             let isOverDarkSection = false
             darkSections.forEach(section => {
                 const rect = section.getBoundingClientRect()
