@@ -1,7 +1,8 @@
 services:
-  # Backend Web Service
+  # Backend Web Service (Free Tier)
   - type: web
     name: xenonedge-backend
+    plan: free
     env: node
     rootDir: backend
     buildCommand: npm install
@@ -12,17 +13,13 @@ services:
       - key: PORT
         value: 5000
       - key: FRONTEND_URL
-        value: https://xenonedge.com # Replace with actual frontend domain
-      # The following should be added via Render dashboard manually for security:
-      # - MONGODB_URI
-      # - JWT_SECRET
-      # - CLOUDINARY_CLOUD_NAME
-      # - CLOUDINARY_API_KEY
-      # - CLOUDINARY_API_SECRET
+        value: https://xenonedge.vercel.app # Example: Update with your Vercel URL
+      # Add MONGODB_URI, JWT_SECRET, and CLOUDINARY keys in Render Dashboard UI
 
-  # Frontend Web Service (If you also want to host frontend on Render)
+  # Frontend Web Service (Optional - Vercel is recommended for free hosting)
   # - type: web
   #   name: xenonedge-frontend
+  #   plan: free
   #   env: node
   #   rootDir: frontend
   #   buildCommand: npm install && npm run build
@@ -31,4 +28,4 @@ services:
   #     - key: NODE_ENV
   #       value: production
   #     - key: NEXT_PUBLIC_API_URL
-  #       value: https://xenonedge-backend.onrender.com/api # Replace after backend deploys
+  #       value: https://xenonedge-backend.onrender.com/api
