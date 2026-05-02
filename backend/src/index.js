@@ -19,6 +19,7 @@ app.use(cors({
     'https://xenonedge.com',
     'http://localhost:3000',
     'http://localhost:3001',
+    /\.vercel\.app$/ // Allow Vercel preview deployments
   ],
   credentials: true,
 }));
