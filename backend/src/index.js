@@ -15,6 +15,8 @@ connectDB();
 app.use(cors({
   origin: [
     process.env.FRONTEND_URL || 'http://localhost:3000',
+    'https://www.xenonedge.com',
+    'https://xenonedge.com',
     'http://localhost:3000',
     'http://localhost:3001',
   ],
