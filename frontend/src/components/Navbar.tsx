@@ -47,9 +47,8 @@ export default function Navbar() {
             let isOverDarkSection = false
             darkSections.forEach(section => {
                 const rect = section.getBoundingClientRect()
-                // Only react when the navbar is FULLY over the dark section
-                // (i.e., the top of the section has reached the top of the screen)
-                if (rect.top <= 0 && rect.bottom >= 56) {
+                // Only react when the navbar is over the dark section
+                if (rect.top <= 56 && rect.bottom >= 56) {
                     isOverDarkSection = true
                 }
             })
