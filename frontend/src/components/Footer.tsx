@@ -20,17 +20,17 @@ const footerLinks = {
     { name: "Contact", href: "/contact" },
   ],
   support: [
-    { name: "Privacy Policy", href: "#" },
-    { name: "Terms of Service", href: "#" },
-    { name: "FAQs", href: "#" },
+    { name: "Privacy Policy", href: "/privacy" },
+    { name: "Terms of Service", href: "/terms" },
+    { name: "FAQs", href: "/faq" },
   ]
 }
 
 const socialLinks = [
-  { icon: FaFacebookF, href: "https://facebook.com", label: "Facebook", color: "hover:bg-[#1877F2]" },
-  { icon: FaLinkedinIn, href: "https://linkedin.com", label: "LinkedIn", color: "hover:bg-[#0A66C2]" },
-  { icon: FaInstagram, href: "https://instagram.com", label: "Instagram", color: "hover:bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF]" },
-  { icon: FaTiktok, href: "https://tiktok.com", label: "TikTok", color: "hover:bg-[#000000] hover:text-white" },
+  { icon: FaFacebookF, href: "https://facebook.com", label: "Facebook", color: "hover:bg-sky-500" },
+  { icon: FaLinkedinIn, href: "https://linkedin.com", label: "LinkedIn", color: "hover:bg-sky-500" },
+  { icon: FaInstagram, href: "https://instagram.com", label: "Instagram", color: "hover:bg-sky-500" },
+  { icon: FaTiktok, href: "https://tiktok.com", label: "TikTok", color: "hover:bg-sky-500 hover:text-white" },
 ]
 
 export default function Footer() {
@@ -61,7 +61,7 @@ export default function Footer() {
               </div>
             </Link>
             
-            <p className="text-slate-400 text-sm leading-relaxed max-w-sm text-justify">
+            <p className="text-slate-400 text-sm leading-relaxed max-w-sm text-left">
               XenonEdge is a premier software development firm dedicated to engineering excellence. We transform ambitious ideas into high-performance digital products through state-of-the-art technology, precision coding, and bespoke innovation tailored for global enterprises.
             </p>
 

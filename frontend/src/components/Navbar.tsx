@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 
 export default function Navbar() {
     const path = usePathname()
-    const isDarkBannerPage = path === '/' || path === '/about' || path === '/portfolio' || path.startsWith('/blog') || path.startsWith('/services')
+    const isDarkBannerPage = path === '/' || path === '/about' || path === '/portfolio' || path === '/privacy' || path === '/terms' || path === '/faq' || path.startsWith('/blog') || path.startsWith('/services')
     const [scrolled, setScrolled] = useState(isDarkBannerPage ? false : true)
 
     type LinkItem = { label: string; href: string; children?: LinkItem[] }
@@ -39,23 +39,22 @@ export default function Navbar() {
             const scrollPos = window.scrollY
             const isScrolled = scrollPos > 20
             
-            const hero = document.querySelector('.hero-dark')
-            const hasDarkBanner = hero !== null || isDarkBannerPage
+            const darkSections = document.querySelectorAll('.hero-dark, .section-dark')
+            const hasDarkBanner = path === '/' || path === '/about' || path === '/portfolio' || path === '/privacy' || path === '/terms' || path === '/faq' || path.startsWith('/blog') || path.startsWith('/services')
 
             setScrolled(hasDarkBanner ? isScrolled : true)
 
-            if (hasDarkBanner) {
-                let isOverDarkSection = false
-                if (hero) {
-                    const heroRect = hero.getBoundingClientRect()
-                    if (heroRect.bottom >= 56) {
-                        isOverDarkSection = true
-                    }
+            let isOverDarkSection = false
+            darkSections.forEach(section => {
+                const rect = section.getBoundingClientRect()
+                // Only react when the navbar is FULLY over the dark section
+                // (i.e., the top of the section has reached the top of the screen)
+                if (rect.top <= 0 && rect.bottom >= 56) {
+                    isOverDarkSection = true
                 }
-                setIsHeaderLight(!isOverDarkSection)
-            } else {
-                setIsHeaderLight(true)
-            }
+            })
+
+            setIsHeaderLight(!isOverDarkSection)
         }
 
 

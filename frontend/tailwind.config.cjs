@@ -14,7 +14,8 @@ module.exports = {
         'x-gray-300': '#9aa6bf'
       },
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui']
+        sans: ['Outfit', 'sans-serif'],
+        serif: ['Outfit', 'sans-serif']
       }
     }
   },

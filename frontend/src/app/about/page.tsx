@@ -8,23 +8,22 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="hero-dark pt-32 pb-24 bg-gradient-to-br from-[#071E3D] to-[#0a2444] text-white overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-500/10 blur-[100px] rounded-full pointer-events-none translate-x-1/3 -translate-y-1/3"></div>
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-500/10 blur-[100px] rounded-full pointer-events-none -translate-x-1/3 translate-y-1/3"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(rgba(14,165,233,0.06)_1px,transparent_1px)] [background-size:32px_32px] pointer-events-none"></div>
-
-        <div className="container relative z-10 flex flex-col items-center text-center pt-12">
-          <span className="inline-block px-4 py-1.5 rounded-md bg-sky-500/10 border border-sky-500/30 text-sky-400 font-bold uppercase tracking-[0.3em] text-[10px] mb-6">
-            About Us
-          </span>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-tight max-w-4xl">
-            Engineering the Future of Digital
-          </h1>
-          <p className="mt-8 text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed">
-            We&apos;re a passionate team of engineers, designers, and strategists building scalable, 
-            secure, and high-performance systems that drive business growth and innovation worldwide.
-          </p>
+      <section className="hero-dark relative pt-20 pb-12 overflow-hidden bg-[#0B1E36]">
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' viewBox=\'0 0 40 40\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Ccircle cx=\'20\' cy=\'20\' r=\'1\'/%3E%3C/g%3E%3C/svg%3E")' }} />
+        <div className="container relative z-10">
+          <div className="max-w-3xl">
+            <div className="inline-block px-4 py-1.5 rounded-md bg-sky-500/10 border border-sky-500/30 text-sky-400 font-bold uppercase tracking-[0.3em] text-[10px] mb-6">
+              About Us
+            </div>
+            <h1 className="text-4xl md:text-6xl font-black text-white tracking-tight leading-[1.1]">
+              Engineering the <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-cyan-300">Future of Digital</span>
+            </h1>
+            <p className="mt-6 text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl text-left">
+              XenonEdge is a premier software development firm dedicated to engineering excellence. 
+              We transform ambitious ideas into high-performance digital products through state-of-the-art 
+              technology, precision coding, and bespoke innovation tailored for global enterprises.
+            </p>
+          </div>
         </div>
       </section>
 

@@ -27,7 +27,7 @@ export default function ServiceCTA({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl bg-[#071E3D] p-10 md:p-16 shadow-2xl"
+        className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl bg-[#0B1E36] p-10 md:p-16 shadow-2xl"
       >
         {/* Subtle Technical Pattern */}
         <div className="absolute inset-0 pointer-events-none">

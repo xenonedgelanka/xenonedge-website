@@ -1,0 +1,34 @@
+services:
+  # Backend Web Service
+  - type: web
+    name: xenonedge-backend
+    env: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: FRONTEND_URL
+        value: https://xenonedge.com # Replace with actual frontend domain
+      # The following should be added via Render dashboard manually for security:
+      # - MONGODB_URI
+      # - JWT_SECRET
+      # - CLOUDINARY_CLOUD_NAME
+      # - CLOUDINARY_API_KEY
+      # - CLOUDINARY_API_SECRET
+
+  # Frontend Web Service (If you also want to host frontend on Render)
+  # - type: web
+  #   name: xenonedge-frontend
+  #   env: node
+  #   rootDir: frontend
+  #   buildCommand: npm install && npm run build
+  #   startCommand: npm start
+  #   envVars:
+  #     - key: NODE_ENV
+  #       value: production
+  #     - key: NEXT_PUBLIC_API_URL
+  #       value: https://xenonedge-backend.onrender.com/api # Replace after backend deploys

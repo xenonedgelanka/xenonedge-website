@@ -1,152 +1,189 @@
 "use client"
 
-import { motion } from 'framer-motion'
-import { FiMail, FiPhone, FiMapPin, FiArrowRight } from 'react-icons/fi'
+import { useState } from 'react'
+import { FiFacebook, FiLinkedin, FiInstagram, FiMail, FiPhone, FiMapPin, FiSend } from 'react-icons/fi'
+import { FaTiktok } from 'react-icons/fa'
+import toast from 'react-hot-toast'
+import { Turnstile } from '@marsidev/react-turnstile'
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'
+
+// Cloudflare Turnstile Site Key (Using Test Key)
+const SITE_KEY = '0x4AAAAAADHerN7db9Xkx7W6'
 
 export default function ContactForm() {
+  const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' })
+  const [submitting, setSubmitting] = useState(false)
+  const [token, setToken] = useState<string | null>(null)
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+
+    // Verify Human via Turnstile
+    if (!token) {
+      toast.error('Please complete the human verification.')
+      return
+    }
+
+    setSubmitting(true)
+    try {
+      const res = await fetch(`${API_URL}/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          firstName: form.name.split(' ')[0] || form.name,
+          lastName: form.name.split(' ').slice(1).join(' ') || '',
+          email: form.email,
+          phone: form.phone,
+          country: '',
+          service: form.subject,
+          message: form.message,
+          captchaToken: token // Pass token to backend
+        }),
+      })
+      const data = await res.json()
+      if (res.ok && data.success) {
+        toast.success('Message sent successfully!')
+        setForm({ name: '', email: '', phone: '', subject: '', message: '' })
+        setToken(null) // Reset token
+      } else {
+        throw new Error(data.message || 'Failed to send')
+      }
+    } catch (err: any) {
+      toast.error(err.message || 'Failed to send message. Please try again.')
+    } finally {
+      setSubmitting(false)
+    }
+  }
+
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-8 items-start relative z-10 w-full max-w-[1200px] mx-auto">
-      {/* Contact Info (Left Column) */}
-      <motion.div 
-        initial={{ opacity: 0, x: -30 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-        className="lg:col-span-2 flex flex-col justify-center h-full space-y-10 lg:pr-10"
-      >
-        <div>
-          <h2 className="text-3xl md:text-4xl font-black text-[#071E3D] tracking-tight mb-4">
-            We'd love to hear from you
-          </h2>
-          <p className="text-lg text-slate-500 leading-relaxed">
-            Whether you have a specific project in mind or just want to explore how we can help your business grow, our team is ready to talk.
-          </p>
-        </div>
+    <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-sm border-2 border-[#0B1E36] overflow-hidden my-10">
+      <div className="grid grid-cols-1 md:grid-cols-5">
 
-        <div className="space-y-8">
-          {/* Item 1 */}
-          <div className="flex items-start gap-5">
-            <div className="w-14 h-14 bg-sky-50 rounded-2xl flex items-center justify-center shrink-0 border border-sky-100/50 shadow-sm text-sky-600">
-              <FiMail size={24} />
-            </div>
-            <div>
-              <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-1">Email Us</h3>
-              <a href="mailto:hello@xenonedge.com" className="text-lg font-bold text-[#071E3D] hover:text-sky-600 transition-colors">
-                hello@xenonedge.com
-              </a>
-              <p className="text-sm text-slate-500 mt-1">We aim to reply within 24 hours.</p>
-            </div>
-          </div>
-
-          {/* Item 2 */}
-          <div className="flex items-start gap-5">
-            <div className="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center shrink-0 border border-indigo-100/50 shadow-sm text-indigo-600">
-              <FiPhone size={24} />
-            </div>
-            <div>
-              <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-1">Call Us</h3>
-              <a href="tel:+94762291826" className="text-lg font-bold text-[#071E3D] hover:text-indigo-600 transition-colors">
-                +94 76 229 1826
-              </a>
-              <p className="text-sm text-slate-500 mt-1">Mon-Fri from 9am to 6pm (IST).</p>
-            </div>
-          </div>
-
-          {/* Item 3 */}
-          <div className="flex items-start gap-5">
-            <div className="w-14 h-14 bg-rose-50 rounded-2xl flex items-center justify-center shrink-0 border border-rose-100/50 shadow-sm text-rose-600">
-              <FiMapPin size={24} />
-            </div>
-            <div>
-              <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-1">Visit Us</h3>
-              <p className="text-lg font-bold text-[#071E3D]">
-                Sri Lanka
-              </p>
-              <p className="text-sm text-slate-500 mt-1">Based in Colombo, serving clients globally.</p>
-            </div>
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Form Area (Right Column) */}
-      <motion.div 
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="lg:col-span-3 bg-white rounded-[2.5rem] p-8 md:p-12 shadow-2xl shadow-[#071E3D]/5 border border-slate-100 relative overflow-hidden"
-      >
-        <div className="absolute top-0 right-0 w-64 h-64 bg-sky-400/5 blur-[80px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
-        
-        <h3 className="text-2xl font-black text-[#071E3D] mb-8 relative z-10">
-          Send us a message
-        </h3>
-
-        <form className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={(e) => e.preventDefault()}>
-          <div className="md:col-span-2">
-            <label className="block text-sm font-bold tracking-wide text-slate-700 mb-2 ml-1">Full Name</label>
-            <input 
-              name="name" 
-              type="text" 
-              placeholder="e.g. John Doe" 
-              className="w-full rounded-2xl p-4 bg-slate-50 border border-slate-200 focus:bg-white focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10 transition-all outline-none text-[#071E3D] font-medium" 
-            />
-          </div>
-
+        {/* Left Side: Contact Info & Socials */}
+        <div className="bg-[#0B1E36] p-10 text-white md:col-span-2 flex flex-col justify-between">
           <div>
-            <label className="block text-sm font-bold tracking-wide text-slate-700 mb-2 ml-1">Email Address</label>
-            <input 
-              name="email" 
-              type="email" 
-              placeholder="john@company.com" 
-              className="w-full rounded-2xl p-4 bg-slate-50 border border-slate-200 focus:bg-white focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10 transition-all outline-none text-[#071E3D] font-medium" 
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-bold tracking-wide text-slate-700 mb-2 ml-1">Phone Number (Optional)</label>
-            <input 
-              name="phone" 
-              type="tel" 
-              placeholder="+1 (555) 000-0000" 
-              className="w-full rounded-2xl p-4 bg-slate-50 border border-slate-200 focus:bg-white focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10 transition-all outline-none text-[#071E3D] font-medium" 
-            />
-          </div>
-
-          <div className="md:col-span-2">
-            <label className="block text-sm font-bold tracking-wide text-slate-700 mb-2 ml-1">Topic / Subject</label>
-            <select className="w-full rounded-2xl p-4 bg-slate-50 border border-slate-200 focus:bg-white focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10 transition-all outline-none text-[#071E3D] font-medium appearance-none">
-              <option value="">Select an inquiry type</option>
-              <option value="web">Web Development</option>
-              <option value="mobile">Mobile Application</option>
-              <option value="ai">AI Integration</option>
-              <option value="design">UI/UX Design</option>
-              <option value="other">Other Inquiry</option>
-            </select>
-          </div>
-
-          <div className="md:col-span-2">
-            <label className="block text-sm font-bold tracking-wide text-slate-700 mb-2 ml-1">Your Message</label>
-            <textarea 
-              name="message" 
-              rows={5} 
-              placeholder="Tell us about your project requirements or how we can help..." 
-              className="w-full rounded-2xl p-4 bg-slate-50 border border-slate-200 focus:bg-white focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10 transition-all outline-none text-[#071E3D] font-medium resize-none" 
-            />
-          </div>
-
-          <div className="md:col-span-2 pt-2">
-            <button 
-              type="submit" 
-              className="btn-premium-dark w-full md:w-auto group"
-            >
-              Send Message
-              <FiArrowRight size={20} className="arrow-icon" />
-            </button>
-            <p className="text-xs text-slate-400 mt-4 text-center md:text-left font-medium">
-              By submitting this form, you agree to our privacy policy and terms of service.
+            <h3 className="text-3xl font-bold mb-4">Get in touch</h3>
+            <p className="text-slate-300 text-sm mb-10 leading-relaxed">
+              Have a project in mind? We'd love to hear about it. Drop us a message and we'll get back to you shortly.
             </p>
+
+            <div className="space-y-8">
+              <div className="flex items-center gap-4">
+                <FiMail className="text-sky-400 shrink-0 mt-1" size={24} />
+                <div>
+                  <p className="text-slate-400 text-xs uppercase tracking-wider mb-1">Email Us</p>
+                  <a href="mailto:xenonedgelanka@gmail.com" className="font-semibold hover:text-sky-400 transition-colors">xenonedgelanka@gmail.com</a>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <FiPhone className="text-sky-400 shrink-0 mt-1" size={24} />
+                <div>
+                  <p className="text-slate-400 text-xs uppercase tracking-wider mb-1">Call Us</p>
+                  <a href="tel:+94762291826" className="font-semibold hover:text-sky-400 transition-colors">+94 76 229 1826</a>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <FiMapPin className="text-sky-400 shrink-0 mt-1" size={24} />
+                <div>
+                  <p className="text-slate-400 text-xs uppercase tracking-wider mb-1">Location</p>
+                  <p className="font-semibold">Colombo, Sri Lanka</p>
+                </div>
+              </div>
+            </div>
           </div>
-        </form>
-      </motion.div>
+
+          <div className="mt-16 pt-8 border-t border-white/10">
+            <p className="text-xs uppercase tracking-widest text-slate-400 mb-4 font-semibold">Follow Us</p>
+            <div className="flex gap-4">
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-sky-500 transition-colors"><FiFacebook size={18} /></a>
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-sky-500 transition-colors"><FaTiktok size={18} /></a>
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-sky-500 transition-colors"><FiLinkedin size={18} /></a>
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-sky-500 transition-colors"><FiInstagram size={18} /></a>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Side: Form */}
+        <div className="p-10 md:col-span-3 bg-slate-50">
+          <h3 className="text-2xl font-bold text-[#0B1E36] mb-8">Send us a Message</h3>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Full Name</label>
+              <input
+                type="text" name="name" required value={form.name} onChange={handleChange} placeholder="John Doe"
+                className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none transition-all font-medium text-[#0B1E36]"
+              />
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Email Address</label>
+                <input
+                  type="email" name="email" required value={form.email} onChange={handleChange} placeholder="john@example.com"
+                  className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none transition-all font-medium text-[#0B1E36]"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Phone Number</label>
+                <input
+                  type="tel" name="phone" value={form.phone} onChange={handleChange} placeholder="+94 76 123 4567"
+                  className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none transition-all font-medium text-[#0B1E36]"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Subject / Topic</label>
+              <input
+                type="text" name="subject" required value={form.subject} onChange={handleChange} placeholder="How can we help?"
+                className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none transition-all font-medium text-[#0B1E36]"
+              />
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Message</label>
+              <textarea
+                name="message" required rows={5} value={form.message} onChange={handleChange} placeholder="Tell us about your project..."
+                className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none transition-all resize-none font-medium text-[#0B1E36]"
+              />
+            </div>
+
+            {/* Cloudflare Turnstile Human Verification */}
+            <div className="py-2">
+              <Turnstile
+                siteKey={SITE_KEY}
+                onSuccess={(token) => setToken(token)}
+                onExpire={() => setToken(null)}
+                onError={() => setToken(null)}
+                options={{
+                  theme: 'light',
+                  size: 'normal',
+                }}
+              />
+            </div>
+
+            <button
+              type="submit" disabled={submitting}
+              className="mt-4 bg-[#0B1E36] text-white rounded-xl px-8 py-4 text-sm font-bold uppercase tracking-wider hover:bg-sky-500 transition-colors flex items-center justify-center gap-2 disabled:opacity-70"
+            >
+              {submitting ? 'Sending...' : (
+                <>
+                  Send Message
+                  <FiSend size={16} />
+                </>
+              )}
+            </button>
+          </form>
+        </div>
+
+      </div>
     </div>
   )
 }

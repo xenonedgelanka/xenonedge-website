@@ -35,7 +35,7 @@ const process = [
 export default function WebDevelopmentPage() {
     return (
         <>
-            <section className="hero-dark relative pt-32 pb-20 overflow-hidden bg-[#0B1E36]">
+            <section className="hero-dark relative pt-20 pb-12 overflow-hidden bg-[#0B1E36]">
                 <div className="container relative z-10">
                     <div className="max-w-3xl">
                         <div className="inline-block px-4 py-1.5 rounded-md bg-sky-500/10 border border-sky-500/30 text-sky-400 font-bold uppercase tracking-[0.3em] text-[10px] mb-6">
@@ -59,7 +59,7 @@ export default function WebDevelopmentPage() {
                 </div>
             </section>
 
-            <section className="py-24 bg-white">
+            <section className="py-16 bg-white">
                 <div className="container">
                     <div className="text-center max-w-2xl mx-auto mb-16">
                         <h2 className="text-3xl md:text-4xl font-black text-[#0B1E36] tracking-tight">
@@ -83,7 +83,7 @@ export default function WebDevelopmentPage() {
                 </div>
             </section>
 
-            <section className="py-24 bg-slate-50">
+            <section className="py-16 bg-slate-50">
                 <div className="container">
                     <div className="text-center max-w-2xl mx-auto mb-16">
                         <h2 className="text-3xl md:text-4xl font-black text-[#0B1E36] tracking-tight">
@@ -111,7 +111,7 @@ export default function WebDevelopmentPage() {
                 </div>
             </section>
 
-            <section className="py-24 bg-white">
+            <section className="py-16 bg-white">
                 <div className="container">
                     <div className="text-center max-w-2xl mx-auto mb-16">
                         <h2 className="text-3xl md:text-4xl font-black text-[#0B1E36] tracking-tight">

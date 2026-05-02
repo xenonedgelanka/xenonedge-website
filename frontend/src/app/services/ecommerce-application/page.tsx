@@ -34,7 +34,7 @@ const process = [
 export default function EcommercePage() {
     return (
         <>
-            <section className="hero-dark relative pt-32 pb-20 overflow-hidden bg-[#0B1E36]">
+            <section className="hero-dark relative pt-20 pb-12 overflow-hidden bg-[#0B1E36]">
                 <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'24\' height=\'24\' viewBox=\'0 0 24 24\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z\' fill=\'%23ffffff\' fill-rule=\'nonzero\'/%3E%3C/svg%3E")' }} />
                 <div className="container relative z-10">
                     <div className="max-w-3xl">
@@ -59,7 +59,7 @@ export default function EcommercePage() {
                 </div>
             </section>
 
-            <section className="py-24 bg-white">
+            <section className="py-16 bg-white">
                 <div className="container">
                     <div className="text-center max-w-2xl mx-auto mb-16">
                         <h2 className="text-3xl md:text-4xl font-black text-[#0B1E36] tracking-tight">
@@ -83,7 +83,7 @@ export default function EcommercePage() {
                 </div>
             </section>
 
-            <section className="py-24 bg-slate-50">
+            <section className="py-16 bg-slate-50">
                 <div className="container">
                     <div className="text-center max-w-2xl mx-auto mb-16">
                         <h2 className="text-3xl md:text-4xl font-black text-[#0B1E36] tracking-tight">
@@ -109,7 +109,7 @@ export default function EcommercePage() {
                 </div>
             </section>
 
-            <section className="py-24 bg-white">
+            <section className="py-16 bg-white">
                 <div className="container">
                     <div className="text-center max-w-2xl mx-auto mb-12">
                         <h2 className="text-3xl md:text-4xl font-black text-[#0B1E36] tracking-tight">
@@ -130,7 +130,7 @@ export default function EcommercePage() {
                 </div>
             </section>
 
-            <section className="py-24 bg-slate-50">
+            <section className="py-16 bg-slate-50">
                 <div className="container">
                     <div className="text-center max-w-2xl mx-auto mb-16">
                         <h2 className="text-3xl md:text-4xl font-black text-[#0B1E36] tracking-tight">

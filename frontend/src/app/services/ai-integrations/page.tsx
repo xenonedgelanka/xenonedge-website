@@ -40,7 +40,7 @@ const process = [
 export default function AIIntegrationsPage() {
     return (
         <>
-            <section className="hero-dark relative pt-32 pb-20 overflow-hidden bg-[#0B1E36]">
+            <section className="hero-dark relative pt-20 pb-12 overflow-hidden bg-[#0B1E36]">
                 <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'30\' height=\'30\' viewBox=\'0 0 30 30\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Ccircle cx=\'15\' cy=\'15\' r=\'1.5\'/%3E%3C/g%3E%3C/svg%3E")' }} />
                 <div className="container relative z-10">
                     <div className="max-w-3xl">
@@ -65,7 +65,7 @@ export default function AIIntegrationsPage() {
                 </div>
             </section>
 
-            <section className="py-24 bg-white">
+            <section className="py-16 bg-white">
                 <div className="container">
                     <div className="text-center max-w-2xl mx-auto mb-16">
                         <h2 className="text-3xl md:text-4xl font-black text-[#0B1E36] tracking-tight">
@@ -89,7 +89,7 @@ export default function AIIntegrationsPage() {
                 </div>
             </section>
 
-            <section className="py-24 bg-slate-50">
+            <section className="py-16 bg-slate-50">
                 <div className="container">
                     <div className="text-center max-w-2xl mx-auto mb-16">
                         <h2 className="text-3xl md:text-4xl font-black text-[#0B1E36] tracking-tight">
@@ -115,7 +115,7 @@ export default function AIIntegrationsPage() {
                 </div>
             </section>
 
-            <section className="py-24 bg-white">
+            <section className="py-16 bg-white">
                 <div className="container">
                     <div className="text-center max-w-2xl mx-auto mb-12">
                         <h2 className="text-3xl md:text-4xl font-black text-[#0B1E36] tracking-tight">
@@ -136,7 +136,7 @@ export default function AIIntegrationsPage() {
                 </div>
             </section>
 
-            <section className="py-24 bg-slate-50">
+            <section className="py-16 bg-slate-50">
                 <div className="container">
                     <div className="text-center max-w-2xl mx-auto mb-16">
                         <h2 className="text-3xl md:text-4xl font-black text-[#0B1E36] tracking-tight">

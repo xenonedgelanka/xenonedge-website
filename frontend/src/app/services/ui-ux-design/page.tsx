@@ -39,7 +39,7 @@ const deliverables = [
 export default function UIUXDesignPage() {
     return (
         <>
-            <section className="hero-dark relative pt-32 pb-20 overflow-hidden bg-[#0B1E36]">
+            <section className="hero-dark relative pt-20 pb-12 overflow-hidden bg-[#0B1E36]">
                 <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'16\' height=\'16\' viewBox=\'0 0 16 16\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M8 0a8 8 0 100 16A8 8 0 008 0zm0 14A6 6 0 118 2a6 6 0 010 12z\' fill=\'%23ffffff\' fill-rule=\'nonzero\'/%3E%3C/svg%3E")' }} />
                 <div className="container relative z-10">
                     <div className="max-w-3xl">
@@ -64,7 +64,7 @@ export default function UIUXDesignPage() {
                 </div>
             </section>
 
-            <section className="py-24 bg-white">
+            <section className="py-16 bg-white">
                 <div className="container">
                     <div className="text-center max-w-2xl mx-auto mb-16">
                         <h2 className="text-3xl md:text-4xl font-black text-[#0B1E36] tracking-tight">
@@ -88,7 +88,7 @@ export default function UIUXDesignPage() {
                 </div>
             </section>
 
-            <section className="py-24 bg-slate-50">
+            <section className="py-16 bg-slate-50">
                 <div className="container">
                     <div className="text-center max-w-2xl mx-auto mb-16">
                         <h2 className="text-3xl md:text-4xl font-black text-[#0B1E36] tracking-tight">
@@ -114,7 +114,7 @@ export default function UIUXDesignPage() {
                 </div>
             </section>
 
-            <section className="py-24 bg-white">
+            <section className="py-16 bg-white">
                 <div className="container">
                     <div className="text-center max-w-2xl mx-auto mb-12">
                         <h2 className="text-3xl md:text-4xl font-black text-[#0B1E36] tracking-tight">
@@ -135,7 +135,7 @@ export default function UIUXDesignPage() {
                 </div>
             </section>
 
-            <section className="py-24 bg-slate-50">
+            <section className="py-16 bg-slate-50">
                 <div className="container">
                     <div className="text-center max-w-2xl mx-auto mb-16">
                         <h2 className="text-3xl md:text-4xl font-black text-[#0B1E36] tracking-tight">

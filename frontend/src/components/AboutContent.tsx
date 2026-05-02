@@ -1,19 +1,22 @@
 "use client"
 
-import Link from 'next/link'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { FiTarget, FiEye, FiHeart, FiUsers, FiCode, FiAward, FiGlobe, FiTrendingUp } from 'react-icons/fi'
+import ServiceCTA from './ServiceCTA'
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   visible: (i: number) => ({ opacity: 1, y: 0, transition: { delay: i * 0.1, duration: 0.5 } })
 }
 
-const stats = [
-  { label: 'Happy Clients', value: '50+', icon: FiUsers },
-  { label: 'Projects Delivered', value: '120+', icon: FiCode },
-  { label: 'Years of Experience', value: '3+', icon: FiAward },
-  { label: 'Countries Served', value: '5+', icon: FiGlobe },
+const defaultStats = [
+  { label: 'Happy Clients', key: 'statClients', icon: FiUsers, defaultValue: '25+' },
+  { label: 'Projects Delivered', key: 'statProjects', icon: FiCode, defaultValue: '40+' },
+  { label: 'Years of Experience', key: 'statExperience', icon: FiAward, defaultValue: '1.5+' },
+  { label: 'Countries Served', key: 'statCountries', icon: FiGlobe, defaultValue: '4+' },
 ]
 
 const values = [
@@ -24,13 +27,24 @@ const values = [
 ]
 
 const timeline = [
-  { year: '2022', title: 'The Beginning', description: 'XenonEdge was founded with a vision to deliver world-class software solutions from Sri Lanka.' },
-  { year: '2023', title: 'Growing Strong', description: 'Expanded our team and delivered 50+ projects across web, mobile, and AI domains.' },
-  { year: '2024', title: 'Global Reach', description: 'Started serving international clients and launched our AI integration services.' },
-  { year: '2025', title: 'Innovation Hub', description: 'Became a trusted partner for startups and enterprises, pushing boundaries with cutting-edge tech.' },
+  { year: '2025 Jan', title: 'The Genesis', description: 'XenonEdge was established with a singular mission: to redefine software engineering standards in Sri Lanka and beyond.' },
+  { year: '2025 Jun', title: 'Scaling Operations', description: 'Expanded our core team and moved into our first official innovation hub, accelerating our delivery capabilities.' },
+  { year: '2025 Dec', title: 'Global Footprint', description: 'Successfully partnered with our first international clients, beginning our journey as a global technology service provider.' },
+  { year: '2026 Mar', title: 'Continuous Evolution', description: 'Diversified into AI and high-scale cloud architectures, staying at the absolute forefront of digital innovation.' },
 ]
 
 export default function AboutContent() {
+  const [siteSettings, setSiteSettings] = useState<any>(null)
+
+  useEffect(() => {
+    fetch(`${API_URL}/settings`)
+      .then(r => r.json())
+      .then(data => {
+        if (data.success) setSiteSettings(data.data)
+      })
+      .catch(err => console.error(err))
+  }, [])
+
   return (
     <>
       {/* Stats Section */}
@@ -38,7 +52,7 @@ export default function AboutContent() {
         <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none"></div>
         <div className="container relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, i) => (
+            {defaultStats.map((stat, i) => (
               <motion.div
                 key={stat.label}
                 custom={i}
@@ -48,10 +62,12 @@ export default function AboutContent() {
                 variants={fadeUp}
                 className="text-center group"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-sky-50 text-sky-600 mb-5 border border-sky-100 shadow-sm group-hover:bg-sky-600 group-hover:text-white transition-all duration-500">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-lg bg-white text-[#0B1E36] mb-5 border-2 border-[#0B1E36] shadow-sm group-hover:bg-[#0B1E36] group-hover:text-white transition-all duration-500">
                   <stat.icon size={28} />
                 </div>
-                <div className="text-4xl md:text-5xl font-black text-[#071E3D] mb-2">{stat.value}</div>
+                <div className="text-4xl md:text-5xl font-black text-[#0B1E36] mb-2">
+                  {siteSettings ? siteSettings[stat.key] : stat.defaultValue}
+                </div>
                 <div className="text-sm font-bold text-slate-400 uppercase tracking-widest">{stat.label}</div>
               </motion.div>
             ))}
@@ -68,13 +84,13 @@ export default function AboutContent() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-white rounded-[2rem] p-10 md:p-12 shadow-lg shadow-sky-900/5 border border-slate-100 relative overflow-hidden group hover:shadow-2xl transition-shadow duration-500"
+              className="bg-white rounded-md p-10 md:p-12 border-2 border-[#0B1E36] relative overflow-hidden group transition-all duration-500"
             >
               <div className="absolute top-0 right-0 w-40 h-40 bg-sky-400/10 blur-[60px] rounded-full pointer-events-none group-hover:bg-sky-400/20 transition-colors"></div>
-              <div className="w-16 h-16 rounded-2xl bg-sky-50 flex items-center justify-center text-sky-600 mb-8 border border-sky-100 shadow-sm">
+              <div className="w-16 h-16 rounded-lg bg-white flex items-center justify-center text-[#0B1E36] mb-8 border-2 border-[#0B1E36] shadow-sm">
                 <FiTarget size={28} />
               </div>
-              <h2 className="text-3xl font-black text-[#071E3D] mb-4">Our Mission</h2>
+              <h2 className="text-3xl font-black text-[#0B1E36] mb-4">Our Mission</h2>
               <p className="text-lg text-slate-500 leading-relaxed">
                 To empower organizations with cutting-edge software solutions that accelerate growth, 
                 streamline operations, and create exceptional user experiences. We believe technology 
@@ -87,13 +103,13 @@ export default function AboutContent() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="bg-white rounded-[2rem] p-10 md:p-12 shadow-lg shadow-indigo-900/5 border border-slate-100 relative overflow-hidden group hover:shadow-2xl transition-shadow duration-500"
+              className="bg-white rounded-md p-10 md:p-12 border-2 border-[#0B1E36] relative overflow-hidden group transition-all duration-500"
             >
               <div className="absolute top-0 right-0 w-40 h-40 bg-indigo-400/10 blur-[60px] rounded-full pointer-events-none group-hover:bg-indigo-400/20 transition-colors"></div>
-              <div className="w-16 h-16 rounded-2xl bg-indigo-50 flex items-center justify-center text-indigo-600 mb-8 border border-indigo-100 shadow-sm">
+              <div className="w-16 h-16 rounded-lg bg-white flex items-center justify-center text-[#0B1E36] mb-8 border-2 border-[#0B1E36] shadow-sm">
                 <FiEye size={28} />
               </div>
-              <h2 className="text-3xl font-black text-[#071E3D] mb-4">Our Vision</h2>
+              <h2 className="text-3xl font-black text-[#0B1E36] mb-4">Our Vision</h2>
               <p className="text-lg text-slate-500 leading-relaxed">
                 To be a globally trusted partner for building resilient, innovative, and scalable 
                 digital products. We envision a future where businesses of all sizes can harness 
@@ -113,10 +129,10 @@ export default function AboutContent() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-sky-100 text-sky-600 font-bold uppercase tracking-widest text-sm mb-6">
+            <span className="inline-block px-4 py-1.5 rounded-md bg-sky-500/10 border border-sky-500/30 text-sky-400 font-bold uppercase tracking-[0.3em] text-[10px] mb-6">
               What Drives Us
             </span>
-            <h2 className="text-4xl md:text-5xl font-black text-[#071E3D] tracking-tight">Our Core Values</h2>
+            <h2 className="text-4xl md:text-5xl font-black text-[#0B1E36] tracking-tight">Our Core Values</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -128,13 +144,13 @@ export default function AboutContent() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUp}
-                className="flex gap-6 p-8 rounded-[2rem] bg-slate-50 border border-slate-100 group hover:bg-white hover:shadow-xl hover:shadow-sky-900/5 hover:border-sky-100 transition-all duration-500"
+                className="flex gap-6 p-8 rounded-md bg-white border-2 border-[#0B1E36] group hover:bg-slate-50 transition-all duration-500"
               >
-                <div className="w-14 h-14 rounded-2xl bg-sky-50 flex items-center justify-center text-sky-600 shrink-0 border border-sky-100 shadow-sm group-hover:bg-sky-600 group-hover:text-white transition-all duration-500">
+                <div className="w-14 h-14 rounded-lg bg-white flex items-center justify-center text-[#0B1E36] shrink-0 border-2 border-[#0B1E36] shadow-sm group-hover:bg-[#0B1E36] group-hover:text-white transition-all duration-500">
                   <value.icon size={24} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-black text-[#071E3D] mb-2">{value.title}</h3>
+                  <h3 className="text-xl font-black text-[#0B1E36] mb-2">{value.title}</h3>
                   <p className="text-slate-500 leading-relaxed">{value.description}</p>
                 </div>
               </motion.div>
@@ -144,7 +160,11 @@ export default function AboutContent() {
       </section>
 
       {/* Journey Timeline */}
-      <section className="py-24 bg-gradient-to-br from-[#071E3D] to-[#0a2444] text-white overflow-hidden relative">
+      <section className="py-24 bg-[#0B1E36] text-white overflow-hidden relative section-dark">
+        {/* Background Watermark */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20vw] font-black text-white/[0.02] select-none pointer-events-none tracking-tighter uppercase whitespace-nowrap">
+          XenonEdge
+        </div>
         <div className="absolute inset-0 bg-[radial-gradient(rgba(14,165,233,0.08)_1px,transparent_1px)] [background-size:32px_32px] pointer-events-none"></div>
         <div className="container relative z-10">
           <motion.div
@@ -153,77 +173,57 @@ export default function AboutContent() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-sky-500/20 text-sky-400 font-bold uppercase tracking-widest text-sm mb-6 border border-sky-500/30">
+            <span className="inline-block px-4 py-1.5 rounded-md bg-sky-500/10 border border-sky-500/30 text-sky-400 font-bold uppercase tracking-[0.3em] text-[10px] mb-6">
               Our Story
             </span>
             <h2 className="text-4xl md:text-5xl font-black tracking-tight">The Journey So Far</h2>
           </motion.div>
 
-          <div className="relative">
-            {/* Center Line */}
-            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-white/10 -translate-x-1/2"></div>
-
-            <div className="space-y-12 md:space-y-0">
-              {timeline.map((item, i) => (
-                <motion.div
-                  key={item.year}
-                  custom={i}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={fadeUp}
-                  className={`md:flex items-center gap-12 mb-16 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
-                >
-                  <div className={`md:w-1/2 ${i % 2 === 0 ? 'md:text-right md:pr-16' : 'md:text-left md:pl-16'}`}>
-                    <div className="bg-white/5 backdrop-blur-sm rounded-[2rem] p-8 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-500">
-                      <span className="text-sky-400 text-5xl font-black block mb-3">{item.year}</span>
-                      <h3 className="text-2xl font-black mb-3">{item.title}</h3>
-                      <p className="text-slate-300 leading-relaxed">{item.description}</p>
-                    </div>
-                  </div>
-
-                  {/* Center Dot */}
-                  <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-sky-500 border-4 border-[#071E3D] shadow-lg shadow-sky-500/30"></div>
-
-                  <div className="md:w-1/2"></div>
-                </motion.div>
-              ))}
-            </div>
+          <div className="max-w-4xl mx-auto space-y-24">
+            {timeline.map((item, i) => (
+              <motion.div
+                key={item.year}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: i * 0.1 }}
+                className="grid grid-cols-1 md:grid-cols-[180px_1fr] gap-6 md:gap-16 group"
+              >
+                <div className="relative">
+                   {/* Sequence Number */}
+                   <div className="text-white/5 text-8xl font-black absolute -top-8 -left-4 select-none transition-colors group-hover:text-sky-500/10">
+                     {String(i + 1).padStart(2, '0')}
+                   </div>
+                   <div className="relative z-10 text-sky-400 font-black text-2xl tracking-tighter pt-4">
+                     {item.year}
+                   </div>
+                </div>
+                <div className="border-l border-white/10 pl-8 md:pl-16 relative py-4">
+                  {/* Indicator Dot */}
+                  <div className="absolute top-8 -left-[5px] w-2 h-2 rounded-full bg-slate-600 transition-all duration-500 group-hover:bg-sky-500"></div>
+                  
+                  <h3 className="text-2xl md:text-3xl font-black mb-4 tracking-tight text-white group-hover:text-sky-400 transition-colors duration-300">
+                    {item.title}
+                  </h3>
+                  <p className="text-slate-400 text-lg leading-relaxed max-w-2xl font-medium">
+                    {item.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-slate-50">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-white rounded-[2.5rem] p-12 md:p-16 shadow-2xl shadow-sky-900/5 border border-slate-100 text-center relative overflow-hidden"
-          >
-            <div className="absolute top-0 left-1/2 w-[600px] h-[300px] bg-sky-300/10 blur-[100px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
-            <div className="relative z-10">
-              <h2 className="text-3xl md:text-5xl font-black text-[#071E3D] tracking-tight mb-6">
-                Ready to Build Something Amazing?
-              </h2>
-              <p className="text-lg text-slate-500 max-w-2xl mx-auto mb-10 leading-relaxed">
-                Let&apos;s collaborate to turn your vision into a powerful digital reality. 
-                Our team is ready to engineer your next breakthrough.
-              </p>
-              <Link 
-                href="/contact" 
-                className="btn-premium-dark group"
-              >
-                Start Your Project
-                <svg className="w-5 h-5 arrow-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-                </svg>
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <ServiceCTA 
+        title="Ready to Build Something Amazing?"
+        subtitle="Let's collaborate to turn your vision into a powerful digital reality. Our team is ready to engineer your next breakthrough."
+        primaryBtnText="Start Your Project"
+        primaryBtnHref="/contact"
+        secondaryBtnText="Explore Our Services"
+        secondaryBtnHref="/services"
+      />
     </>
   )
 }
