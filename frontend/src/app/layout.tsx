@@ -65,10 +65,7 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [
-      { url: '/images/favicon.png', sizes: '32x32', type: 'image/png' },
-      { url: '/images/favicon.png', sizes: '16x16', type: 'image/png' },
-    ],
+    icon: '/images/favicon.png',
     shortcut: '/images/favicon.png',
     apple: '/images/favicon.png',
   },
@@ -99,9 +96,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png" />
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
