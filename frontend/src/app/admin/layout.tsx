@@ -118,7 +118,7 @@ function AdminLayoutInner({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     if (!isLoading && !admin && pathname !== '/admin/secure-entry-44') {
-      router.push('/admin/secure-entry-44')
+      router.push('/')
     }
   }, [admin, isLoading, pathname, router])
 
@@ -132,7 +132,7 @@ function AdminLayoutInner({ children }: { children: React.ReactNode }) {
       if (timeout) clearTimeout(timeout);
       timeout = setTimeout(() => {
         logout();
-        router.push('/admin/secure-entry-44');
+        router.push('/');
       }, 5 * 60 * 1000); // 5 minutes
     };
 

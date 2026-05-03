@@ -68,7 +68,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     localStorage.removeItem('admin_data')
     delete axios.defaults.headers.common['Authorization']
     toast.success('Logged out successfully')
-    router.push('/admin/secure-entry-44')
+    router.push('/')
   }
 
   return (
