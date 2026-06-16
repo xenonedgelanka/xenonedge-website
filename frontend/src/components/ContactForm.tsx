@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { FiFacebook, FiLinkedin, FiInstagram, FiMail, FiPhone, FiMapPin, FiSend } from 'react-icons/fi'
 import { FaTiktok } from 'react-icons/fa'
+import { HiOutlineClock } from 'react-icons/hi'
 import toast from 'react-hot-toast'
 import { Turnstile } from '@marsidev/react-turnstile'
 
@@ -10,6 +11,38 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'
 
 // Cloudflare Turnstile Site Key (Using Test Key)
 const SITE_KEY = '0x4AAAAAADHerN7db9Xkx7W6'
+
+const contactDetails = [
+  {
+    icon: FiMapPin,
+    label: "Our Office",
+    value: "Colombo, Sri Lanka",
+  },
+  {
+    icon: FiPhone,
+    label: "Direct Line",
+    value: "+94 76 229 1826",
+    href: "tel:+94762291826",
+  },
+  {
+    icon: FiMail,
+    label: "Digital Inquiries",
+    value: "xenonedgelanka@gmail.com",
+    href: "mailto:xenonedgelanka@gmail.com",
+  },
+  {
+    icon: HiOutlineClock,
+    label: "Availability",
+    value: "24 / 7 — Always Available",
+  },
+]
+
+const socialLinks = [
+  { icon: FiFacebook, href: "https://facebook.com", label: "Facebook" },
+  { icon: FaTiktok, href: "https://tiktok.com", label: "TikTok" },
+  { icon: FiLinkedin, href: "https://linkedin.com", label: "LinkedIn" },
+  { icon: FiInstagram, href: "https://instagram.com", label: "Instagram" },
+]
 
 export default function ContactForm() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' })
@@ -61,97 +94,120 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-sm border-2 border-[#0B1E36] overflow-hidden my-10">
-      <div className="grid grid-cols-1 md:grid-cols-5">
+    <div className="max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-12 md:gap-16">
 
-        {/* Left Side: Contact Info & Socials */}
-        <div className="bg-[#0B1E36] p-10 text-white md:col-span-2 flex flex-col justify-between">
-          <div>
-            <h3 className="text-3xl font-bold mb-4">Get in touch</h3>
-            <p className="text-slate-300 text-sm mb-10 leading-relaxed">
-              Have a project in mind? We'd love to hear about it. Drop us a message and we'll get back to you shortly.
-            </p>
+        {/* Left Side: Contact Details */}
+        <div className="md:col-span-2 pt-2">
+          <h3 className="text-2xl font-semibold text-[#0B1E36] mb-3">
+            Get in touch
+          </h3>
+          <p className="text-slate-500 text-sm leading-relaxed mb-10 max-w-xs">
+            Have a project in mind? We&apos;d love to hear about it. Drop us a message and we&apos;ll get back to you shortly.
+          </p>
 
-            <div className="space-y-8">
-              <div className="flex items-center gap-4">
-                <FiMail className="text-sky-400 shrink-0 mt-1" size={24} />
-                <div>
-                  <p className="text-slate-400 text-xs uppercase tracking-wider mb-1">Email Us</p>
-                  <a href="mailto:xenonedgelanka@gmail.com" className="font-semibold hover:text-sky-400 transition-colors">xenonedgelanka@gmail.com</a>
+          <div className="space-y-7">
+            {contactDetails.map((item) => {
+              const Icon = item.icon
+              const content = (
+                <div className="flex items-start gap-4 group">
+                  <Icon className="text-sky-500 shrink-0 mt-0.5" size={22} />
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.2em] text-[#0B1E36] font-bold mb-0.5">
+                      {item.label}
+                    </p>
+                    <p className="text-slate-500 text-sm group-hover:text-[#0B1E36] transition-colors duration-200">
+                      {item.value}
+                    </p>
+                  </div>
                 </div>
-              </div>
+              )
 
-              <div className="flex items-center gap-4">
-                <FiPhone className="text-sky-400 shrink-0 mt-1" size={24} />
-                <div>
-                  <p className="text-slate-400 text-xs uppercase tracking-wider mb-1">Call Us</p>
-                  <a href="tel:+94762291826" className="font-semibold hover:text-sky-400 transition-colors">+94 76 229 1826</a>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <FiMapPin className="text-sky-400 shrink-0 mt-1" size={24} />
-                <div>
-                  <p className="text-slate-400 text-xs uppercase tracking-wider mb-1">Location</p>
-                  <p className="font-semibold">Colombo, Sri Lanka</p>
-                </div>
-              </div>
-            </div>
+              if (item.href) {
+                return (
+                  <a key={item.label} href={item.href} className="block">
+                    {content}
+                  </a>
+                )
+              }
+              return <div key={item.label}>{content}</div>
+            })}
           </div>
 
-          <div className="mt-16 pt-8 border-t border-white/10">
-            <p className="text-xs uppercase tracking-widest text-slate-400 mb-4 font-semibold">Follow Us</p>
+          {/* Social Media Icons */}
+          <div className="mt-10 pt-8 border-t border-slate-200">
+            <p className="text-xs uppercase tracking-[0.2em] text-[#0B1E36] font-bold mb-4">Follow Us</p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-sky-500 transition-colors"><FiFacebook size={18} /></a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-sky-500 transition-colors"><FaTiktok size={18} /></a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-sky-500 transition-colors"><FiLinkedin size={18} /></a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-sky-500 transition-colors"><FiInstagram size={18} /></a>
+              {socialLinks.map(({ icon: Icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="text-slate-400 hover:text-sky-500 transition-colors duration-300"
+                >
+                  <Icon size={22} />
+                </a>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* Right Side: Form */}
-        <div className="p-10 md:col-span-3 bg-slate-50">
-          <h3 className="text-2xl font-bold text-[#0B1E36] mb-8">Send us a Message</h3>
+        {/* Right Side: Form Card */}
+        <div className="md:col-span-3 bg-slate-50 rounded-2xl shadow-sm border-2 border-[#0B1E36] p-8 md:p-10">
+          <h3 className="text-3xl font-bold text-[#0B1E36] mb-8">
+            Send us a Message
+          </h3>
+
           <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Full Name */}
             <div>
-              <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Full Name</label>
+              <label className="block text-[13px] font-bold text-slate-500 uppercase tracking-wider mb-2">Full Name</label>
               <input
-                type="text" name="name" required value={form.name} onChange={handleChange} placeholder="John Doe"
-                className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none transition-all font-medium text-[#0B1E36]"
+                type="text" name="name" required value={form.name} onChange={handleChange}
+                placeholder="John Doe"
+                className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-[15px] focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none transition-all font-medium text-[#0B1E36]"
               />
             </div>
 
+            {/* Email & Phone */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
-                <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Email Address</label>
+                <label className="block text-[13px] font-bold text-slate-500 uppercase tracking-wider mb-2">Email Address</label>
                 <input
-                  type="email" name="email" required value={form.email} onChange={handleChange} placeholder="john@example.com"
-                  className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none transition-all font-medium text-[#0B1E36]"
+                  type="email" name="email" required value={form.email} onChange={handleChange}
+                  placeholder="john@example.com"
+                  className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-[15px] focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none transition-all font-medium text-[#0B1E36]"
                 />
               </div>
               <div>
-                <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Phone Number</label>
+                <label className="block text-[13px] font-bold text-slate-500 uppercase tracking-wider mb-2">Phone Number</label>
                 <input
-                  type="tel" name="phone" value={form.phone} onChange={handleChange} placeholder="+94 76 123 4567"
-                  className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none transition-all font-medium text-[#0B1E36]"
+                  type="tel" name="phone" value={form.phone} onChange={handleChange}
+                  placeholder="+94 76 123 4567"
+                  className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-[15px] focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none transition-all font-medium text-[#0B1E36]"
                 />
               </div>
             </div>
 
+            {/* Subject */}
             <div>
-              <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Subject / Topic</label>
+              <label className="block text-[13px] font-bold text-slate-500 uppercase tracking-wider mb-2">Subject / Topic</label>
               <input
-                type="text" name="subject" required value={form.subject} onChange={handleChange} placeholder="How can we help?"
-                className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none transition-all font-medium text-[#0B1E36]"
+                type="text" name="subject" required value={form.subject} onChange={handleChange}
+                placeholder="How can we help?"
+                className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-[15px] focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none transition-all font-medium text-[#0B1E36]"
               />
             </div>
 
+            {/* Message */}
             <div>
-              <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Message</label>
+              <label className="block text-[13px] font-bold text-slate-500 uppercase tracking-wider mb-2">Message</label>
               <textarea
-                name="message" required rows={5} value={form.message} onChange={handleChange} placeholder="Tell us about your project..."
-                className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none transition-all resize-none font-medium text-[#0B1E36]"
+                name="message" required rows={5} value={form.message} onChange={handleChange}
+                placeholder="Tell us about your project..."
+                className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-[15px] focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none transition-all resize-none font-medium text-[#0B1E36]"
               />
             </div>
 
@@ -171,7 +227,7 @@ export default function ContactForm() {
 
             <button
               type="submit" disabled={submitting}
-              className="mt-4 bg-[#0B1E36] text-white rounded-xl px-8 py-4 text-sm font-bold uppercase tracking-wider hover:bg-sky-500 transition-colors flex items-center justify-center gap-2 disabled:opacity-70"
+              className="mt-4 bg-[#0B1E36] text-white rounded-xl px-8 py-4 text-[15px] font-bold uppercase tracking-wider hover:bg-sky-500 transition-colors flex items-center justify-center gap-2.5 disabled:opacity-70"
             >
               {submitting ? 'Sending...' : (
                 <>

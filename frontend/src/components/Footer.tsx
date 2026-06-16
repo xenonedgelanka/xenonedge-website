@@ -1,7 +1,15 @@
 "use client"
 import Link from "next/link"
 import Image from "next/image"
-import { FaFacebookF, FaLinkedinIn, FaInstagram, FaTiktok, FaPhoneAlt, FaEnvelope } from "react-icons/fa"
+import { FaFacebookF, FaLinkedinIn, FaInstagram, FaTiktok } from "react-icons/fa"
+import { HiOutlineMail, HiOutlinePhone, HiOutlineLocationMarker } from "react-icons/hi"
+
+const socialLinks = [
+  { icon: FaFacebookF, href: "https://facebook.com", label: "Facebook" },
+  { icon: FaInstagram, href: "https://instagram.com", label: "Instagram" },
+  { icon: FaTiktok, href: "https://tiktok.com", label: "TikTok" },
+  { icon: FaLinkedinIn, href: "https://linkedin.com", label: "LinkedIn" },
+]
 
 const footerLinks = {
   services: [
@@ -26,145 +34,146 @@ const footerLinks = {
   ]
 }
 
-const socialLinks = [
-  { icon: FaFacebookF, href: "https://facebook.com", label: "Facebook", color: "hover:bg-sky-500" },
-  { icon: FaLinkedinIn, href: "https://linkedin.com", label: "LinkedIn", color: "hover:bg-sky-500" },
-  { icon: FaInstagram, href: "https://instagram.com", label: "Instagram", color: "hover:bg-sky-500" },
-  { icon: FaTiktok, href: "https://tiktok.com", label: "TikTok", color: "hover:bg-sky-500 hover:text-white" },
-]
-
 export default function Footer() {
   return (
-    <footer className="relative bg-[#050B15] text-white pt-20 pb-10 overflow-hidden border-t border-white/5">
-      {/* Premium Background Elements */}
-      <div className="absolute top-0 left-[-10%] w-[40%] h-[40%] bg-sky-500/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-600/5 rounded-full blur-[120px] pointer-events-none" />
-      
-      {/* Subtle Grid Pattern Overlay */}
-      <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+    <footer className="relative bg-[#050B15] text-white overflow-hidden">
 
-      <div className="container relative z-10 mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
-          
-          {/* Brand & Mission Section */}
-          <div className="lg:col-span-4 space-y-6">
-            <Link href="/" className="inline-block transition-all duration-500">
-              <div className="relative">
-                <Image 
-                  src="/images/whitelogo.png" 
-                  alt="XenonEdge Logo" 
-                  width={180} 
-                  height={50} 
-                  className="h-8 lg:h-10 w-auto brightness-110"
-                  priority
-                />
-              </div>
+      {/* ── Main Footer ── */}
+      <div className="container mx-auto px-6 lg:px-8 pt-20 pb-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-10">
+
+          {/* Column 1 — Brand */}
+          <div className="lg:col-span-3 space-y-6">
+            <Link href="/" className="inline-block">
+              <Image
+                src="/images/whitelogo.png"
+                alt="XenonEdge Logo"
+                width={180}
+                height={50}
+                className="h-7 lg:h-9 w-auto brightness-110"
+                priority
+              />
             </Link>
-            
-            <p className="text-slate-400 text-sm leading-relaxed max-w-sm text-left">
-              XenonEdge is a premier software development firm dedicated to engineering excellence. We transform ambitious ideas into high-performance digital products through state-of-the-art technology, precision coding, and bespoke innovation tailored for global enterprises.
+
+            <p className="text-slate-400 text-[13px] leading-relaxed max-w-[280px] italic">
+              &ldquo;Engineering the future through precision coding, bespoke
+              innovation and state-of-the-art technology.&rdquo;
             </p>
 
-            <div className="flex gap-4">
-              {socialLinks.map(({ icon: Icon, href, label, color }) => (
+            {/* Social Icons */}
+            <div className="flex items-center gap-5 pt-2">
+              {socialLinks.map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className={`group h-10 w-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center transition-colors duration-300 ${color}`}
+                  className="text-slate-500 hover:text-sky-400 transition-colors duration-300"
                 >
-                  <Icon size={18} className="text-slate-400 group-hover:text-white transition-colors duration-300" />
+                  <Icon size={16} />
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Links Grid */}
-          <div className="lg:col-span-1" /> {/* Spacer */}
-          
-          <div className="lg:col-span-4 grid grid-cols-2 gap-8">
-            <div>
-              <h4 className="text-white font-bold text-base mb-6 tracking-wide uppercase text-[13px]">
-                Services
-              </h4>
-              <ul className="space-y-3">
-                {footerLinks.services.map((link) => (
-                  <li key={link.name}>
-                    <Link 
-                      href={link.href} 
-                      className="text-slate-400 text-sm flex items-center gap-2"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-bold text-base mb-6 tracking-wide uppercase text-[13px]">
-                Company
-              </h4>
-              <ul className="space-y-3">
-                {footerLinks.company.map((link) => (
-                  <li key={link.name}>
-                    <Link 
-                      href={link.href} 
-                      className="text-slate-400 text-sm flex items-center gap-2"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          {/* Column 2 — Services */}
+          <div className="lg:col-span-3">
+            <h4 className="text-white/80 font-semibold text-[11px] uppercase tracking-[0.25em] mb-7">
+              Services
+            </h4>
+            <ul className="space-y-4">
+              {footerLinks.services.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-slate-400 hover:text-white text-[13px] transition-colors duration-200"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* Contact Section */}
+          {/* Column 3 — Company */}
           <div className="lg:col-span-3">
-            <h4 className="text-white font-bold text-base mb-6 tracking-wide uppercase text-[13px]">
+            <h4 className="text-white/80 font-semibold text-[11px] uppercase tracking-[0.25em] mb-7">
+              Company
+            </h4>
+            <ul className="space-y-4">
+              {footerLinks.company.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-slate-400 hover:text-white text-[13px] transition-colors duration-200"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4 — Contact */}
+          <div className="lg:col-span-3">
+            <h4 className="text-white/80 font-semibold text-[11px] uppercase tracking-[0.25em] mb-7">
               Contact
             </h4>
-            <div className="space-y-6">
-              <div>
-                <p className="text-[10px] text-slate-500 uppercase tracking-[0.2em] font-bold mb-1">Email Support</p>
-                <a 
-                  href="mailto:info@xenonedge.com" 
-                  className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+            <ul className="space-y-5">
+              <li>
+                <a
+                  href="https://maps.google.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 group"
                 >
-                  info@xenonedge.com
+                  <HiOutlineLocationMarker className="text-sky-400 mt-0.5 shrink-0" size={18} />
+                  <span className="text-slate-400 group-hover:text-white text-[13px] transition-colors duration-200 leading-relaxed">
+                    Sri Lanka
+                  </span>
                 </a>
-              </div>
-
-              <div>
-                <p className="text-[10px] text-slate-500 uppercase tracking-[0.2em] font-bold mb-1">Call Anytime</p>
-                <a 
-                  href="tel:+94762291826" 
-                  className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+              </li>
+              <li>
+                <a
+                  href="tel:+94762291826"
+                  className="flex items-center gap-3 group"
                 >
-                  +94 76 229 1826
+                  <HiOutlinePhone className="text-sky-400 shrink-0" size={18} />
+                  <span className="text-slate-400 group-hover:text-white text-[13px] transition-colors duration-200">
+                    +94 762291826
+                  </span>
                 </a>
-              </div>
-            </div>
+              </li>
+              <li>
+                <a
+                  href="mailto:info@xenonedge.com"
+                  className="flex items-center gap-3 group"
+                >
+                  <HiOutlineMail className="text-sky-400 shrink-0" size={16} />
+                  <span className="text-slate-400 group-hover:text-white text-[13px] transition-colors duration-200">
+                    info@xenonedge.com
+                  </span>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
+      </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex flex-wrap items-center justify-center gap-2 text-slate-500 text-[12px]">
-            <span>© {new Date().getFullYear()}</span>
-            <span className="text-slate-300 font-medium">XENONEDGE (PVT) LTD</span>
-            <span className="hidden md:inline text-slate-700 mx-1">|</span>
-            <span className="hidden md:inline">Engineering the Future.</span>
-          </div>
-          
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+      {/* ── Bottom Bar ── */}
+      <div className="border-t border-white/5">
+        <div className="container mx-auto px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-slate-500 text-[11px] uppercase tracking-[0.2em]">
+            © {new Date().getFullYear()} XenonEdge (Pvt) Ltd. All rights reserved.
+          </p>
+
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2">
             {footerLinks.support.map((link) => (
-              <Link 
-                key={link.name} 
-                href={link.href} 
-                className="text-slate-500 hover:text-white text-[12px] transition-all duration-300"
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-slate-500 hover:text-white text-[11px] tracking-[0.15em] transition-colors duration-200"
               >
                 {link.name}
               </Link>
@@ -175,5 +184,3 @@ export default function Footer() {
     </footer>
   )
 }
-
-
