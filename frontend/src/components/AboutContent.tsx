@@ -179,7 +179,7 @@ export default function AboutContent() {
             <h2 className="text-4xl md:text-5xl font-black tracking-tight">The Journey So Far</h2>
           </motion.div>
 
-          <div className="max-w-4xl mx-auto space-y-24">
+          <div className="max-w-4xl mx-auto space-y-16">
             {timeline.map((item, i) => (
               <motion.div
                 key={item.year}
@@ -187,25 +187,21 @@ export default function AboutContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: i * 0.1 }}
-                className="grid grid-cols-1 md:grid-cols-[180px_1fr] gap-6 md:gap-16 group"
+                className="grid grid-cols-1 md:grid-cols-[180px_1fr] gap-6 md:gap-16"
               >
                 <div className="relative">
-                   {/* Sequence Number */}
-                   <div className="text-white/5 text-8xl font-black absolute -top-8 -left-4 select-none transition-colors group-hover:text-sky-500/10">
-                     {String(i + 1).padStart(2, '0')}
-                   </div>
                    <div className="relative z-10 text-sky-400 font-black text-2xl tracking-tighter pt-4">
                      {item.year}
                    </div>
                 </div>
                 <div className="border-l border-white/10 pl-8 md:pl-16 relative py-4">
                   {/* Indicator Dot */}
-                  <div className="absolute top-8 -left-[5px] w-2 h-2 rounded-full bg-slate-600 transition-all duration-500 group-hover:bg-sky-500"></div>
+                  <div className="absolute top-8 -left-[5px] w-2 h-2 rounded-full bg-sky-400"></div>
                   
-                  <h3 className="text-2xl md:text-3xl font-black mb-4 tracking-tight text-white group-hover:text-sky-400 transition-colors duration-300">
+                  <h3 className="text-2xl md:text-3xl font-black mb-4 tracking-tight text-white">
                     {item.title}
                   </h3>
-                  <p className="text-slate-400 text-lg leading-relaxed max-w-2xl font-medium">
+                  <p className="text-slate-400 text-base leading-relaxed max-w-2xl font-medium">
                     {item.description}
                   </p>
                 </div>

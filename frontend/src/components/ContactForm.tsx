@@ -163,51 +163,51 @@ export default function ContactForm() {
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Full Name */}
             <div>
-              <label className="block text-[13px] font-bold text-slate-500 uppercase tracking-wider mb-2">Full Name</label>
+              <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Full Name</label>
               <input
                 type="text" name="name" required value={form.name} onChange={handleChange}
                 placeholder="John Doe"
-                className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-[15px] focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none transition-all font-medium text-[#0B1E36]"
+                className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none transition-all font-medium text-[#0B1E36]"
               />
             </div>
 
             {/* Email & Phone */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
-                <label className="block text-[13px] font-bold text-slate-500 uppercase tracking-wider mb-2">Email Address</label>
+                <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Email Address</label>
                 <input
                   type="email" name="email" required value={form.email} onChange={handleChange}
                   placeholder="john@example.com"
-                  className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-[15px] focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none transition-all font-medium text-[#0B1E36]"
+                  className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none transition-all font-medium text-[#0B1E36]"
                 />
               </div>
               <div>
-                <label className="block text-[13px] font-bold text-slate-500 uppercase tracking-wider mb-2">Phone Number</label>
+                <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Phone Number</label>
                 <input
                   type="tel" name="phone" value={form.phone} onChange={handleChange}
                   placeholder="+94 76 123 4567"
-                  className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-[15px] focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none transition-all font-medium text-[#0B1E36]"
+                  className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none transition-all font-medium text-[#0B1E36]"
                 />
               </div>
             </div>
 
             {/* Subject */}
             <div>
-              <label className="block text-[13px] font-bold text-slate-500 uppercase tracking-wider mb-2">Subject / Topic</label>
+              <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Subject / Topic</label>
               <input
                 type="text" name="subject" required value={form.subject} onChange={handleChange}
                 placeholder="How can we help?"
-                className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-[15px] focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none transition-all font-medium text-[#0B1E36]"
+                className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none transition-all font-medium text-[#0B1E36]"
               />
             </div>
 
             {/* Message */}
             <div>
-              <label className="block text-[13px] font-bold text-slate-500 uppercase tracking-wider mb-2">Message</label>
+              <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Message</label>
               <textarea
                 name="message" required rows={5} value={form.message} onChange={handleChange}
                 placeholder="Tell us about your project..."
-                className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-[15px] focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none transition-all resize-none font-medium text-[#0B1E36]"
+                className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20 outline-none transition-all resize-none font-medium text-[#0B1E36]"
               />
             </div>
 
@@ -227,7 +227,7 @@ export default function ContactForm() {
 
             <button
               type="submit" disabled={submitting}
-              className="mt-4 bg-[#0B1E36] text-white rounded-xl px-8 py-4 text-[15px] font-bold uppercase tracking-wider hover:bg-sky-500 transition-colors flex items-center justify-center gap-2.5 disabled:opacity-70"
+              className="mt-4 bg-[#0B1E36] text-white rounded-xl px-8 py-4 text-sm font-bold uppercase tracking-wider hover:bg-sky-500 transition-colors flex items-center justify-center gap-2.5 disabled:opacity-70"
             >
               {submitting ? 'Sending...' : (
                 <>
