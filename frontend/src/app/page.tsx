@@ -11,7 +11,9 @@ import BlogPreview from '../components/BlogPreview'
 import FAQ from '../components/FAQ'
 
 export const metadata = {
-  title: 'Xenonedge',
+  title: {
+    absolute: 'XenonEdge | Modern Software Solutions & Custom Development'
+  },
   description: 'XenonEdge delivers scalable, secure, and high-performance software solutions. From custom web development to enterprise digital transformations, we build tomorrow’s technology today | Leading Software Development Company & Custom IT Solutions'
 }
 

@@ -1,7 +1,7 @@
 import AboutContent from '../../components/AboutContent'
 
 export const metadata = {
-  title: 'XenonEdge | About Us',
+  title: 'About Us',
   description: 'Learn about XenonEdge — our mission, vision, values, and the journey of building world-class software solutions from Sri Lanka.'
 }
 

@@ -28,6 +28,21 @@ async function getBlogPost(id: string): Promise<BlogPost | null> {
   }
 }
 
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = await getBlogPost(slug);
+  if (!post) return { title: 'Post Not Found' };
+  return {
+    title: post.title,
+    description: post.excerpt || post.content.substring(0, 150),
+    openGraph: {
+      title: post.title,
+      description: post.excerpt || post.content.substring(0, 150),
+      images: post.image ? [{ url: post.image }] : [],
+    }
+  }
+}
+
 async function getRecentPosts(excludeId: string): Promise<BlogPost[]> {
   try {
     const res = await fetch(`${API_URL}/blog?limit=4&status=published`, { next: { revalidate: 60 } })

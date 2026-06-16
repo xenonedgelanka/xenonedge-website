@@ -1,7 +1,7 @@
 import ContactForm from '../../components/ContactForm'
 
 export const metadata = {
-  title: 'XenonEdge | Contact',
+  title: 'Contact Us',
   description: 'Get in touch with XenonEdge to elevate your business with cutting-edge software solutions.'
 }
 

@@ -1,7 +1,7 @@
 import PortfolioGrid from '../../components/PortfolioGrid'
 
 export const metadata = {
-  title: 'XenonEdge | Portfolio & Our Works',
+  title: 'Portfolio',
   description: 'Selected projects, graphic designs, and web applications delivered by XenonEdge.'
 }
 

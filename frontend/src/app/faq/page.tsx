@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { FiArrowLeft } from 'react-icons/fi'
 
 export const metadata = {
-  title: 'FAQ | XenonEdge',
+  title: 'Frequently Asked Questions',
   description: 'Frequently asked questions about XenonEdge services, process, and technology.'
 }
 
