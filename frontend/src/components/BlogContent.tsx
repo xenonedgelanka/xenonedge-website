@@ -1,13 +1,6 @@
-"use client"
-import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { FiArrowRight } from 'react-icons/fi'
-import { motion } from 'framer-motion'
-
-import Loader from './Loader'
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'
 
 interface Blog {
   _id: string
@@ -30,20 +23,7 @@ function formatDate(dateStr: string) {
   });
 }
 
-export default function BlogContent() {
-  const [blogs, setBlogs] = useState<Blog[]>([])
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    fetch(`${API_URL}/blog?status=published`)
-      .then(r => r.json())
-      .then(data => {
-        if (data.data) setBlogs(data.data)
-      })
-      .catch(err => console.error(err))
-      .finally(() => setLoading(false))
-  }, [])
-
+export default function BlogContent({ blogs }: { blogs: Blog[] }) {
   return (
     <>
       <section className="hero-dark pt-24 pb-12 bg-[#071E3D] text-white relative overflow-hidden">
@@ -63,21 +43,15 @@ export default function BlogContent() {
 
       <section className="py-16 bg-white">
         <div className="container">
-          {loading ? (
-            <Loader />
-          ) :
-          blogs.length === 0 ? (
+          {blogs.length === 0 ? (
             <div className="text-center py-20 bg-slate-50 rounded-3xl border-2 border-dashed border-slate-200">
               <p className="text-slate-500 font-medium italic">No articles published yet. Check back soon!</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-              {blogs.map((blog, idx) => (
-                <motion.article 
+              {blogs.map((blog) => (
+                <article 
                   key={blog._id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: idx * 0.1 }}
                   className="group bg-white rounded-2xl overflow-hidden border-2 border-slate-200 flex flex-col h-full"
                 >
                   <Link href={`/blog/${blog._id}`} className="block relative aspect-[16/10] overflow-hidden">
@@ -116,7 +90,7 @@ export default function BlogContent() {
                       </Link>
                     </div>
                   </div>
-                </motion.article>
+                </article>
               ))}
             </div>
           )}
