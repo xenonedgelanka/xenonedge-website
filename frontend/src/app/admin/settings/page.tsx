@@ -41,7 +41,7 @@ interface SiteSettings {
 }
 
 const EMPTY_SETTINGS: SiteSettings = {
-  companyName: 'XenonEdge Lanka',
+  companyName: 'xenonedge Lanka',
   tagline: 'Building the Digital Future',
   description: '',
   email: '',
@@ -405,7 +405,7 @@ export default function SettingsAdmin() {
         color="bg-sky-500/10"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          <Field label="Company Name" field="companyName" placeholder="XenonEdge Lanka" />
+          <Field label="Company Name" field="companyName" placeholder="xenonedge Lanka" />
           <Field label="Tagline" field="tagline" placeholder="Building the Digital Future" />
           <div className="md:col-span-2">
             <Field label="Company Description" field="description" placeholder="Brief description of your company..." rows={3} />
@@ -453,8 +453,8 @@ export default function SettingsAdmin() {
         defaultOpen={false}
       >
         <div className="space-y-5">
-          <Field label="Default Page Title" field="seoTitle" placeholder="XenonEdge Lanka | Digital Solutions" />
-          <Field label="Meta Description" field="seoDescription" placeholder="XenonEdge Lanka provides world-class web, mobile, and AI solutions..." rows={3} />
+          <Field label="Default Page Title" field="seoTitle" placeholder="xenonedge Lanka | Digital Solutions" />
+          <Field label="Meta Description" field="seoDescription" placeholder="xenonedge Lanka provides world-class web, mobile, and AI solutions..." rows={3} />
           <Field label="Meta Keywords" field="seoKeywords" placeholder="web development, mobile apps, AI, Sri Lanka, digital solutions" />
           {/* SEO Preview */}
           {(settings.seoTitle || settings.seoDescription) && (
@@ -504,7 +504,7 @@ export default function SettingsAdmin() {
         defaultOpen={false}
       >
         <div className="space-y-6">
-          <Field label="About Title" field="aboutTitle" placeholder="About XenonEdge Lanka" />
+          <Field label="About Title" field="aboutTitle" placeholder="About xenonedge Lanka" />
           <Field label="About Description" field="aboutDescription" placeholder="Tell visitors about your company, mission, and values..." rows={5} />
           
           <div className="pt-4 border-t border-white/5">
@@ -530,7 +530,7 @@ export default function SettingsAdmin() {
           <div className="md:col-span-2">
             <Field label="Footer Description" field="footerText" placeholder="Brief company description for the footer..." rows={2} />
           </div>
-          <Field label="Copyright Text" field="copyrightText" placeholder="© 2025 XenonEdge Lanka. All rights reserved." />
+          <Field label="Copyright Text" field="copyrightText" placeholder="© 2025 xenonedge Lanka. All rights reserved." />
         </div>
       </CollapsibleSection>
 

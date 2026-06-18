@@ -63,7 +63,7 @@ export default function QuoteSection() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.5 }}
                     >
-                        — XenonEdge
+                        — xenonedge
                     </motion.p>
 
                     {/* Bottom accent line */}

@@ -91,7 +91,7 @@ export default function Navbar() {
                 <Link href="/" className="flex items-center">
                     <Image
                         src={isHeaderLight ? '/images/blacklogo.png' : '/images/whitelogo.png'}
-                        alt="XenonEdge Logo"
+                        alt="xenonedge logo"
                         width={160}
                         height={40}
                         className="h-8 md:h-10 w-auto object-contain"

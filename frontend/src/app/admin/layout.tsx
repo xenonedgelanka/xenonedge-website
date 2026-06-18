@@ -42,7 +42,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, pathname, admin, logout }: Sideb
         {sidebarOpen ? (
           <Image 
             src="/images/whitelogo.png" 
-            alt="XenonEdge" 
+            alt="xenonedge" 
             width={140} 
             height={32} 
             className="object-contain"

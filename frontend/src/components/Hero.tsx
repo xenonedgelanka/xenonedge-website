@@ -70,7 +70,7 @@ export default function Hero() {
             </h1>
 
             <p className="mt-4 text-lg md:text-xl text-gray-400 max-w-xl leading-relaxed text-left">
-              XenonEdge is the leading software development company in Jaffna, Sri Lanka. 
+              xenonedge is the leading software development company in Jaffna, Sri Lanka. 
               We engineer custom software solutions, high-performance web development, mobile apps, 
               AI integrations, eCommerce platforms, UI/UX designs, SEO, and digital marketing services.
             </p>

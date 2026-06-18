@@ -2,8 +2,8 @@ import Link from 'next/link'
 import { FiShield, FiArrowLeft } from 'react-icons/fi'
 
 export const metadata = {
-  title: 'Privacy Policy | XenonEdge',
-  description: 'Learn how XenonEdge collects, uses, and protects your personal information.'
+  title: 'Privacy Policy | xenonedge',
+  description: 'Learn how xenonedge collects, uses, and protects your personal information.'
 }
 
 export default function PrivacyPage() {
@@ -33,7 +33,7 @@ export default function PrivacyPage() {
         <div className="container">
           <div className="max-w-3xl mx-auto prose prose-slate lg:prose-lg">
             <p className="text-xl text-slate-600 leading-relaxed mb-12">
-              At XenonEdge, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website or use our services.
+              At xenonedge, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website or use our services.
             </p>
 
             <h2 className="text-2xl font-black text-[#0B1E36] uppercase tracking-tight mt-12 mb-6">1. Information We Collect</h2>

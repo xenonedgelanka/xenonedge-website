@@ -4,7 +4,7 @@ import ServiceCTA from '../../../components/ServiceCTA'
 import ProcessTimeline from '../../../components/ProcessTimeline'
 
 export const metadata = {
-    title: 'Ecommerce Application Development | XenonEdge',
+    title: 'Ecommerce Application Development | xenonedge',
     description: 'Custom ecommerce websites and mobile apps. Shopify, WooCommerce, and headless commerce solutions that drive sales and customer loyalty.'
 }
 

@@ -4,8 +4,8 @@ import ServiceCTA from '../../../components/ServiceCTA'
 import ProcessTimeline from '../../../components/ProcessTimeline'
 
 export const metadata = {
-    title: 'SEO & Content Writing Services | XenonEdge',
-    description: 'Boost your FileSearch rankings with expert SEO services and high-quality content writing. Technical SEO, content strategy, and organic growth solutions by XenonEdge.'
+    title: 'SEO & Content Writing Services | xenonedge',
+    description: 'Boost your FileSearch rankings with expert SEO services and high-quality content writing. Technical SEO, content strategy, and organic growth solutions by xenonedge.'
 }
 
 const features = [

@@ -4,8 +4,8 @@ import ServiceCTA from '../../../components/ServiceCTA'
 import ProcessTimeline from '../../../components/ProcessTimeline'
 
 export const metadata = {
-    title: 'Digital Marketing Services | XenonEdge',
-    description: 'Data-driven digital marketing services including social media marketing, PPC campaigns, email marketing, and brand strategy. Maximize your ROI with XenonEdge.'
+    title: 'Digital Marketing Services | xenonedge',
+    description: 'Data-driven digital marketing services including social media marketing, PPC campaigns, email marketing, and brand strategy. Maximize your ROI with xenonedge.'
 }
 
 const features = [

@@ -4,7 +4,7 @@ import ServiceCTA from '../../../components/ServiceCTA'
 import ProcessTimeline from '../../../components/ProcessTimeline'
 
 export const metadata = {
-    title: 'Mobile App Development | XenonEdge',
+    title: 'Mobile App Development | xenonedge',
     description: 'Top-rated mobile app development company for iOS and Android. Native and cross-platform solutions using React Native, Flutter, and Swift.'
 }
 

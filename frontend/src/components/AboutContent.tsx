@@ -27,7 +27,7 @@ const values = [
 ]
 
 const timeline = [
-  { year: '2025 Jan', title: 'The Genesis', description: 'XenonEdge was established with a singular mission: to redefine software engineering standards in Sri Lanka and beyond.' },
+  { year: '2025 Jan', title: 'The Genesis', description: 'xenonedge was established with a singular mission: to redefine software engineering standards in Sri Lanka and beyond.' },
   { year: '2025 Jun', title: 'Scaling Operations', description: 'Expanded our core team and moved into our first official innovation hub, accelerating our delivery capabilities.' },
   { year: '2025 Dec', title: 'Global Footprint', description: 'Successfully partnered with our first international clients, beginning our journey as a global technology service provider.' },
   { year: '2026 Mar', title: 'Continuous Evolution', description: 'Diversified into AI and high-scale cloud architectures, staying at the absolute forefront of digital innovation.' },
@@ -163,7 +163,7 @@ export default function AboutContent() {
       <section className="py-24 bg-[#0B1E36] text-white overflow-hidden relative section-dark">
         {/* Background Watermark */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20vw] font-black text-white/[0.02] select-none pointer-events-none tracking-tighter uppercase whitespace-nowrap">
-          XenonEdge
+          xenonedge
         </div>
         <div className="absolute inset-0 bg-[radial-gradient(rgba(14,165,233,0.08)_1px,transparent_1px)] [background-size:32px_32px] pointer-events-none"></div>
         <div className="container relative z-10">

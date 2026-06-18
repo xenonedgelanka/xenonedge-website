@@ -2,8 +2,8 @@ import Link from 'next/link'
 import { FiFileText, FiArrowLeft } from 'react-icons/fi'
 
 export const metadata = {
-  title: 'Terms of Service | XenonEdge',
-  description: 'The terms and conditions for using XenonEdge services and website.'
+  title: 'Terms of Service | xenonedge',
+  description: 'The terms and conditions for using xenonedge services and website.'
 }
 
 export default function TermsPage() {
@@ -38,7 +38,7 @@ export default function TermsPage() {
 
             <h2 className="text-2xl font-black text-[#0B1E36] uppercase tracking-tight mt-12 mb-6">1. Acceptance of Terms</h2>
             <p className="text-slate-500 mb-8">
-              XenonEdge ("we," "us," or "our") provides services to you subject to these Terms of Service. By using our website or engaging in our services, you accept these terms in full. If you disagree with any part of these terms, you must not use our website or services.
+              xenonedge ("we," "us," or "our") provides services to you subject to these Terms of Service. By using our website or engaging in our services, you accept these terms in full. If you disagree with any part of these terms, you must not use our website or services.
             </p>
 
             <h2 className="text-2xl font-black text-[#0B1E36] uppercase tracking-tight mt-12 mb-6">2. Use of Services</h2>
@@ -54,12 +54,12 @@ export default function TermsPage() {
 
             <h2 className="text-2xl font-black text-[#0B1E36] uppercase tracking-tight mt-12 mb-6">3. Intellectual Property</h2>
             <p className="text-slate-500 mb-8">
-              Unless otherwise stated, we or our licensors own the intellectual property rights for all material on XenonEdge. All intellectual property rights are reserved. You may access this from XenonEdge for your own personal use subjected to restrictions set in these terms.
+              Unless otherwise stated, we or our licensors own the intellectual property rights for all material on xenonedge. All intellectual property rights are reserved. You may access this from xenonedge for your own personal use subjected to restrictions set in these terms.
             </p>
 
             <h2 className="text-2xl font-black text-[#0B1E36] uppercase tracking-tight mt-12 mb-6">4. Limitation of Liability</h2>
             <p className="text-slate-500 mb-8">
-              In no event shall XenonEdge be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the services.
+              In no event shall xenonedge be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the services.
             </p>
 
             <h2 className="text-2xl font-black text-[#0B1E36] uppercase tracking-tight mt-12 mb-6">5. Changes to Terms</h2>

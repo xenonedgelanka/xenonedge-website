@@ -4,7 +4,7 @@ import ServiceCTA from '../../../components/ServiceCTA'
 import ProcessTimeline from '../../../components/ProcessTimeline'
 
 export const metadata = {
-    title: 'Web Development Services | XenonEdge',
+    title: 'Web Development Services | xenonedge',
     description: 'Custom web development services using React, Next.js, and modern technologies. We build scalable, high-performance websites and web applications.'
 }
 

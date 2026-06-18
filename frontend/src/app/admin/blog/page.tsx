@@ -31,7 +31,7 @@ const CATEGORIES = ['Architecture', 'Design', 'AI', 'Development', 'Mobile', 'Cl
 
 const EMPTY_FORM = {
   title: '', slug: '', excerpt: '', content: '',
-  category: 'Development', tags: '', author: 'XenonEdge Team',
+  category: 'Development', tags: '', author: 'xenonedge team',
   status: 'draft' as 'draft' | 'published', featured: false, readTime: 5
 }
 

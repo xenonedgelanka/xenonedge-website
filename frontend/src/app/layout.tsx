@@ -7,8 +7,8 @@ import { headers } from 'next/headers'
 import { Toaster } from 'react-hot-toast'
 
 const siteConfig = {
-  name: 'XenonEdge',
-  description: 'XenonEdge is the leading software development company in Jaffna, Sri Lanka. We deliver custom software, web development, mobile apps, AI integrations, UI/UX, and digital marketing services.',
+  name: 'xenonedge',
+  description: 'xenonedge is the leading software development company in Jaffna, Sri Lanka. We deliver custom software, web development, mobile apps, AI integrations, UI/UX, and digital marketing services.',
   url: 'https://xenonedge.com',
   ogImage: 'https://xenonedge.com/og-image.jpg',
   links: {
@@ -37,14 +37,14 @@ export const metadata: Metadata = {
     'SEO Services Sri Lanka',
     'Digital Marketing Jaffna'
   ],
-  authors: [{ name: 'XenonEdge' }],
-  creator: 'XenonEdge',
+  authors: [{ name: 'xenonedge' }],
+  creator: 'xenonedge',
   metadataBase: new URL(siteConfig.url),
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: siteConfig.url,
-    title: 'XenonEdge | Modern Software Solutions',
+    title: 'xenonedge | Modern Software Solutions',
     description: siteConfig.description,
     siteName: siteConfig.name,
     images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: siteConfig.name }],
@@ -82,7 +82,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'XenonEdge',
+    name: 'xenonedge',
     url: siteConfig.url,
     logo: `${siteConfig.url}/logo.png`,
     sameAs: [siteConfig.links.twitter, siteConfig.links.github],

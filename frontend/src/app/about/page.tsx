@@ -22,7 +22,7 @@ export default function AboutPage() {
               Engineering the <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-cyan-300">Future of Digital</span>
             </h1>
             <p className="mt-6 text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl text-left">
-              XenonEdge is the leading software development company in Jaffna, Sri Lanka. 
+              xenonedge is the leading software development company in Jaffna, Sri Lanka. 
               We transform ambitious ideas into high-performance digital products through custom software engineering, 
               precision coding, and bespoke innovation tailored for businesses across Sri Lanka and worldwide.
             </p>

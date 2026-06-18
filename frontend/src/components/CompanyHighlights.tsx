@@ -62,7 +62,7 @@ export default function CompanyHighlights() {
 
                         {/* Description */}
                         <p className="text-base md:text-lg text-slate-500 leading-relaxed max-w-xl mb-10">
-                            As the best software development company in Jaffna, XenonEdge delivers premium custom software solutions, high-performance web development, mobile apps, and artificial intelligence integrations. We combine engineering excellence with user-experience (UI/UX) design, professional SEO content writing, and result-driven digital marketing to scale your brand across Sri Lanka and globally.
+                            As the best software development company in Jaffna, xenonedge delivers premium custom software solutions, high-performance web development, mobile apps, and artificial intelligence integrations. We combine engineering excellence with user-experience (UI/UX) design, professional SEO content writing, and result-driven digital marketing to scale your brand across Sri Lanka and globally.
                         </p>
 
 

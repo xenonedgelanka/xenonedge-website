@@ -47,7 +47,7 @@ export default function Footer() {
             <Link href="/" className="inline-block">
               <Image
                 src="/images/whitelogo.png"
-                alt="XenonEdge Logo"
+                alt="xenonedge logo"
                 width={180}
                 height={50}
                 className="h-7 lg:h-9 w-auto brightness-110"
@@ -165,7 +165,7 @@ export default function Footer() {
       <div className="border-t border-white/5">
         <div className="container mx-auto px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-slate-500 text-[11px] uppercase tracking-[0.2em]">
-            © {new Date().getFullYear()} XenonEdge (Pvt) Ltd. All rights reserved.
+            © {new Date().getFullYear()} xenonedge (Pvt) Ltd. All rights reserved.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2">

@@ -260,7 +260,7 @@ export default function MessagesAdmin() {
 
               {/* Reply CTA */}
               <a
-                href={`mailto:${selectedMsg.email}?subject=Re: Your inquiry to XenonEdge Lanka`}
+                href={`mailto:${selectedMsg.email}?subject=Re: Your inquiry to xenonedge Lanka`}
                 onClick={() => updateStatus(selectedMsg._id, 'replied')}
                 className="admin-btn-primary w-full py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 no-underline"
               >

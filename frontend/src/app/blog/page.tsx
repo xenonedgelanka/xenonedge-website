@@ -10,10 +10,10 @@ export const metadata = {
     canonical: 'https://xenonedge.com/blog',
   },
   openGraph: {
-    title: 'Knowledge Hub | XenonEdge',
-    description: 'Expert perspectives on technology, business strategy, and the future of digital innovation from the XenonEdge team.',
+    title: 'Knowledge Hub | xenonedge',
+    description: 'Expert perspectives on technology, business strategy, and the future of digital innovation from the xenonedge team.',
     url: 'https://xenonedge.com/blog',
-    siteName: 'XenonEdge',
+    siteName: 'xenonedge',
     type: 'website',
   },
   robots: {

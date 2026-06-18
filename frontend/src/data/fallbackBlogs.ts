@@ -17,7 +17,7 @@ export const FALLBACK_BLOGS: BlogPost[] = [
     title: "Modernizing Sri Lankan Businesses: The Shift to Cloud ERP Systems",
     excerpt: "Explore how modern cloud-based ERP solutions are driving digital transformation, improving operational efficiency, and empowering local enterprises.",
     category: "Enterprise Solutions",
-    author: "XenonEdge Team",
+    author: "xenonedge team",
     createdAt: "2026-06-18T12:00:00.000Z",
     slug: "modernizing-sri-lankan-businesses-the-shift-to-cloud-erp-systems",
     image: "https://res.cloudinary.com/dnmf16bqn/image/upload/v1781796290/xenonedge_blogs/jfbwpqam4ufgs7jmsbhs.jpg",
@@ -40,7 +40,7 @@ export const FALLBACK_BLOGS: BlogPost[] = [
     title: "Building Scalable Mobile Applications: React Native vs Flutter",
     excerpt: "A detailed comparison of React Native and Flutter for custom mobile development to help you choose the best framework for your next tech product.",
     category: "Mobile Development",
-    author: "XenonEdge Team",
+    author: "xenonedge team",
     createdAt: "2026-06-18T13:00:00.000Z",
     slug: "building-scalable-mobile-applications-react-native-vs-flutter",
     image: "https://res.cloudinary.com/dnmf16bqn/image/upload/v1781796291/xenonedge_blogs/fvxm96nwkksfonmibetr.jpg",
@@ -63,7 +63,7 @@ export const FALLBACK_BLOGS: BlogPost[] = [
     title: "The Power of Custom CRM: Transforming Customer Relationships through Bespoke Software",
     excerpt: "Discover why off-the-shelf CRM software might be holding your business back and how a custom-engineered CRM drives growth and client retention.",
     category: "Custom Software",
-    author: "XenonEdge Team",
+    author: "xenonedge team",
     createdAt: "2026-06-18T14:00:00.000Z",
     slug: "the-power-of-custom-crm-transforming-customer-relationships-through-bespoke-software",
     image: "https://res.cloudinary.com/dnmf16bqn/image/upload/v1781796293/xenonedge_blogs/osdwtat9nvkarbwflzqa.jpg",
@@ -75,7 +75,7 @@ export const FALLBACK_BLOGS: BlogPost[] = [
       <p>No two companies manage customer relationships the exact same way. A custom CRM is designed around your specific sales funnel, customer support queues, and automated follow-ups. You only build the features you need, keeping the user interface clean, simple, and easy for your team to adopt.</p>
       
       <h3>2. Zero License Fees & Lifetime Value</h3>
-      <p>Commercial CRMs charge monthly per-user subscription fees. As your sales and support teams grow, these costs scale exponentially. With a custom CRM built by a tech partner like XenonEdge, you own the code and intellectual property outright, meaning no seat-based monthly fees.</p>
+      <p>Commercial CRMs charge monthly per-user subscription fees. As your sales and support teams grow, these costs scale exponentially. With a custom CRM built by a tech partner like xenonedge, you own the code and intellectual property outright, meaning no seat-based monthly fees.</p>
       
       <h3>3. Seamless Third-Party Integrations</h3>
       <p>A custom CRM can be built to integrate directly with your existing inventory management, invoicing platforms, legacy databases, and communication channels (like SMS, WhatsApp, and email APIs) without requiring complex workarounds.</p>

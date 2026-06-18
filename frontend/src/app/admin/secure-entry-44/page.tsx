@@ -30,7 +30,7 @@ export default function AdminLogin() {
         <div className="text-center mb-10 flex flex-col items-center">
           <Image
             src="/images/whitelogo.png"
-            alt="XenonEdge Logo"
+            alt="xenonedge logo"
             width={180}
             height={40}
             className="mb-6 object-contain"

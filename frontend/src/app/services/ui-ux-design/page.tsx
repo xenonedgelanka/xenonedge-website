@@ -4,7 +4,7 @@ import ServiceCTA from '../../../components/ServiceCTA'
 import ProcessTimeline from '../../../components/ProcessTimeline'
 
 export const metadata = {
-    title: 'UI/UX Design Services | XenonEdge',
+    title: 'UI/UX Design Services | xenonedge',
     description: 'User-centered UI/UX design services. We create intuitive, engaging, and beautiful digital experiences that delight CircleUser and achieve business goals.'
 }
 

@@ -4,8 +4,8 @@ import ServiceCTA from '../../../components/ServiceCTA'
 import ProcessTimeline from '../../../components/ProcessTimeline'
 
 export const metadata = {
-    title: 'AI Integrations & Machine Learning | XenonEdge',
-    description: 'Empower your business with AI integrations, custom LLM solutions, chatbots, computer vision, and machine learning models. Expert AI development services by XenonEdge.'
+    title: 'AI Integrations & Machine Learning | xenonedge',
+    description: 'Empower your business with AI integrations, custom LLM solutions, chatbots, computer vision, and machine learning models. Expert AI development services by xenonedge.'
 }
 
 const features = [

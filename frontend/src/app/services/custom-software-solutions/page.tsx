@@ -4,7 +4,7 @@ import ServiceCTA from '../../../components/ServiceCTA'
 import ProcessTimeline from '../../../components/ProcessTimeline'
 
 export const metadata = {
-    title: 'Custom Software Solutions | XenonEdge',
+    title: 'Custom Software Solutions | xenonedge',
     description: 'Enterprise-grade custom software development. CRM, ERP, and bespoke business applications that streamline operations and drive efficiency.'
 }
 
