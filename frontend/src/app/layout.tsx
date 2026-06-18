@@ -8,7 +8,7 @@ import { Toaster } from 'react-hot-toast'
 
 const siteConfig = {
   name: 'XenonEdge',
-  description: 'XenonEdge builds scalable, secure, and high-performance software solutions. Leading software development company in Sri Lanka specializing in web, mobile, and AI solutions.',
+  description: 'XenonEdge is the best and No. 1 software development company in Jaffna, Sri Lanka. We deliver custom software, web development, mobile apps, AI integrations, UI/UX, and digital marketing services.',
   url: 'https://xenonedge.com',
   ogImage: 'https://xenonedge.com/og-image.jpg',
   links: {
@@ -19,19 +19,23 @@ const siteConfig = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'XenonEdge | Modern Software Solutions & Custom Development',
+    default: 'XenonEdge | Best Software Development Company in Jaffna, Sri Lanka',
     template: '%s | XenonEdge'
   },
   description: siteConfig.description,
   keywords: [
+    'Software Development Jaffna',
+    'Best Software Company in Jaffna',
+    'No 1 Software Company in Jaffna',
     'Software Development Sri Lanka',
-    'Web Development',
-    'Mobile App Development',
-    'Custom Software Solutions',
-    'AI Integrations',
-    'Ecommerce Application',
-    'UI/UX Design',
-    'Digital Marketing'
+    'Custom Software Solutions Sri Lanka',
+    'Web Development Jaffna',
+    'Mobile App Development Sri Lanka',
+    'AI Solutions Sri Lanka',
+    'eCommerce Website Development',
+    'UI/UX Design Company',
+    'SEO Services Sri Lanka',
+    'Digital Marketing Jaffna'
   ],
   authors: [{ name: 'XenonEdge' }],
   creator: 'XenonEdge',

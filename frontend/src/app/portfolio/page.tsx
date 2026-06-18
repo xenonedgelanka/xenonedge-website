@@ -1,8 +1,11 @@
 import PortfolioGrid from '../../components/PortfolioGrid'
 
 export const metadata = {
-  title: 'Portfolio',
-  description: 'Selected projects, graphic designs, and web applications delivered by XenonEdge.'
+  title: 'Our Portfolio | Custom Software & Web Projects',
+  description: 'Browse our portfolio of custom software solutions, mobile apps, and high-performance web development projects delivered by XenonEdge across Sri Lanka and globally.',
+  alternates: {
+    canonical: 'https://xenonedge.com/portfolio',
+  }
 }
 
 export default function PortfolioPage() {

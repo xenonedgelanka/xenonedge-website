@@ -12,9 +12,9 @@ import FAQ from '../components/FAQ'
 
 export const metadata = {
   title: {
-    absolute: 'XenonEdge | Modern Software Solutions & Custom Development'
+    absolute: 'XenonEdge | Best & No. 1 Software Development Company in Jaffna, Sri Lanka'
   },
-  description: 'XenonEdge delivers scalable, secure, and high-performance software solutions. From custom web development to enterprise digital transformations, we build tomorrow’s technology today | Leading Software Development Company & Custom IT Solutions',
+  description: 'Looking for the best software company in Jaffna? XenonEdge is the No. 1 software development partner in Sri Lanka. We build custom software solutions, high-performance web development, mobile apps, AI integrations, eCommerce platforms, UI/UX design, SEO, and digital marketing services.',
   alternates: {
     canonical: 'https://xenonedge.com',
   },

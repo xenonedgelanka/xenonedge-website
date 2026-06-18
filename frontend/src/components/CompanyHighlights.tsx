@@ -55,14 +55,14 @@ export default function CompanyHighlights() {
                     >
 
                         {/* Heading */}
-                        <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-[var(--btn)] leading-[1.15] mb-6">
-                            Leading Software Development{' '}
-                            <span className="text-sky-500">Partner in Sri Lanka</span>
+                        <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-[var(--btn)] leading-[1.15] mb-6 animate-fade-in">
+                            No. 1 Software Company in <br />
+                            <span className="text-sky-500">Jaffna & Sri Lanka</span>
                         </h2>
 
                         {/* Description */}
                         <p className="text-base md:text-lg text-slate-500 leading-relaxed max-w-xl mb-10">
-                            XenonEdge is a top software development company in Sri Lanka. We build high-quality web applications and custom digital solutions that help businesses grow. Our team uses the latest technology to ensure your projects are fast, secure, and built for success.
+                            As the best software development company in Jaffna, XenonEdge delivers premium custom software solutions, high-performance web development, mobile apps, and artificial intelligence integrations. We combine engineering excellence with user-experience (UI/UX) design, professional SEO content writing, and result-driven digital marketing to scale your brand across Sri Lanka and globally.
                         </p>
 
 

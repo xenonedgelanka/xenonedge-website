@@ -70,8 +70,9 @@ export default function Hero() {
             </h1>
 
             <p className="mt-4 text-lg md:text-xl text-gray-400 max-w-xl leading-relaxed text-left">
-              XenonEdge is a premier software development firm dedicated to engineering excellence. 
-              We transform ambitious ideas into high-performance digital products through state-of-the-art technology.
+              XenonEdge is the best and No. 1 software development company in Jaffna, Sri Lanka. 
+              We engineer custom software solutions, high-performance web development, mobile apps, 
+              AI integrations, eCommerce platforms, UI/UX designs, SEO, and digital marketing services.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">

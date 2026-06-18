@@ -3,8 +3,11 @@ import Link from 'next/link'
 import { FiArrowLeft } from 'react-icons/fi'
 
 export const metadata = {
-  title: 'Frequently Asked Questions',
-  description: 'Frequently asked questions about XenonEdge services, process, and technology.'
+  title: 'Frequently Asked Questions | XenonEdge Support',
+  description: 'Get answers to your questions about custom software solutions, mobile app development, web design, and SEO services from XenonEdge, Jaffna\'s No.1 software development partner.',
+  alternates: {
+    canonical: 'https://xenonedge.com/faq',
+  }
 }
 
 export default function FAQPage() {
