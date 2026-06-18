@@ -65,7 +65,7 @@ export default function ServicesContent() {
                         Premium <span className="text-sky-400">Software</span> Services
                     </h1>
                     <p className="mt-6 text-xl text-slate-300 max-w-3xl leading-relaxed">
-                        Delivering high-performance, secure, and scalable digital solutions. As the best and No. 1 software development company in Jaffna, Sri Lanka, we empower businesses worldwide with state-of-the-art custom IT solutions.
+                        Delivering high-performance, secure, and scalable digital solutions. As the leading software development company in Jaffna, Sri Lanka, we empower businesses worldwide with state-of-the-art custom IT solutions.
                     </p>
                 </div>
             </section>

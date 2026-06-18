@@ -2,7 +2,7 @@ import AboutContent from '../../components/AboutContent'
 
 export const metadata = {
   title: 'About Us | Best Software Company in Jaffna',
-  description: 'Learn about XenonEdge — the best and No. 1 software development company in Jaffna, Sri Lanka. Our mission, values, and journey in custom software engineering.',
+  description: 'Learn about XenonEdge — the leading software development company in Jaffna, Sri Lanka. Our mission, values, and journey in custom software engineering.',
   alternates: {
     canonical: 'https://xenonedge.com/about',
   }
@@ -22,7 +22,7 @@ export default function AboutPage() {
               Engineering the <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-cyan-300">Future of Digital</span>
             </h1>
             <p className="mt-6 text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl text-left">
-              XenonEdge is the best and No. 1 software development company in Jaffna, Sri Lanka. 
+              XenonEdge is the leading software development company in Jaffna, Sri Lanka. 
               We transform ambitious ideas into high-performance digital products through custom software engineering, 
               precision coding, and bespoke innovation tailored for businesses across Sri Lanka and worldwide.
             </p>
