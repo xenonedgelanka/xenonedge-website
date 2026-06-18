@@ -36,7 +36,6 @@ export const metadata: Metadata = {
   authors: [{ name: 'XenonEdge' }],
   creator: 'XenonEdge',
   metadataBase: new URL(siteConfig.url),
-  alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
     locale: 'en_US',

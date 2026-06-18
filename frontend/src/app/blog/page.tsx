@@ -3,8 +3,22 @@ import BlogContent from '../../components/BlogContent'
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'
 
 export const metadata = {
-  title: 'Knowledge Hub',
-  description: 'Expert perspectives on technology, business strategy, and the future of digital innovation from the XenonEdge team.'
+  title: 'Knowledge Hub | XenonEdge',
+  description: 'Expert perspectives on technology, business strategy, and the future of digital innovation from the XenonEdge team.',
+  alternates: {
+    canonical: 'https://xenonedge.com/blog',
+  },
+  openGraph: {
+    title: 'Knowledge Hub | XenonEdge',
+    description: 'Expert perspectives on technology, business strategy, and the future of digital innovation from the XenonEdge team.',
+    url: 'https://xenonedge.com/blog',
+    siteName: 'XenonEdge',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default async function BlogPage() {
