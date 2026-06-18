@@ -13,72 +13,72 @@ export interface BlogPost {
 
 export const FALLBACK_BLOGS: BlogPost[] = [
   {
-    _id: "the-future-of-e-commerce-how-ai-is-transforming-the-shopping-experience",
-    title: "The Future of E-Commerce: How AI is Transforming the Shopping Experience",
-    excerpt: "Explore how artificial intelligence is revolutionizing the retail landscape, from personalized recommendations to autonomous logistics.",
-    category: "Artificial Intelligence",
+    _id: "modernizing-sri-lankan-businesses-the-shift-to-cloud-erp-systems",
+    title: "Modernizing Sri Lankan Businesses: The Shift to Cloud ERP Systems",
+    excerpt: "Explore how modern cloud-based ERP solutions are driving digital transformation, improving operational efficiency, and empowering local enterprises.",
+    category: "Enterprise Solutions",
     author: "XenonEdge Team",
-    createdAt: "2026-06-10T08:00:00.000Z",
-    slug: "the-future-of-e-commerce-how-ai-is-transforming-the-shopping-experience",
-    image: "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?q=80&w=800&auto=format&fit=crop",
-    tags: ["AI", "Ecommerce", "Innovation"],
+    createdAt: "2026-06-18T12:00:00.000Z",
+    slug: "modernizing-sri-lankan-businesses-the-shift-to-cloud-erp-systems",
+    image: "https://res.cloudinary.com/dnmf16bqn/image/upload/v1781796290/xenonedge_blogs/jfbwpqam4ufgs7jmsbhs.jpg",
+    tags: ["Cloud ERP", "Digital Transformation", "Sri Lanka Business"],
     content: `
-      <p>Artificial Intelligence (AI) is no longer a futuristic concept—it is actively reshaping the global e-commerce landscape. Retailers worldwide are leveraging intelligent algorithms to deliver tailored, fast, and frictionless shopping journeys that consumers have come to expect.</p>
+      <p>In Sri Lanka's rapidly evolving economic landscape, traditional business models are facing unprecedented pressures. Companies are discovering that standard desktop software and manual spreadsheets are no longer sufficient to scale. The solution? Migrating to cloud-based Enterprise Resource Planning (ERP) systems.</p>
       
-      <h3>1. Hyper-Personalized Shopping Journeys</h3>
-      <p>Traditional recommendation engines suggested items based solely on basic demographics or simple associations. Modern AI systems analyze browsing history, real-time mouse movements, search queries, social media engagement, and even weather patterns to customize the product catalog for each individual visitor. This level of personalization dramatically improves conversion rates and enhances brand loyalty.</p>
+      <h3>1. Unified Operations in Real-Time</h3>
+      <p>A Cloud ERP integrates all departments—finance, human resources, inventory, sales, and logistics—into a single database. For local Sri Lankan businesses, this means decisions can be made based on real-time data rather than waiting for weekly reports. Whether tracking stock in Colombo or sales in Jaffna, the data is instantly accessible.</p>
       
-      <h3>2. Predictive Inventory & Intelligent Supply Chain</h3>
-      <p>Out-of-stock messages and shipping delays are major friction points. AI helps e-commerce platforms predict demand spikes before they happen, allowing businesses to adjust warehouse stock preemptively. Machine learning models analyze seasonal trends, historical sales data, and market patterns to ensure popular items are closer to delivery locations, enabling same-day or next-day shipping.</p>
+      <h3>2. Drastic Cost Optimization</h3>
+      <p>On-premise servers require significant initial investments, regular hardware upgrades, and full-time IT administration teams. Cloud ERPs eliminate these capital expenses, running on secure, managed cloud infrastructure with scalable subscription models. Businesses only pay for what they use, lowering overhead substantially.</p>
       
-      <h3>3. 24/7 AI-Powered Conversational Commerce</h3>
-      <p>Customer support is a critical component of retail. Advanced conversational AI agents go beyond basic scripts, resolving complex user queries about order tracking, sizing, returns, and billing instantly. This instant support improves customer trust while freeing human agents to focus on high-touch issues.</p>
+      <h3>3. Mobile Accessibility and Hybrid Work</h3>
+      <p>With cloud infrastructure, employees can manage operations securely from anywhere. Sales representatives can generate invoices on the go, managers can approve purchase orders from their mobile devices, and operations can continue uninterrupted.</p>
     `
   },
   {
-    _id: "how-to-start-a-saas-business",
-    title: "How to Start a SaaS Business: A Comprehensive Guide",
-    excerpt: "A comprehensive guide on building, launching, and scaling a successful Software as a Service company in the modern market.",
-    category: "Business Strategy",
+    _id: "building-scalable-mobile-applications-react-native-vs-flutter",
+    title: "Building Scalable Mobile Applications: React Native vs Flutter",
+    excerpt: "A detailed comparison of React Native and Flutter for custom mobile development to help you choose the best framework for your next tech product.",
+    category: "Mobile Development",
     author: "XenonEdge Team",
-    createdAt: "2026-06-12T09:30:00.000Z",
-    slug: "how-to-start-a-saas-business",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
-    tags: ["SaaS", "Business", "Development"],
+    createdAt: "2026-06-18T13:00:00.000Z",
+    slug: "building-scalable-mobile-applications-react-native-vs-flutter",
+    image: "https://res.cloudinary.com/dnmf16bqn/image/upload/v1781796291/xenonedge_blogs/fvxm96nwkksfonmibetr.jpg",
+    tags: ["Mobile Apps", "React Native", "Flutter"],
     content: `
-      <p>Software as a Service (SaaS) continues to dominate the technology sector, offering predictable recurring revenue models and immense scalability. However, building a sustainable SaaS business requires more than just writing code; it demands deep market alignment and strategic planning.</p>
+      <p>The demand for high-quality mobile applications is at an all-time high. For startups and enterprises looking to build cross-platform apps, the choice between React Native and Flutter remains a critical decision. Both frameworks offer powerful capabilities, but align with different engineering needs.</p>
       
-      <h3>1. Finding and Validating the Core Problem</h3>
-      <p>The number one reason startups fail is lack of market need. Successful SaaS platforms solve a specific, high-friction problem for a well-defined target audience. Before writing a single line of code, conduct extensive user interviews, build low-fidelity mockups, and pre-sell the solution to validate that users are willing to pay for it.</p>
+      <h3>1. Development Efficiency & Code Reusability</h3>
+      <p>Both React Native and Flutter allow developers to write a single codebase that runs on both iOS and Android. This dramatically cuts development time and cost in half. React Native relies on JavaScript and React, making it a natural choice for web developers. Flutter uses Dart and its own custom graphics engine, compiles directly to native code.</p>
       
-      <h3>2. Defining the Minimum Viable Product (MVP)</h3>
-      <p>Avoid the temptation of feature creep. Focus on delivering the core solution exceptionally well. The goal of the MVP is to get your product in the hands of early users as fast as possible to gather real-world usage patterns, direct feedback, and validation.</p>
+      <h3>2. UI Customization and Performance</h3>
+      <p>Flutter is renowned for building highly custom, pixel-perfect user interfaces with smooth animations. Because it renders its own widgets, the app looks identical across all platforms and OS versions. React Native, on the other hand, maps JavaScript components to native platform UI widgets, delivering a highly familiar native platform feel.</p>
       
-      <h3>3. Product-Led Growth & Subscription Metrics</h3>
-      <p>Scale is driven by metrics. Focus on key metrics such as Monthly Recurring Revenue (MRR), Customer Acquisition Cost (CAC), Customer Lifetime Value (LTV), and Churn Rate. By building a product-led experience where the software sells itself through self-serve options and free trials, you accelerate user acquisition while keeping overhead low.</p>
+      <h3>3. Ecosystem and Community Support</h3>
+      <p>React Native has a massive community and a vast ecosystem of third-party libraries since it is backed by Meta and built on JavaScript. Flutter, backed by Google, has caught up rapidly, offering comprehensive built-in tools and documentation that make it highly reliable for enterprise-grade projects.</p>
     `
   },
   {
-    _id: "from-problem-to-solution-how-to-collaborate-effectively-with-a-tech-partner",
-    title: "From Problem to Solution: Collaborating with a Tech Partner",
-    excerpt: "Mastering the art of technical partnership to transform business challenges into high-performance digital solutions.",
-    category: "Collaboration",
+    _id: "the-power-of-custom-crm-transforming-customer-relationships-through-bespoke-software",
+    title: "The Power of Custom CRM: Transforming Customer Relationships through Bespoke Software",
+    excerpt: "Discover why off-the-shelf CRM software might be holding your business back and how a custom-engineered CRM drives growth and client retention.",
+    category: "Custom Software",
     author: "XenonEdge Team",
-    createdAt: "2026-06-15T10:15:00.000Z",
-    slug: "from-problem-to-solution-how-to-collaborate-effectively-with-a-tech-partner",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop",
-    tags: ["Productivity", "Strategy", "Tech"],
+    createdAt: "2026-06-18T14:00:00.000Z",
+    slug: "the-power-of-custom-crm-transforming-customer-relationships-through-bespoke-software",
+    image: "https://res.cloudinary.com/dnmf16bqn/image/upload/v1781796293/xenonedge_blogs/osdwtat9nvkarbwflzqa.jpg",
+    tags: ["Custom CRM", "Bespoke Software", "Business Growth"],
     content: `
-      <p>In today's digital economy, every company is a software company. Choosing the right technology partner and collaborating effectively can mean the difference between market leadership and obsolescence.</p>
+      <p>Customer Relationship Management (CRM) is the heart of modern sales and support. While off-the-shelf CRM products like Salesforce or HubSpot are popular, they often come with expensive license fees and rigid templates that force businesses to adapt their workflows to the software. Custom CRM systems solve this by wrapping around your unique business processes.</p>
       
-      <h3>1. Defining Outcomes, Not Just Features</h3>
-      <p>When working with a software team, describe the desired business outcomes rather than just listing features. A high-quality partner will analyze the user journey and choose the right technical architectures and technologies to achieve those goals most efficiently.</p>
+      <h3>1. Perfect Alignment with Business Workflows</h3>
+      <p>No two companies manage customer relationships the exact same way. A custom CRM is designed around your specific sales funnel, customer support queues, and automated follow-ups. You only build the features you need, keeping the user interface clean, simple, and easy for your team to adopt.</p>
       
-      <h3>2. Agile Sprints and Continuous Feedback</h3>
-      <p>Long development cycles without checkpoints lead to misaligned expectations. High-performing teams run on weekly or bi-weekly sprints, demonstrating working software at the end of each sprint. This allows for rapid course correction and ensures the final product matches user needs perfectly.</p>
+      <h3>2. Zero License Fees & Lifetime Value</h3>
+      <p>Commercial CRMs charge monthly per-user subscription fees. As your sales and support teams grow, these costs scale exponentially. With a custom CRM built by a tech partner like XenonEdge, you own the code and intellectual property outright, meaning no seat-based monthly fees.</p>
       
-      <h3>3. Prioritizing Security and Maintainability</h3>
-      <p>Building the software is just the beginning. Long-term reliability depends on clean code, automated testing pipelines, and robust cloud configurations. Prioritize these aspects from day one to avoid costly technical debt down the road.</p>
+      <h3>3. Seamless Third-Party Integrations</h3>
+      <p>A custom CRM can be built to integrate directly with your existing inventory management, invoicing platforms, legacy databases, and communication channels (like SMS, WhatsApp, and email APIs) without requiring complex workarounds.</p>
     `
   }
 ]

@@ -56,8 +56,8 @@ export default function CompanyHighlights() {
 
                         {/* Heading */}
                         <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-[var(--btn)] leading-[1.15] mb-6 animate-fade-in">
-                            Leading Software Company in <br />
-                            <span className="text-sky-500">Jaffna & Sri Lanka</span>
+                            Leading Software Company <br />
+                            in <span className="text-sky-500">Jaffna & Sri Lanka</span>
                         </h2>
 
                         {/* Description */}
