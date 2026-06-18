@@ -1,8 +1,8 @@
 import AboutContent from '../../components/AboutContent'
 
 export const metadata = {
-  title: 'About Us | Best Software Company in Jaffna',
-  description: 'Learn about XenonEdge — the leading software development company in Jaffna, Sri Lanka. Our mission, values, and journey in custom software engineering.',
+  title: 'About Us | xenonedge',
+  description: 'Learn about xenonedge — the leading software development company in Jaffna, Sri Lanka. Our mission, values, and journey in custom software engineering.',
   alternates: {
     canonical: 'https://xenonedge.com/about',
   }

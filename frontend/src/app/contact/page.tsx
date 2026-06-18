@@ -1,8 +1,8 @@
 import ContactForm from '../../components/ContactForm'
 
 export const metadata = {
-  title: 'Contact Us | XenonEdge Software Solutions',
-  description: 'Get in touch with XenonEdge, the leading software development company in Jaffna, Sri Lanka, for premium custom software development, mobile apps, web, AI, and digital marketing.',
+  title: 'Contact Us | xenonedge',
+  description: 'Get in touch with xenonedge, the leading software development company in Jaffna, Sri Lanka, for premium custom software development, mobile apps, web, AI, and digital marketing.',
   alternates: {
     canonical: 'https://xenonedge.com/contact',
   }

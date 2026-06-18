@@ -19,8 +19,8 @@ const siteConfig = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'XenonEdge | Best Software Development Company in Jaffna, Sri Lanka',
-    template: '%s | XenonEdge'
+    default: 'xenonedge | Best Software Development Company in Jaffna, Sri Lanka',
+    template: '%s | xenonedge'
   },
   description: siteConfig.description,
   keywords: [
