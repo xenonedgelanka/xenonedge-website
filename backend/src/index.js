@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const https = require('https');
+const http = require('http');
 require('dotenv').config();
 
 const connectDB = require('./config/db');
@@ -25,6 +27,11 @@ app.use(cors({
 }));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+
+// Health check / keep-alive ping endpoint
+app.get('/api/ping', (req, res) => {
+  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+});
 
 // Routes
 app.get('/', (req, res) => {
@@ -52,4 +59,19 @@ app.use((req, res) => {
 // Start Server
 app.listen(PORT, () => {
   console.log(`✅ Server running on http://localhost:${PORT}`);
+
+  // Keep-alive: ping self every 14 minutes to prevent Render free tier from sleeping
+  const BACKEND_URL = process.env.RENDER_EXTERNAL_URL || `http://localhost:${PORT}`;
+  if (process.env.NODE_ENV === 'production') {
+    setInterval(() => {
+      const url = `${BACKEND_URL}/api/ping`;
+      const client = url.startsWith('https') ? https : http;
+      client.get(url, (res) => {
+        console.log(`🔁 Keep-alive ping → ${res.statusCode}`);
+      }).on('error', (err) => {
+        console.error('Keep-alive ping failed:', err.message);
+      });
+    }, 14 * 60 * 1000); // every 14 minutes
+    console.log(`🔁 Keep-alive started → pinging ${BACKEND_URL}/api/ping every 14 min`);
+  }
 });
