@@ -55,7 +55,7 @@ export default function Footer() {
               />
             </Link>
 
-            <p className="text-slate-400 text-[13px] leading-relaxed max-w-[280px] italic">
+            <p className="text-slate-400 text-[15px] leading-relaxed max-w-[280px] italic">
               &ldquo;Engineering the future through precision coding, bespoke
               innovation and state-of-the-art technology.&rdquo;
             </p>
@@ -71,7 +71,7 @@ export default function Footer() {
                   aria-label={label}
                   className="text-slate-500 hover:text-sky-400 transition-colors duration-300"
                 >
-                  <Icon size={16} />
+                  <Icon size={19} />
                 </a>
               ))}
             </div>
@@ -79,7 +79,7 @@ export default function Footer() {
 
           {/* Column 2 — Services */}
           <div className="lg:col-span-3">
-            <h4 className="text-white/80 font-semibold text-[11px] uppercase tracking-[0.25em] mb-7">
+            <h4 className="text-white/80 font-semibold text-[13px] uppercase tracking-[0.25em] mb-7">
               Services
             </h4>
             <ul className="space-y-4">
@@ -87,7 +87,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-slate-400 hover:text-white text-[13px] transition-colors duration-200"
+                    className="text-slate-400 hover:text-white text-[15px] transition-colors duration-200"
                   >
                     {link.name}
                   </Link>
@@ -98,7 +98,7 @@ export default function Footer() {
 
           {/* Column 3 — Company */}
           <div className="lg:col-span-3">
-            <h4 className="text-white/80 font-semibold text-[11px] uppercase tracking-[0.25em] mb-7">
+            <h4 className="text-white/80 font-semibold text-[13px] uppercase tracking-[0.25em] mb-7">
               Company
             </h4>
             <ul className="space-y-4">
@@ -106,7 +106,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-slate-400 hover:text-white text-[13px] transition-colors duration-200"
+                    className="text-slate-400 hover:text-white text-[15px] transition-colors duration-200"
                   >
                     {link.name}
                   </Link>
@@ -117,7 +117,7 @@ export default function Footer() {
 
           {/* Column 4 — Contact */}
           <div className="lg:col-span-3">
-            <h4 className="text-white/80 font-semibold text-[11px] uppercase tracking-[0.25em] mb-7">
+            <h4 className="text-white/80 font-semibold text-[13px] uppercase tracking-[0.25em] mb-7">
               Contact
             </h4>
             <ul className="space-y-5">
@@ -128,8 +128,8 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="flex items-start gap-3 group"
                 >
-                  <HiOutlineLocationMarker className="text-sky-400 mt-0.5 shrink-0" size={18} />
-                  <span className="text-slate-400 group-hover:text-white text-[13px] transition-colors duration-200 leading-relaxed">
+                  <HiOutlineLocationMarker className="text-sky-400 mt-0.5 shrink-0" size={20} />
+                  <span className="text-slate-400 group-hover:text-white text-[15px] transition-colors duration-200 leading-relaxed">
                     Sri Lanka
                   </span>
                 </a>
@@ -139,8 +139,8 @@ export default function Footer() {
                   href="tel:+94762291826"
                   className="flex items-center gap-3 group"
                 >
-                  <HiOutlinePhone className="text-sky-400 shrink-0" size={18} />
-                  <span className="text-slate-400 group-hover:text-white text-[13px] transition-colors duration-200">
+                  <HiOutlinePhone className="text-sky-400 shrink-0" size={20} />
+                  <span className="text-slate-400 group-hover:text-white text-[15px] transition-colors duration-200">
                     +94 762291826
                   </span>
                 </a>
@@ -150,8 +150,8 @@ export default function Footer() {
                   href="mailto:info@xenonedge.com"
                   className="flex items-center gap-3 group"
                 >
-                  <HiOutlineMail className="text-sky-400 shrink-0" size={16} />
-                  <span className="text-slate-400 group-hover:text-white text-[13px] transition-colors duration-200">
+                  <HiOutlineMail className="text-sky-400 shrink-0" size={19} />
+                  <span className="text-slate-400 group-hover:text-white text-[15px] transition-colors duration-200">
                     info@xenonedge.com
                   </span>
                 </a>
