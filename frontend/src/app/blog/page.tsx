@@ -1,4 +1,5 @@
 import BlogContent from '../../components/BlogContent'
+import { FALLBACK_BLOGS } from '../../data/fallbackBlogs'
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'
 
@@ -33,7 +34,11 @@ export default async function BlogPage() {
       blogs = data.data || []
     }
   } catch (err) {
-    // Blog data unavailable — render empty state gracefully
+    // Fall back to static content
+  }
+
+  if (!blogs || blogs.length === 0) {
+    blogs = FALLBACK_BLOGS
   }
 
   return <BlogContent blogs={blogs} />

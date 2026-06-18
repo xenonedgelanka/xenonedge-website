@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FiArrowLeft } from 'react-icons/fi'
 import { notFound } from 'next/navigation'
+import { FALLBACK_BLOGS, BlogPost as FallbackBlogPost } from '../../../data/fallbackBlogs'
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'
 
@@ -20,12 +21,16 @@ interface BlogPost {
 async function getBlogPost(id: string): Promise<BlogPost | null> {
   try {
     const res = await fetch(`${API_URL}/blog/${id}`, { next: { revalidate: 60 } })
-    if (!res.ok) return null
-    const json = await res.json()
-    return json.data
+    if (res.ok) {
+      const json = await res.json()
+      if (json.data) return json.data
+    }
   } catch (err) {
-    return null
+    // Fall back below
   }
+  
+  const fallback = FALLBACK_BLOGS.find(p => p._id === id || p.slug === id)
+  return (fallback as unknown as BlogPost) || null
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
@@ -50,12 +55,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 async function getRecentPosts(excludeId: string): Promise<BlogPost[]> {
   try {
     const res = await fetch(`${API_URL}/blog?limit=4&status=published`, { next: { revalidate: 60 } })
-    if (!res.ok) return []
-    const json = await res.json()
-    return (json.data || []).filter((p: BlogPost) => p._id !== excludeId).slice(0, 3)
+    if (res.ok) {
+      const json = await res.json()
+      const posts = (json.data || []).filter((p: BlogPost) => p._id !== excludeId).slice(0, 3)
+      if (posts.length > 0) return posts
+    }
   } catch (err) {
-    return []
+    // Fall back below
   }
+
+  const fallbackList = FALLBACK_BLOGS.filter(p => p._id !== excludeId && p.slug !== excludeId).slice(0, 3)
+  return fallbackList as unknown as BlogPost[]
 }
 
 function formatDate(dateStr: string) {
