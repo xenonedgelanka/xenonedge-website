@@ -193,17 +193,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   </Link>
                 ))}
               </div>
-
-              {/* Newsletter Widget */}
-              <div className="mt-16 bg-[#071E3D] rounded-2xl p-10 text-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-sky-500/10 blur-2xl rounded-full"></div>
-                <h4 className="text-2xl font-black mb-4 uppercase tracking-tight relative z-10">Stay Ahead</h4>
-                <p className="text-xs text-slate-400 mb-8 font-bold uppercase tracking-widest leading-relaxed relative z-10">Get premium tech insights delivered weekly.</p>
-                <div className="flex flex-col gap-4 relative z-10">
-                  <input type="email" placeholder="Email address" className="w-full px-5 py-4 rounded-xl bg-white/5 border border-white/10 focus:outline-none focus:border-sky-500 text-sm transition-all" />
-                  <button className="w-full py-4 bg-sky-500 text-white rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-sky-600 transition-all shadow-lg shadow-sky-500/20">Subscribe</button>
-                </div>
-              </div>
             </div>
           </aside>
         </div>
