@@ -24,16 +24,20 @@ export default function BlogContent({ blogs }: { blogs: Blog[] }) {
   return (
     <>
       {/* Sleek Minimal Header */}
-      <section className="pt-32 pb-16 bg-white border-b border-slate-100">
-        <div className="container px-6 mx-auto">
+      <section className="hero-dark relative pt-32 pb-20 bg-[#0B1E36] text-white overflow-hidden">
+        {/* Architectural Background Elements */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' viewBox=\'0 0 40 40\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Ccircle cx=\'20\' cy=\'20\' r=\'1\'/%3E%3C/g%3E%3C/svg%3E")' }} />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-500/10 blur-[100px] rounded-full pointer-events-none translate-x-1/3 -translate-y-1/3"></div>
+        
+        <div className="container relative z-10 px-6 mx-auto">
           <div className="max-w-3xl">
-            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-sky-600 mb-3 block">
+            <span className="inline-block px-4 py-1.5 rounded-md bg-sky-500/10 border border-sky-500/30 text-sky-400 font-bold uppercase tracking-[0.3em] text-[10px] mb-6">
               Insights & Technology
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 uppercase">
+            <h1 className="text-4xl md:text-6xl font-black text-white tracking-tight leading-[1.1] uppercase">
               The Hub
             </h1>
-            <p className="mt-4 text-base md:text-lg text-slate-500 max-w-xl leading-relaxed">
+            <p className="mt-6 text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed">
               Perspectives on software engineering, cloud architecture, and digital strategy from our team.
             </p>
           </div>

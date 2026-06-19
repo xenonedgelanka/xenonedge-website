@@ -36,7 +36,7 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#050B15] text-white overflow-hidden">
+    <footer className="relative bg-gradient-to-b from-[#071E3D] to-[#050B15] text-white overflow-hidden border-t border-[#071E3D]/30">
 
       {/* ── Main Footer ── */}
       <div className="container mx-auto px-6 lg:px-8 pt-20 pb-14">

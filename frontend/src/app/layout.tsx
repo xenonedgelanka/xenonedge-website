@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import type { Metadata } from 'next'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import FestiveThemeEffects from '../components/FestiveThemeEffects'
 import Script from 'next/script'
 import { headers } from 'next/headers'
 import { Toaster } from 'react-hot-toast'
@@ -118,6 +119,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               style: { background: '#0B1E36', color: '#f1f5f9' },
               success: { iconTheme: { primary: '#38bdf8', secondary: '#0f172a' } },
             }} />
+            <FestiveThemeEffects />
             <Navbar />
             <main className="flex-1">{children}</main>
             <Footer />

@@ -38,6 +38,7 @@ interface SiteSettings {
   statProjects: string
   statExperience: string
   statCountries: string
+  activeThemeMode: string
 }
 
 const EMPTY_SETTINGS: SiteSettings = {
@@ -67,6 +68,7 @@ const EMPTY_SETTINGS: SiteSettings = {
   statProjects: '40+',
   statExperience: '1.5+',
   statCountries: '4+',
+  activeThemeMode: 'default',
 }
 
 interface SectionProps {
@@ -145,6 +147,7 @@ export default function SettingsAdmin() {
           statProjects: s.statProjects || '40+',
           statExperience: s.statExperience || '1.5+',
           statCountries: s.statCountries || '4+',
+          activeThemeMode: s.activeThemeMode || 'default',
         }
         setSettings(cleaned)
         setOriginal(cleaned)
@@ -397,6 +400,32 @@ export default function SettingsAdmin() {
           <span className="text-sm text-amber-300">You have unsaved changes to site settings</span>
         </div>
       )}
+
+      {/* Festive Theme Mode */}
+      <CollapsibleSection
+        title="Festive Theme Configuration"
+        icon={<Sparkles size={16} className="text-amber-400" />}
+        color="bg-amber-500/10"
+        defaultOpen={true}
+      >
+        <div className="space-y-4">
+          <div>
+            <label className="admin-label">Active Festive Theme Mode</label>
+            <select
+              className="admin-input w-full bg-slate-900 border border-white/10 text-white rounded-lg p-2.5 outline-none focus:border-sky-500"
+              value={settings.activeThemeMode}
+              onChange={e => update('activeThemeMode', e.target.value)}
+            >
+              <option value="default">Default Theme (No overlays)</option>
+              <option value="christmas">Christmas Mode (Falling snow)</option>
+              <option value="halloween">Halloween Mode (Spooky pumpkins & bats)</option>
+            </select>
+            <p className="text-xs text-slate-400 mt-2 leading-relaxed font-light italic">
+              * Note: The selected theme will dynamically display particle overlays and interactive greetings globally on all user-facing website pages.
+            </p>
+          </div>
+        </div>
+      </CollapsibleSection>
 
       {/* Company Info */}
       <CollapsibleSection

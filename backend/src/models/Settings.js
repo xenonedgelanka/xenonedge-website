@@ -42,6 +42,13 @@ const settingsSchema = new mongoose.Schema({
   // Footer
   footerText: { type: String, default: '' },
   copyrightText: { type: String, default: '' },
+
+  // Festive Theme Configuration
+  activeThemeMode: {
+    type: String,
+    default: 'default',
+    enum: ['default', 'christmas', 'halloween']
+  },
 }, { timestamps: true });
 
 module.exports = mongoose.model('Settings', settingsSchema);

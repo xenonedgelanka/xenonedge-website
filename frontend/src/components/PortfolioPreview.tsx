@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { FiArrowUpRight } from 'react-icons/fi'
 import { useState, useEffect } from 'react'
+import ProjectDetailsModal from './ProjectDetailsModal'
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'
 
@@ -13,6 +14,9 @@ interface Project {
   image: string
   description: string
   featured: boolean
+  technologies?: string[]
+  liveUrl?: string
+  githubUrl?: string
 }
 
 const FALLBACK = [
@@ -23,6 +27,8 @@ const FALLBACK = [
 
 export default function PortfolioPreview() {
   const [projects, setProjects] = useState<Project[]>(FALLBACK)
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   useEffect(() => {
     fetch(`${API_URL}/portfolio?featured=true`)
@@ -62,11 +68,16 @@ export default function PortfolioPreview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="group"
+              onClick={() => {
+                setSelectedProject(project)
+                setIsModalOpen(true)
+              }}
+              className="group cursor-pointer flex flex-col h-full bg-white rounded-2xl border border-slate-200 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 overflow-hidden"
             >
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-slate-50 border border-slate-200 transition-all duration-500 group-hover:border-slate-400">
+              {/* Image Container */}
+              <div className="relative aspect-video w-full overflow-hidden bg-slate-50 border-b border-slate-100">
                 <div className="absolute top-4 left-4 z-20">
-                  <span className="inline-block px-3 py-1.5 bg-[#071E3D] text-white text-[10px] font-bold uppercase tracking-widest rounded-md">
+                  <span className="inline-block px-3 py-1.5 bg-[#071E3D] text-white text-[10px] font-bold uppercase tracking-widest rounded-md shadow-sm">
                     {project.category}
                   </span>
                 </div>
@@ -81,22 +92,43 @@ export default function PortfolioPreview() {
                 ) : (
                   <div className="w-full h-full relative p-12 flex items-center justify-center bg-slate-50">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.5" strokeLinecap="round" strokeLinejoin="round"
-                      className="w-32 h-32 text-slate-200 transition-transform duration-700 group-hover:scale-110 group-hover:text-sky-100">
+                      className="w-24 h-24 text-slate-200 transition-transform duration-700 group-hover:scale-110 group-hover:text-sky-100">
                       <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
                       <circle cx="9" cy="9" r="2" />
                       <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
                     </svg>
                   </div>
                 )}
+              </div>
 
-                {/* Bottom Info */}
-                <div className="absolute inset-x-0 bottom-0 p-6 bg-white border-t border-slate-100">
-                  <h3 className="text-xl font-black text-[#071E3D] uppercase tracking-tight transition-colors group-hover:text-black">
-                    {project.title}
-                  </h3>
-                  <div className="flex items-center gap-2 mt-1 text-[10px] font-bold text-slate-400 group-hover:text-slate-600 transition-colors uppercase tracking-[0.2em]">
-                    Explore Case Study <FiArrowUpRight size={14} />
+              {/* Bottom Info Info flows naturally under the image */}
+              <div className="flex flex-col flex-grow p-6">
+                <h3 className="text-xl font-black text-[#071E3D] uppercase tracking-tight transition-colors group-hover:text-sky-600 mb-2 leading-snug">
+                  {project.title}
+                </h3>
+                {project.description && (
+                  <p className="text-slate-500 text-xs line-clamp-2 mb-4 leading-relaxed">
+                    {project.description}
+                  </p>
+                )}
+                
+                {project.technologies && project.technologies.length > 0 && (
+                  <div className="flex flex-wrap gap-1.5 mb-4 mt-auto">
+                    {project.technologies.slice(0, 3).map((tech) => (
+                      <span key={tech} className="text-[9px] font-bold px-2 py-0.5 rounded bg-slate-50 text-slate-600 border border-slate-200/50 uppercase tracking-wider">
+                        {tech}
+                      </span>
+                    ))}
+                    {project.technologies.length > 3 && (
+                      <span className="text-[9px] font-bold px-2 py-0.5 rounded bg-slate-50 text-slate-400">
+                        +{project.technologies.length - 3}
+                      </span>
+                    )}
                   </div>
+                )}
+
+                <div className="flex items-center gap-2 mt-auto text-[10px] font-bold text-sky-600 group-hover:text-sky-700 transition-colors uppercase tracking-[0.2em]">
+                  Explore Case Study <FiArrowUpRight size={14} />
                 </div>
               </div>
             </motion.div>
@@ -111,6 +143,13 @@ export default function PortfolioPreview() {
           </Link>
         </div>
       </div>
+
+      {/* Project Details Modal */}
+      <ProjectDetailsModal
+        project={selectedProject}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </section>
   )
 }
