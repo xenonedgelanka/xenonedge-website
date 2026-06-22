@@ -74,8 +74,7 @@ export default function Footer() {
             </Link>
 
             <p className="text-slate-400 text-[15px] leading-relaxed max-w-[280px] italic">
-              &ldquo;Engineering the future through precision coding, bespoke
-              innovation and state-of-the-art technology.&rdquo;
+              &ldquo;{settings?.footerText || "Engineering the future through precision coding, bespoke innovation and state-of-the-art technology."}&rdquo;
             </p>
 
             {/* Social Icons */}
@@ -141,36 +140,36 @@ export default function Footer() {
             <ul className="space-y-5">
               <li>
                 <a
-                  href="https://maps.google.com"
+                  href={settings?.address ? `https://maps.google.com/?q=${encodeURIComponent(settings.address)}` : "https://maps.google.com"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-3 group"
                 >
                   <HiOutlineLocationMarker className="text-sky-400 mt-0.5 shrink-0" size={20} />
                   <span className="text-slate-400 group-hover:text-white text-[15px] transition-colors duration-200 leading-relaxed">
-                    Sri Lanka
+                    {settings?.address || "Sri Lanka"}
                   </span>
                 </a>
               </li>
               <li>
                 <a
-                  href="tel:+94762291826"
+                  href={settings?.phone ? `tel:${settings.phone.replace(/\s+/g, '')}` : "tel:+94762291826"}
                   className="flex items-center gap-3 group"
                 >
                   <HiOutlinePhone className="text-sky-400 shrink-0" size={20} />
                   <span className="text-slate-400 group-hover:text-white text-[15px] transition-colors duration-200">
-                    +94 762291826
+                    {settings?.phone || "+94 762291826"}
                   </span>
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:info@xenonedge.com"
+                  href={settings?.email ? `mailto:${settings.email}` : "mailto:info@xenonedge.com"}
                   className="flex items-center gap-3 group"
                 >
                   <HiOutlineMail className="text-sky-400 shrink-0" size={19} />
                   <span className="text-slate-400 group-hover:text-white text-[15px] transition-colors duration-200">
-                    info@xenonedge.com
+                    {settings?.email || "info@xenonedge.com"}
                   </span>
                 </a>
               </li>
@@ -183,7 +182,7 @@ export default function Footer() {
       <div className="border-t border-white/5">
         <div className="container mx-auto px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-slate-500 text-[11px] uppercase tracking-[0.2em]">
-            © {new Date().getFullYear()} xenonedge (Pvt) Ltd. All rights reserved.
+            {settings?.copyrightText || `© ${new Date().getFullYear()} xenonedge (Pvt) Ltd. All rights reserved.`}
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2">

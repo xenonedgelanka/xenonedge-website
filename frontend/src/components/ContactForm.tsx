@@ -12,30 +12,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'
 // Cloudflare Turnstile Site Key (Using Test Key)
 const SITE_KEY = '0x4AAAAAADHerN7db9Xkx7W6'
 
-const contactDetails = [
-  {
-    icon: FiMapPin,
-    label: "Our Office",
-    value: "Colombo, Sri Lanka",
-  },
-  {
-    icon: FiPhone,
-    label: "Direct Line",
-    value: "+94 76 229 1826",
-    href: "tel:+94762291826",
-  },
-  {
-    icon: FiMail,
-    label: "Digital Inquiries",
-    value: "xenonedgelanka@gmail.com",
-    href: "mailto:xenonedgelanka@gmail.com",
-  },
-  {
-    icon: HiOutlineClock,
-    label: "Availability",
-    value: "24 / 7 — Always Available",
-  },
-]
+
 
 
 
@@ -64,6 +41,31 @@ export default function ContactForm() {
     if (settings.instagram) activeSocials.push({ icon: FiInstagram, href: settings.instagram, label: "Instagram" })
     if (settings.twitter) activeSocials.push({ icon: FiTwitter, href: settings.twitter, label: "Twitter" })
   }
+
+  const contactDetails = [
+    {
+      icon: FiMapPin,
+      label: "Our Office",
+      value: settings?.address || "Colombo, Sri Lanka",
+    },
+    {
+      icon: FiPhone,
+      label: "Direct Line",
+      value: settings?.phone || "+94 76 229 1826",
+      href: settings?.phone ? `tel:${settings.phone.replace(/\s+/g, '')}` : "tel:+94762291826",
+    },
+    {
+      icon: FiMail,
+      label: "Digital Inquiries",
+      value: settings?.email || "xenonedgelanka@gmail.com",
+      href: settings?.email ? `mailto:${settings.email}` : "mailto:xenonedgelanka@gmail.com",
+    },
+    {
+      icon: HiOutlineClock,
+      label: "Availability",
+      value: "24 / 7 — Always Available",
+    },
+  ]
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))

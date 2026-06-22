@@ -6,6 +6,8 @@ import { motion } from 'framer-motion'
 import AnimatedSection from './AnimatedSection'
 import AnimatedLottie from './AnimatedLottie'
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'
+
 const phrases = [
   { text: "Web Designs", color: "text-sky-400" },
   { text: "Mobile Apps", color: "text-indigo-400" },
@@ -19,6 +21,18 @@ export default function Hero() {
   const [displayText, setDisplayText] = useState("")
   const [isDeleting, setIsDeleting] = useState(false)
   const [speed, setSpeed] = useState(100)
+  const [settings, setSettings] = useState<any>(null)
+
+  useEffect(() => {
+    fetch(`${API_URL}/settings`)
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.success && res.data) {
+          setSettings(res.data)
+        }
+      })
+      .catch(() => {})
+  }, [])
 
   useEffect(() => {
     const handleTyping = () => {
@@ -56,23 +70,27 @@ export default function Hero() {
       <div className="container hero-inner grid grid-cols-1 md:grid-cols-2 items-center gap-12 pt-12 pb-16 md:pt-16 md:pb-24 w-full">
         <div className="relative z-10 w-full">
           <AnimatedSection>
-            <h1 className="text-4xl md:text-6xl font-extrabold leading-[1.15] tracking-tight min-h-[160px] md:min-h-[220px]">
-              Build Better<br />
-              Experiences with<br />
-              <span className={`inline-block ${phrases[index].color} transition-colors duration-500 min-w-[200px]`}>
-                {displayText}
-                <motion.span
-                  animate={{ opacity: [1, 0, 1] }}
-                  transition={{ repeat: Infinity, duration: 1 }}
-                  className="inline-block ml-2 w-1.5 h-[0.75em] bg-current align-middle rounded-full"
-                />
-              </span>
-            </h1>
+            {settings?.heroTitle ? (
+              <h1 className="text-4xl md:text-6xl font-extrabold leading-[1.15] tracking-tight">
+                {settings.heroTitle}
+              </h1>
+            ) : (
+              <h1 className="text-4xl md:text-6xl font-extrabold leading-[1.15] tracking-tight min-h-[160px] md:min-h-[220px]">
+                Build Better<br />
+                Experiences with<br />
+                <span className={`inline-block ${phrases[index].color} transition-colors duration-500 min-w-[200px]`}>
+                  {displayText}
+                  <motion.span
+                    animate={{ opacity: [1, 0, 1] }}
+                    transition={{ repeat: Infinity, duration: 1 }}
+                    className="inline-block ml-2 w-1.5 h-[0.75em] bg-current align-middle rounded-full"
+                  />
+                </span>
+              </h1>
+            )}
 
             <p className="mt-4 text-lg md:text-xl text-gray-400 max-w-xl leading-relaxed text-left">
-              xenonedge is the leading software development company in Jaffna, Sri Lanka. 
-              We engineer custom software solutions, high-performance web development, mobile apps, 
-              AI integrations, eCommerce platforms, UI/UX designs, SEO, and digital marketing services.
+              {settings?.heroSubtitle || "xenonedge is the leading software development company in Jaffna, Sri Lanka. We engineer custom software solutions, high-performance web development, mobile apps, AI integrations, eCommerce platforms, UI/UX designs, SEO, and digital marketing services."}
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
@@ -81,7 +99,7 @@ export default function Hero() {
                 className="group relative inline-flex items-center text-sky-400 font-bold text-lg transition-all duration-300 hover:text-sky-300"
               >
                 <span className="relative">
-                  Let's Talk!
+                  {settings?.heroCTA || "Let's Talk!"}
                   <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-sky-400 transition-all duration-500 group-hover:w-full"></span>
                 </span>
                 <svg
