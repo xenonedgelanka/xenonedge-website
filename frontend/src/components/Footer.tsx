@@ -1,15 +1,11 @@
 "use client"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { FaFacebookF, FaLinkedinIn, FaInstagram, FaTiktok } from "react-icons/fa"
+import { FaFacebookF, FaLinkedinIn, FaInstagram, FaTiktok, FaTwitter } from "react-icons/fa"
 import { HiOutlineMail, HiOutlinePhone, HiOutlineLocationMarker } from "react-icons/hi"
 
-const socialLinks = [
-  { icon: FaFacebookF, href: "https://facebook.com", label: "Facebook" },
-  { icon: FaInstagram, href: "https://instagram.com", label: "Instagram" },
-  { icon: FaTiktok, href: "https://tiktok.com", label: "TikTok" },
-  { icon: FaLinkedinIn, href: "https://linkedin.com", label: "LinkedIn" },
-]
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'
 
 const footerLinks = {
   services: [
@@ -35,6 +31,28 @@ const footerLinks = {
 }
 
 export default function Footer() {
+  const [settings, setSettings] = useState<any>(null)
+
+  useEffect(() => {
+    fetch(`${API_URL}/settings`)
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.success && res.data) {
+          setSettings(res.data)
+        }
+      })
+      .catch(() => {})
+  }, [])
+
+  const activeSocials = []
+  if (settings) {
+    if (settings.facebook) activeSocials.push({ icon: FaFacebookF, href: settings.facebook, label: "Facebook" })
+    if (settings.instagram) activeSocials.push({ icon: FaInstagram, href: settings.instagram, label: "Instagram" })
+    if (settings.tiktok) activeSocials.push({ icon: FaTiktok, href: settings.tiktok, label: "TikTok" })
+    if (settings.linkedin) activeSocials.push({ icon: FaLinkedinIn, href: settings.linkedin, label: "LinkedIn" })
+    if (settings.twitter) activeSocials.push({ icon: FaTwitter, href: settings.twitter, label: "Twitter" })
+  }
+
   return (
     <footer className="relative bg-gradient-to-b from-[#071E3D] to-[#050B15] text-white overflow-hidden border-t border-[#071E3D]/30">
 
@@ -62,7 +80,7 @@ export default function Footer() {
 
             {/* Social Icons */}
             <div className="flex items-center gap-5 pt-2">
-              {socialLinks.map(({ icon: Icon, href, label }) => (
+              {activeSocials.map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
                   href={href}

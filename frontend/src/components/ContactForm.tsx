@@ -1,7 +1,7 @@
 "use client"
 
-import { useState } from 'react'
-import { FiFacebook, FiLinkedin, FiInstagram, FiMail, FiPhone, FiMapPin, FiSend } from 'react-icons/fi'
+import { useState, useEffect } from 'react'
+import { FiFacebook, FiLinkedin, FiInstagram, FiMail, FiPhone, FiMapPin, FiSend, FiTwitter } from 'react-icons/fi'
 import { FaTiktok } from 'react-icons/fa'
 import { HiOutlineClock } from 'react-icons/hi'
 import toast from 'react-hot-toast'
@@ -37,17 +37,33 @@ const contactDetails = [
   },
 ]
 
-const socialLinks = [
-  { icon: FiFacebook, href: "https://facebook.com", label: "Facebook" },
-  { icon: FaTiktok, href: "https://tiktok.com", label: "TikTok" },
-  { icon: FiLinkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: FiInstagram, href: "https://instagram.com", label: "Instagram" },
-]
+
 
 export default function ContactForm() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' })
   const [submitting, setSubmitting] = useState(false)
   const [token, setToken] = useState<string | null>(null)
+  const [settings, setSettings] = useState<any>(null)
+
+  useEffect(() => {
+    fetch(`${API_URL}/settings`)
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.success && res.data) {
+          setSettings(res.data)
+        }
+      })
+      .catch(() => {})
+  }, [])
+
+  const activeSocials = []
+  if (settings) {
+    if (settings.facebook) activeSocials.push({ icon: FiFacebook, href: settings.facebook, label: "Facebook" })
+    if (settings.tiktok) activeSocials.push({ icon: FaTiktok, href: settings.tiktok, label: "TikTok" })
+    if (settings.linkedin) activeSocials.push({ icon: FiLinkedin, href: settings.linkedin, label: "LinkedIn" })
+    if (settings.instagram) activeSocials.push({ icon: FiInstagram, href: settings.instagram, label: "Instagram" })
+    if (settings.twitter) activeSocials.push({ icon: FiTwitter, href: settings.twitter, label: "Twitter" })
+  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
@@ -135,23 +151,25 @@ export default function ContactForm() {
           </div>
 
           {/* Social Media Icons */}
-          <div className="mt-10 pt-8 border-t border-slate-200">
-            <p className="text-xs uppercase tracking-[0.2em] text-[#0B1E36] font-bold mb-4">Follow Us</p>
-            <div className="flex gap-4">
-              {socialLinks.map(({ icon: Icon, href, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className="text-slate-400 hover:text-sky-500 transition-colors duration-300"
-                >
-                  <Icon size={22} />
-                </a>
-              ))}
+          {activeSocials.length > 0 && (
+            <div className="mt-10 pt-8 border-t border-slate-200">
+              <p className="text-xs uppercase tracking-[0.2em] text-[#0B1E36] font-bold mb-4">Follow Us</p>
+              <div className="flex gap-4">
+                {activeSocials.map(({ icon: Icon, href, label }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="text-slate-400 hover:text-sky-500 transition-colors duration-300"
+                  >
+                    <Icon size={22} />
+                  </a>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         {/* Right Side: Form Card */}

@@ -15,6 +15,7 @@ const settingsSchema = new mongoose.Schema({
   facebook: { type: String, default: '' },
   twitter: { type: String, default: '' },
   instagram: { type: String, default: '' },
+  tiktok: { type: String, default: '' },
   linkedin: { type: String, default: '' },
   github: { type: String, default: '' },
   youtube: { type: String, default: '' },

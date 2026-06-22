@@ -9,6 +9,7 @@ import {
   Search as SearchIcon, Type, FileText, Sparkles, ChevronDown, ChevronUp,
   RotateCcw, CheckCircle, AlertCircle, ExternalLink, User
 } from 'lucide-react'
+import { FaTiktok as Tiktok } from 'react-icons/fa'
 
 interface SiteSettings {
   _id?: string
@@ -21,6 +22,7 @@ interface SiteSettings {
   facebook: string
   twitter: string
   instagram: string
+  tiktok: string
   linkedin: string
   github: string
   youtube: string
@@ -51,6 +53,7 @@ const EMPTY_SETTINGS: SiteSettings = {
   facebook: '',
   twitter: '',
   instagram: '',
+  tiktok: '',
   linkedin: '',
   github: '',
   youtube: '',
@@ -130,6 +133,7 @@ export default function SettingsAdmin() {
           facebook: s.facebook || '',
           twitter: s.twitter || '',
           instagram: s.instagram || '',
+          tiktok: s.tiktok || '',
           linkedin: s.linkedin || '',
           github: s.github || '',
           youtube: s.youtube || '',
@@ -468,6 +472,7 @@ export default function SettingsAdmin() {
           <Field label="Facebook" field="facebook" placeholder="https://facebook.com/xenonedge" icon={<Facebook size={14} />} />
           <Field label="Twitter / X" field="twitter" placeholder="https://twitter.com/xenonedge" icon={<Twitter size={14} />} />
           <Field label="Instagram" field="instagram" placeholder="https://instagram.com/xenonedge" icon={<Instagram size={14} />} />
+          <Field label="TikTok" field="tiktok" placeholder="https://tiktok.com/@xenonedge" icon={<Tiktok size={14} />} />
           <Field label="LinkedIn" field="linkedin" placeholder="https://linkedin.com/company/xenonedge" icon={<Linkedin size={14} />} />
           <Field label="GitHub" field="github" placeholder="https://github.com/xenonedge" icon={<Github size={14} />} />
           <Field label="YouTube" field="youtube" placeholder="https://youtube.com/@xenonedge" icon={<Youtube size={14} />} />
