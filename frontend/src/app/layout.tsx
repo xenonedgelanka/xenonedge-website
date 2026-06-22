@@ -80,7 +80,22 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const pathname = headersList.get('x-invoke-path') || headersList.get('x-pathname') || ''
   const isAdmin = pathname.startsWith('/admin')
 
-  const jsonLd = {
+  // Fetch settings dynamically so phone/email in JSON-LD stay up-to-date
+  let sitePhone = ''
+  let siteEmail = ''
+  try {
+    const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'
+    const res = await fetch(`${API_URL}/settings`, { next: { revalidate: 3600 } })
+    const data = await res.json()
+    if (data?.success && data?.data) {
+      sitePhone = data.data.phone || ''
+      siteEmail = data.data.email || ''
+    }
+  } catch {
+    // silently fall back to empty values
+  }
+
+  const jsonLd: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'xenonedge',
@@ -89,12 +104,16 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     sameAs: [siteConfig.links.twitter, siteConfig.links.github],
     description: siteConfig.description,
     address: { '@type': 'PostalAddress', addressCountry: 'LK' },
-    contactPoint: {
+  }
+
+  if (sitePhone || siteEmail) {
+    const contactPoint: Record<string, string> = {
       '@type': 'ContactPoint',
-      telephone: '+94 76 229 1826',
       contactType: 'customer service',
-      email: 'xenonedgelanka@gmail.com',
-    },
+    }
+    if (sitePhone) contactPoint.telephone = sitePhone
+    if (siteEmail) contactPoint.email = siteEmail
+    jsonLd.contactPoint = contactPoint
   }
 
   return (
