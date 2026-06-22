@@ -138,41 +138,47 @@ export default function Footer() {
               Contact
             </h4>
             <ul className="space-y-5">
-              <li>
-                <a
-                  href={settings?.address ? `https://maps.google.com/?q=${encodeURIComponent(settings.address)}` : "https://maps.google.com"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-start gap-3 group"
-                >
-                  <HiOutlineLocationMarker className="text-sky-400 mt-0.5 shrink-0" size={20} />
-                  <span className="text-slate-400 group-hover:text-white text-[15px] transition-colors duration-200 leading-relaxed">
-                    {settings?.address || "Sri Lanka"}
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href={settings?.phone ? `tel:${settings.phone.replace(/\s+/g, '')}` : "tel:+94762291826"}
-                  className="flex items-center gap-3 group"
-                >
-                  <HiOutlinePhone className="text-sky-400 shrink-0" size={20} />
-                  <span className="text-slate-400 group-hover:text-white text-[15px] transition-colors duration-200">
-                    {settings?.phone || "+94 762291826"}
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href={settings?.email ? `mailto:${settings.email}` : "mailto:info@xenonedge.com"}
-                  className="flex items-center gap-3 group"
-                >
-                  <HiOutlineMail className="text-sky-400 shrink-0" size={19} />
-                  <span className="text-slate-400 group-hover:text-white text-[15px] transition-colors duration-200">
-                    {settings?.email || "info@xenonedge.com"}
-                  </span>
-                </a>
-              </li>
+              {settings?.address && (
+                <li>
+                  <a
+                    href={`https://maps.google.com/?q=${encodeURIComponent(settings.address)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-start gap-3 group"
+                  >
+                    <HiOutlineLocationMarker className="text-sky-400 mt-0.5 shrink-0" size={20} />
+                    <span className="text-slate-400 group-hover:text-white text-[15px] transition-colors duration-200 leading-relaxed">
+                      {settings.address}
+                    </span>
+                  </a>
+                </li>
+              )}
+              {settings?.phone && (
+                <li>
+                  <a
+                    href={`tel:${settings.phone.replace(/\s+/g, '')}`}
+                    className="flex items-center gap-3 group"
+                  >
+                    <HiOutlinePhone className="text-sky-400 shrink-0" size={20} />
+                    <span className="text-slate-400 group-hover:text-white text-[15px] transition-colors duration-200">
+                      {settings.phone}
+                    </span>
+                  </a>
+                </li>
+              )}
+              {settings?.email && (
+                <li>
+                  <a
+                    href={`mailto:${settings.email}`}
+                    className="flex items-center gap-3 group"
+                  >
+                    <HiOutlineMail className="text-sky-400 shrink-0" size={19} />
+                    <span className="text-slate-400 group-hover:text-white text-[15px] transition-colors duration-200">
+                      {settings.email}
+                    </span>
+                  </a>
+                </li>
+              )}
             </ul>
           </div>
         </div>

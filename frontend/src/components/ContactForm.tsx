@@ -42,30 +42,35 @@ export default function ContactForm() {
     if (settings.twitter) activeSocials.push({ icon: FiTwitter, href: settings.twitter, label: "Twitter" })
   }
 
-  const contactDetails = [
-    {
+  const contactDetails = []
+  if (settings?.address) {
+    contactDetails.push({
       icon: FiMapPin,
       label: "Our Office",
-      value: settings?.address || "Colombo, Sri Lanka",
-    },
-    {
+      value: settings.address,
+    })
+  }
+  if (settings?.phone) {
+    contactDetails.push({
       icon: FiPhone,
       label: "Direct Line",
-      value: settings?.phone || "+94 76 229 1826",
-      href: settings?.phone ? `tel:${settings.phone.replace(/\s+/g, '')}` : "tel:+94762291826",
-    },
-    {
+      value: settings.phone,
+      href: `tel:${settings.phone.replace(/\s+/g, '')}`,
+    })
+  }
+  if (settings?.email) {
+    contactDetails.push({
       icon: FiMail,
       label: "Digital Inquiries",
-      value: settings?.email || "xenonedgelanka@gmail.com",
-      href: settings?.email ? `mailto:${settings.email}` : "mailto:xenonedgelanka@gmail.com",
-    },
-    {
-      icon: HiOutlineClock,
-      label: "Availability",
-      value: "24 / 7 — Always Available",
-    },
-  ]
+      value: settings.email,
+      href: `mailto:${settings.email}`,
+    })
+  }
+  contactDetails.push({
+    icon: HiOutlineClock,
+    label: "Availability",
+    value: "24 / 7 — Always Available",
+  })
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
